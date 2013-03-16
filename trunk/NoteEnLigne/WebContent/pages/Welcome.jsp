@@ -11,15 +11,12 @@
 <body bgcolor="white">
 
 
-<form id="login" >
-    <h1>Authentification</h1>
-    <br/>
-    <fieldset id="inputs">
-        <input id="user" type="text" name="user" placeholder="Utilisateur" autofocus required>
-        &nbsp;&nbsp;&nbsp;   
-        <input id="pass" type="password" name="pass" placeholder="Mot de passe" required>
-    </fieldset>
-   
-</form>
+<html:errors />
+
+<html:form action="/Login" >
+User Name :<html:text name="LoginForm" property="userName" />
+Password  :<html:password name="LoginForm" property="password" />
+<html:submit value="Login" />
+</html:form>
 </body>
 </html:html>

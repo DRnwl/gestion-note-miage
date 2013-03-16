@@ -1,65 +1,66 @@
-package bean;
+package fr.paris10.miage.gnote.univcmp.bean;
 
-	
 
-public class EC {
+public class ConfigurationEC {
 	/**
-	 * Les différents attributs ainsi que leur visibilité
+	 * Les diff�rents attributs ainsi que leur visibilit�
 	 */
+	private int nombreExamen;
+	private String numeroConfiguration;
 	private String codeEC;
-	private String libelle;
-	private float credit;
+	private String annee;
 
 	/**
 	 * Conctructeur sans parametre.
 	 */
 
-	public EC() {
+	public ConfigurationEC() {
 	}
 
 	/**
 	 * Le constructeur avec param�tres
 	 * 
-	 * @param libelle
-	 * @param credit
+	 * @param nombreExamen
 	 */
-	public EC(String codeEC, String libelle, float credit) {
-
-		this.codeEC = codeEC;
-		this.libelle = libelle;
-		this.credit = credit;
+	public ConfigurationEC(String numeroConfiguration, String codeEC, int nombreExamen) {
+		this.setNumeroConfiguration(numeroConfiguration);
+		this.setCodeEC(codeEC);
+		this.nombreExamen = nombreExamen;
 	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
-
+	public String getNumeroConfiguration() {
+		return numeroConfiguration;
+	}
 	public String getCodeEC() {
 		return codeEC;
 	}
-
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public float getCredit() {
-		return credit;
+	public int getNombreExamen() {
+		return nombreExamen;
 	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
+	public void setNombreExamen(int nombreExamen) {
+		this.nombreExamen = nombreExamen;
+	}
+	public void setNumeroConfiguration(String numeroConfiguration) {
+		this.numeroConfiguration = numeroConfiguration;
+	}
 	public void setCodeEC(String codeEC) {
 		this.codeEC = codeEC;
 	}
 
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+	public String getAnnee() {
+		return annee;
 	}
 
-	public void setCredit(float credit) {
-		this.credit = credit;
+	public void setAnnee(String annee) {
+		this.annee = annee;
 	}
 
 }
