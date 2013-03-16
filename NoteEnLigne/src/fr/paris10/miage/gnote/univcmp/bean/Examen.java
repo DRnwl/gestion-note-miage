@@ -1,4 +1,4 @@
-package bean;
+package fr.paris10.miage.gnote.univcmp.bean;
 
 /**
  * Classe représentant l'Examen pass� par un étudiant

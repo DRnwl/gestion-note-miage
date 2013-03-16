@@ -1,61 +1,65 @@
-package bean;
+package fr.paris10.miage.gnote.univcmp.bean;
 
-/**
- * Classe représentant le semestre
- * 
- * @author Patrick Kasongo
- * @version 1.0
- * 
- */
-public class Semestre {
+	
+
+public class EC {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private String numeroSemestre;
+	private String codeEC;
 	private String libelle;
+	private float credit;
 
 	/**
 	 * Conctructeur sans parametre.
 	 */
 
-	public Semestre() {
+	public EC() {
 	}
 
 	/**
-	 * Le constructeur
+	 * Le constructeur avec param�tres
 	 * 
-	 * @param numeroSemestre
 	 * @param libelle
+	 * @param credit
 	 */
+	public EC(String codeEC, String libelle, float credit) {
 
-	public Semestre(String numeroSemestre, String libelle) {
-
-		this.numeroSemestre = numeroSemestre;
+		this.codeEC = codeEC;
 		this.libelle = libelle;
+		this.credit = credit;
 	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getNumeroSemestre() {
-		return numeroSemestre;
+	public String getCodeEC() {
+		return codeEC;
 	}
 
 	public String getLibelle() {
 		return libelle;
 	}
 
+	public float getCredit() {
+		return credit;
+	}
+
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroSemestre(String numeroSemestre) {
-		this.numeroSemestre = numeroSemestre;
+	public void setCodeEC(String codeEC) {
+		this.codeEC = codeEC;
 	}
 
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
+	}
+
+	public void setCredit(float credit) {
+		this.credit = credit;
 	}
 
 }

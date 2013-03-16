@@ -1,5 +1,5 @@
 
-package bean;
+package fr.paris10.miage.gnote.univcmp.bean;
 
 /**
  * Classe représentant la promotion d'un étudiant

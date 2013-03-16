@@ -1,18 +1,19 @@
-package bean;
+package fr.paris10.miage.gnote.univcmp.bean;
 
 /**
- * Classe représentant l'EU
+ * Classe représentant la promotion d'un étudiant
  * 
  * @author Patrick Kasongo
  * @version 1.0
  * 
  */
-public class UE {
+public class Promotion {
+
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private String numeroUE;
-	private String numeroSemestre;
+
+	private String numeroPromotion;
 	private String numeroFormation;
 	private String libelle;
 
@@ -20,36 +21,32 @@ public class UE {
 	 * Conctructeur sans parametre.
 	 */
 
-	public UE() {
+	public Promotion() {
 	}
 
 	/**
-	 * Le constructeur avec paramètre
+	 * Le constructeur avec paramètres
 	 * 
-	 * @param numeroUE
-	 * @param numeroSemestre
+	 * @param numeroPromotion
 	 * @param numeroFormation
 	 * @param libelle
 	 */
-	public UE(String numeroUE, String numeroSemestre, String numeroFormation,
+
+	public Promotion(String numeroPromotion, String numeroFormation,
 			String libelle) {
 
-		this.numeroUE = numeroUE;
-		this.numeroSemestre = numeroSemestre;
+		this.numeroPromotion = numeroPromotion;
 		this.numeroFormation = numeroFormation;
 		this.libelle = libelle;
+
 	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getNumeroUE() {
-		return numeroUE;
-	}
-
-	public String getNumeroSemestre() {
-		return numeroSemestre;
+	public String getNumeroPromotion() {
+		return numeroPromotion;
 	}
 
 	public String getNumeroFormation() {
@@ -64,12 +61,8 @@ public class UE {
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroUE(String numeroUE) {
-		this.numeroUE = numeroUE;
-	}
-
-	public void setNumeroSemestre(String numeroSemestre) {
-		this.numeroSemestre = numeroSemestre;
+	public void setNumeroPromotion(String numeroPromotion) {
+		this.numeroPromotion = numeroPromotion;
 	}
 
 	public void setNumeroFormation(String numeroFormation) {
@@ -79,4 +72,5 @@ public class UE {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+
 }
