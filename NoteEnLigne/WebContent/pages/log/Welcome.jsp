@@ -14,12 +14,26 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 --%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-<logic:redirect forward="welcome"/>
 
-<%--
+<html:html>
+<head>
+<title><bean:message key="welcome.title"/></title>
+<html:base/>
+</head>
+<body bgcolor="white">
 
-Redirect default requests to Welcome global ActionForward.
-By using a redirect, the user-agent will change address to match the path of our Welcome ActionForward. 
+<logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
+  <font color="red">
+    ERROR:  Application resources not loaded -- check servlet container
+    logs for error messages.
+  </font>
+</logic:notPresent>
 
---%>
+<h3><bean:message key="welcome.heading"/></h3>
+<p><bean:message key="welcome.message"/></p>
+
+</body>
+</html:html>
