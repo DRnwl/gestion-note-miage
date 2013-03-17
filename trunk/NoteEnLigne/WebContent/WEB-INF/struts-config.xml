@@ -54,9 +54,9 @@
     <action-mappings>
             <!-- Default "Welcome" action -->
             <!-- Forwards to Welcome.jsp -->
-       <!-- <action
+       <action
             path="/Welcome"
-            forward="/pages/Welcome.jsp"/>  -->
+            forward="/pages/log/Welcome.jsp"/> 
             
          
 
