@@ -32,8 +32,39 @@
   </font>
 </logic:notPresent>
 
-<h3><bean:message key="welcome.heading"/></h3>
-<p><bean:message key="welcome.message"/></p>
+        
+        
+        <div class="header">
+        </div>
+            <div class ="loginForm"> 
+                <form action="Controleur" method="post" name="loginForm" target="_self">
+                    <input type="hidden" name="action" value="doLogin"></input>
+                    <table  >
+                        <tr>
+                            <td>Nom utilisateur</td>
+                        </tr>
+                        <tr><td><input name="username" type="text" /></td></tr>
+                        <tr>
+                            <td>Mot de passe</td>
+                            
+                        </tr>
+                        <tr><td><input name="password" type="password" /></td></tr>
+                        <tr>
+                            <td><button  type="submit">Valider</button></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                    <div class="message">
+                        <%
+                            if (request.getAttribute("message") != null) 
+                            {
+                                out.print(request.getAttribute("message"));
+                            }
+                        %>
+                    </div>
+                </form>
+            </div>
+        </div>
 
 </body>
 </html:html>
