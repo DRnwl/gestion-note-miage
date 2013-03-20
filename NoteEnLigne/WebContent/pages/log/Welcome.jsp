@@ -17,10 +17,10 @@
   </font>
 </logic:notPresent>
 
-                <html:form action="/InputSubmit" >
+                <html:form action="/InputSubmit">
                 Login <html:text property="login"></html:text><br>
                 mot de passe <html:text property="mdp"></html:text>
-                  
+              <html:submit value="soumettre"></html:submit>    
            </html:form>
 
 </body>
