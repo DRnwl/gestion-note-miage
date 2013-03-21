@@ -3,7 +3,7 @@ package fr.paris10.miage.gnote.univcmp.bean;
 /**
  * Classe représentant le semestre
  * 
- * @author Patrick Kasongo
+ * @author Lydie Tiago
  * @version 1.0
  * 
  */
@@ -11,7 +11,8 @@ public class Semestre {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private String numeroSemestre;
+	private int numeroSemestre;
+	private static int nextSemestre=0;
 	private String libelle;
 
 	/**
@@ -24,13 +25,12 @@ public class Semestre {
 	/**
 	 * Le constructeur
 	 * 
-	 * @param numeroSemestre
 	 * @param libelle
 	 */
 
-	public Semestre(String numeroSemestre, String libelle) {
+	public Semestre(String libelle) {
 
-		this.numeroSemestre = numeroSemestre;
+		this.numeroSemestre = this.nextSemestre++;
 		this.libelle = libelle;
 	}
 
@@ -38,21 +38,24 @@ public class Semestre {
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getNumeroSemestre() {
+	public int getNumeroSemestre() {
 		return numeroSemestre;
 	}
 
 	public String getLibelle() {
 		return libelle;
 	}
+	
+	
+
+	public static int getNextSemestre() {
+		return nextSemestre;
+	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroSemestre(String numeroSemestre) {
-		this.numeroSemestre = numeroSemestre;
-	}
 
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;

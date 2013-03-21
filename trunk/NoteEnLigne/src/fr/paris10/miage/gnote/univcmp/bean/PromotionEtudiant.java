@@ -3,8 +3,8 @@ package fr.paris10.miage.gnote.univcmp.bean;
 
 /**
  * Classe représentant la promotion d'un étudiant
- * 
- * @author Patrick Kasongo
+ * Correspond à la table EST_DANS de la BDD
+ * @author Lydie Tiago
  * @version 1.0
  * 
  */
@@ -13,9 +13,8 @@ public class PromotionEtudiant {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private String idPromotionEtudiant;
-	private String numeroEtudiant;
-	private String numeroPromotion;
+	private int numeroEtudiant;
+	private int numeroPromotion;
 	
 	
 
@@ -34,9 +33,8 @@ public class PromotionEtudiant {
 	 * @param libelle
 	 */
 
-	public PromotionEtudiant(String idPromotionEtudiant, String numeroEtudiant, String numeroPromotion) {
+	public PromotionEtudiant(int numeroEtudiant, int numeroPromotion) {
 
-		this.idPromotionEtudiant = idPromotionEtudiant;
 		this.numeroEtudiant = numeroEtudiant;
 		this.numeroPromotion = numeroPromotion;
 		
@@ -46,29 +44,23 @@ public class PromotionEtudiant {
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
-	public String getIdPromotionEtudiant() {
-		return idPromotionEtudiant;
-	}
 
-	public String getNumeroEtudiant() {
+	public int getNumeroEtudiant() {
 		return numeroEtudiant;
 	}
 
-	public String getNumeroPromotion() {
+	public int getNumeroPromotion() {
 		return numeroPromotion;
 	}
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
-	public void setIdPromotionEtudiant(String idPromotionEtudiant) {
-		this.idPromotionEtudiant = idPromotionEtudiant;
-	}
 
-	public void setNumeroEtudiant(String numeroEtudiant) {
+	public void setNumeroEtudiant(int numeroEtudiant) {
 		this.numeroEtudiant = numeroEtudiant;
 	}
 
-	public void setNumeroPromotion(String numeroPromotion) {
+	public void setNumeroPromotion(int numeroPromotion) {
 		this.numeroPromotion = numeroPromotion;
 	}
 }
