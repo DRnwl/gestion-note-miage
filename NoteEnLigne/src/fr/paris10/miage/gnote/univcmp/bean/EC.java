@@ -6,9 +6,11 @@ public class EC {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private String codeEC;
+	private int numeroEC;
+	private int numeroFormation;
+	private int numeroUE;
 	private String libelle;
-	private float credit;
+	private float coef;
 
 	/**
 	 * Conctructeur sans parametre.
@@ -19,47 +21,68 @@ public class EC {
 
 	/**
 	 * Le constructeur avec param�tres
-	 * 
+	 * @param numeroEC
+	 * @param numeroUE
+	 * @param numeroFormation
 	 * @param libelle
-	 * @param credit
+	 * @param coef
 	 */
-	public EC(String codeEC, String libelle, float credit) {
-
-		this.codeEC = codeEC;
+	public EC(int numeroEC, int numeroFormation, int numeroUE, String libelle,
+			float coef) {
+		super();
+		this.numeroEC = numeroEC;
+		this.numeroFormation = numeroFormation;
+		this.numeroUE = numeroUE;
 		this.libelle = libelle;
-		this.credit = credit;
+		this.coef = coef;
 	}
-
+	
 	/***********************************************************************************************************************
-	 ****************************************************** LES GETTERS******************************************************
+	 ****************************************************** LES GETTERS/SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getCodeEC() {
-		return codeEC;
+	
+
+
+	public int getNumeroEC() {
+		return numeroEC;
+	}
+
+	public void setNumeroEC(int numeroEC) {
+		this.numeroEC = numeroEC;
+	}
+
+	public int getNumeroFormation() {
+		return numeroFormation;
+	}
+
+	public void setNumeroFormation(int numeroFormation) {
+		this.numeroFormation = numeroFormation;
+	}
+
+	public int getNumeroUE() {
+		return numeroUE;
+	}
+
+	public void setNumeroUE(int numeroUE) {
+		this.numeroUE = numeroUE;
 	}
 
 	public String getLibelle() {
 		return libelle;
 	}
 
-	public float getCredit() {
-		return credit;
-	}
-
-	/***********************************************************************************************************************
-	 ****************************************************** LES SETTERS******************************************************
-	 ***********************************************************************************************************************/
-
-	public void setCodeEC(String codeEC) {
-		this.codeEC = codeEC;
-	}
-
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
 
-	public void setCredit(float credit) {
-		this.credit = credit;
+	public float getCoef() {
+		return coef;
 	}
+
+	public void setCoef(float coef) {
+		this.coef = coef;
+	}
+
 
 }

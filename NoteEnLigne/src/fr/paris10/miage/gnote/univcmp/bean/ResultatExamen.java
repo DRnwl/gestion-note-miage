@@ -1,9 +1,9 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
 /**
- * Classe repésentant au resultat d'examen passé par un étudiant
- * 
- * @author Patrick Kasongo
+ * Classe repésentant le resultat d'examen passé par un étudiant
+ * Correspond à la table A_PASSE de la BDD * 
+ * @author Lydie Tiago
  * @version 1.0
  * 
  */
@@ -12,14 +12,9 @@ public class ResultatExamen {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private String numeroExamen;
-	private String numeroEtudiant;
+	private int numeroExamen;
+	private int numeroEtudiant;
 	private float note;
-	private String libelleEC;
-	private float ratio;
-	private String typeExamen;
-	private int numeroEC;
-	private float noteFinale;
 
 	/**
 	 * Conctructeur sans parametre.
@@ -36,24 +31,23 @@ public class ResultatExamen {
 	 * @param note
 	 */
 
-	public ResultatExamen(String numeroExamen, String numeroEtudiant,float note, String libelleEC) {
-
+	public ResultatExamen(int numeroExamen, int numeroEtudiant, float note) {
+		super();
 		this.numeroExamen = numeroExamen;
 		this.numeroEtudiant = numeroEtudiant;
 		this.note = note;
-		this.libelleEC = libelleEC;
-
 	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getNumeroExamen() {
+	public int getNumeroExamen() {
 		return numeroExamen;
 	}
 
-	public String getNumeroEtudiant() {
+
+	public int getNumeroEtudiant() {
 		return numeroEtudiant;
 	}
 
@@ -61,19 +55,16 @@ public class ResultatExamen {
 		return note;
 	}
 	
-	public String getLibelleEC() {
-		return libelleEC;
-	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroExamen(String numeroExamen) {
+	public void setNumeroExamen(int numeroExamen) {
 		this.numeroExamen = numeroExamen;
 	}
 
-	public void setNumeroEtudiant(String numeroEtudiant) {
+	public void setNumeroEtudiant(int numeroEtudiant) {
 		this.numeroEtudiant = numeroEtudiant;
 	}
 
@@ -81,39 +72,4 @@ public class ResultatExamen {
 		this.note = note;
 	}
 
-	public void setLibelleEC(String libelleEC) {
-		this.libelleEC = libelleEC;
-	}
-
-	public String getTypeExamen() {
-		return typeExamen;
-	}
-
-	public void setTypeExamen(String typeExamen) {
-		this.typeExamen = typeExamen;
-	}
-
-	public float getRatio() {
-		return ratio;
-	}
-
-	public void setRatio(float ratio) {
-		this.ratio = ratio;
-	}
-
-	public int getNumeroEC() {
-		return numeroEC;
-	}
-
-	public void setNumeroEC(int numeroEC) {
-		this.numeroEC = numeroEC;
-	}
-
-	public float getNoteFinale() {
-		return noteFinale;
-	}
-
-	public void setNoteFinale(float noteFinale) {
-		this.noteFinale = noteFinale;
-	}
 }

@@ -1,9 +1,11 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
+import java.sql.Date;
+
 /**
  * Classe représentant l'Examen pass� par un étudiant
  * 
- * @author Patrick Kasongo
+ * @author Lydie Tiago
  * @version 1.0
  * 
  */
@@ -11,14 +13,16 @@ public class Examen {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private String numeroExamen;
-	private String CodeEC;
+	private int numeroExamen;
+	private static int nextExamen=0;
+	private Date dateExamen;
+	private int numeroType;
+	private int numeroFormation;
+	private int numeroUE;
+	private int numeroEC;
 	private String libelle;
-	private String date;
-	private String heure;
-	private float ratioEC;
-	private String typeExamen;
-	private String annee;
+	private String horaire;
+	private float poucentage;
 
 	/**
 	 * Conctructeur sans parametre.
@@ -27,101 +31,101 @@ public class Examen {
 	public Examen() {
 	}
 
-	/**
-	 * Le constructeur avec param�tres
-	 * 
-	 * @param numeroExamen
-	 * @param CodeEC
-	 * @param libelle
-	 * @param date
-	 * @param heure
-	 * @param ratioEC
-	 * @param typeExamen
-	 */
-
-	public Examen(String numeroExamen, String CodeEC, String libelle, String date,
-			String heure, float ratioEC, String typeExamen) {
-
-		this.numeroExamen = numeroExamen;
-		this.CodeEC = CodeEC;
+	public Examen(int numeroExamen, Date dateExamen, int numeroType,
+			int numeroFormation, int numeroUE, int numeroEC, String libelle,
+			String horaire, float poucentage) {
+		super();
+		this.numeroExamen = this.nextExamen++;
+		this.dateExamen = dateExamen;
+		this.numeroType = numeroType;
+		this.numeroFormation = numeroFormation;
+		this.numeroUE = numeroUE;
+		this.numeroEC = numeroEC;
 		this.libelle = libelle;
-		this.date = date;
-		this.heure = heure;
-		this.ratioEC = ratioEC;
-		this.typeExamen = typeExamen;
-
+		this.horaire = horaire;
+		this.poucentage = poucentage;
 	}
+	
 
 	/***********************************************************************************************************************
-	 ****************************************************** LES GETTERS******************************************************
+	 ****************************************************** LES GETTERS/SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getNumeroExamen() {
+
+	public int getNumeroExamen() {
 		return numeroExamen;
 	}
 
-	public String getCodeEC() {
-		return CodeEC;
+
+	public static int getNextExamen() {
+		return nextExamen;
 	}
-	
+
+
+	public Date getDateExamen() {
+		return dateExamen;
+	}
+
+	public void setDateExamen(Date dateExamen) {
+		this.dateExamen = dateExamen;
+	}
+
+	public int getNumeroType() {
+		return numeroType;
+	}
+
+	public void setNumeroType(int numeroType) {
+		this.numeroType = numeroType;
+	}
+
+	public int getNumeroFormation() {
+		return numeroFormation;
+	}
+
+	public void setNumeroFormation(int numeroFormation) {
+		this.numeroFormation = numeroFormation;
+	}
+
+	public int getNumeroUE() {
+		return numeroUE;
+	}
+
+	public void setNumeroUE(int numeroUE) {
+		this.numeroUE = numeroUE;
+	}
+
+	public int getNumeroEC() {
+		return numeroEC;
+	}
+
+	public void setNumeroEC(int numeroEC) {
+		this.numeroEC = numeroEC;
+	}
+
 	public String getLibelle() {
 		return libelle;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public String getHeure() {
-		return heure;
-	}
-
-	public float getRatioEC() {
-		return ratioEC;
-	}
-
-	public String getTypeExamen() {
-		return typeExamen;
-	}
-
-	/***********************************************************************************************************************
-	 ****************************************************** LES SETTERS******************************************************
-	 ***********************************************************************************************************************/
-
-	public void setNumeroExamen(String numeroExamen) {
-		this.numeroExamen = numeroExamen;
 	}
 
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public String getHoraire() {
+		return horaire;
 	}
 
-	public void setHeure(String heure) {
-		this.heure = heure;
+	public void setHoraire(String horaire) {
+		this.horaire = horaire;
 	}
 
-	public void setRatioEC(float ratioEC) {
-		this.ratioEC = ratioEC;
+	public float getPoucentage() {
+		return poucentage;
 	}
 
-	public void setTypeExamen(String typeExamen) {
-		this.typeExamen = typeExamen;
+	public void setPoucentage(float poucentage) {
+		this.poucentage = poucentage;
 	}
 
-	public void setCodeEC(String codeEC) {
-		CodeEC = codeEC;
-	}
 
-	public String getAnnee() {
-		return annee;
-	}
-
-	public void setAnnee(String annee) {
-		this.annee = annee;
-	}
 
 }

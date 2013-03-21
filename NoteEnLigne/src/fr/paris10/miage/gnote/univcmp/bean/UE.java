@@ -3,7 +3,7 @@ package fr.paris10.miage.gnote.univcmp.bean;
 /**
  * Classe représentant l'EU
  * 
- * @author Patrick Kasongo
+ * @author Lydie Tiago
  * @version 1.0
  * 
  */
@@ -11,9 +11,9 @@ public class UE {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private String numeroUE;
-	private String numeroSemestre;
-	private String numeroFormation;
+	private int numeroUE;
+	private int numeroSemestre;
+	private int numeroFormation;
 	private String libelle;
 
 	/**
@@ -31,9 +31,9 @@ public class UE {
 	 * @param numeroFormation
 	 * @param libelle
 	 */
-	public UE(String numeroUE, String numeroSemestre, String numeroFormation,
+	public UE(int numeroUE,int numeroSemestre, int numeroFormation,
 			String libelle) {
-
+		
 		this.numeroUE = numeroUE;
 		this.numeroSemestre = numeroSemestre;
 		this.numeroFormation = numeroFormation;
@@ -44,15 +44,15 @@ public class UE {
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getNumeroUE() {
+	public int getNumeroUE() {
 		return numeroUE;
 	}
 
-	public String getNumeroSemestre() {
+	public int getNumeroSemestre() {
 		return numeroSemestre;
 	}
 
-	public String getNumeroFormation() {
+	public int getNumeroFormation() {
 		return numeroFormation;
 	}
 
@@ -60,19 +60,18 @@ public class UE {
 		return libelle;
 	}
 
+	
+
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroUE(String numeroUE) {
-		this.numeroUE = numeroUE;
-	}
 
-	public void setNumeroSemestre(String numeroSemestre) {
+	public void setNumeroSemestre(int numeroSemestre) {
 		this.numeroSemestre = numeroSemestre;
 	}
 
-	public void setNumeroFormation(String numeroFormation) {
+	public void setNumeroFormation(int numeroFormation) {
 		this.numeroFormation = numeroFormation;
 	}
 

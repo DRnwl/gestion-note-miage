@@ -1,45 +1,31 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
 /**
- * Classe repésentant la formation suivie par un étudiant
+ * Class repésentant la formation suivie par un étudiant
  * 
- * @author Patrick Kasongo
+ * @author Lydie Tiago
  * @version 1.0
  * 
  */
 public class Formation {
 
-	/**
-	 * Les différents attributs ainsi que leur visibilité
-	 */
-
-	private String numeroFormation;
+	private int numeroFormation;
+	private static int nextFormation=0;
+	private int numeroContrat;
 	private String libelle;
 	private String niveau;
 	private String type;
 	private String parcours;
 
-	/**
-	 * Conctructeur sans parametre.
-	 */
-
 	public Formation() {
 	}
 
-	/**
-	 * Le constructeur avec paramètre
-	 * 
-	 * @param numeroFormation
-	 * @param libelle
-	 * @param niveau
-	 * @param type
-	 * @param parcours
-	 */
 
-	public Formation(String numeroFormation, String libelle, String niveau,
+	public Formation( int numeroContrat,String libelle, String niveau,
 			String type, String parcours) {
 
-		this.numeroFormation = numeroFormation;
+		this.numeroFormation = this.nextFormation++;
+		this.numeroContrat=numeroContrat;
 		this.libelle = libelle;
 		this.niveau = niveau;
 		this.type = type;
@@ -51,8 +37,18 @@ public class Formation {
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getNumeroFormation() {
+	public int getNumeroFormation() {
 		return numeroFormation;
+	}
+	
+	
+	
+	public static int getNextFormation() {
+		return nextFormation;
+	}
+
+	public int getNumeroContrat() {
+		return numeroContrat;
 	}
 
 	public String getLibelle() {
@@ -75,10 +71,6 @@ public class Formation {
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroFormation(String numeroFormation) {
-		this.numeroFormation = numeroFormation;
-	}
-
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
@@ -94,5 +86,11 @@ public class Formation {
 	public void setParcours(String parcours) {
 		this.parcours = parcours;
 	}
+
+	public void setNumeroContrat(int numeroContrat) {
+		this.numeroContrat = numeroContrat;
+	}
+	
+	
 
 }

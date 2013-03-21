@@ -3,7 +3,7 @@ package fr.paris10.miage.gnote.univcmp.bean;
 /**
  * Classe représentant la promotion d'un étudiant
  * 
- * @author Patrick Kasongo
+ * @author Lydie Tiago
  * @version 1.0
  * 
  */
@@ -13,9 +13,10 @@ public class Promotion {
 	 * Les différents attributs ainsi que leur visibilité
 	 */
 
-	private String numeroPromotion;
-	private String numeroFormation;
-	private String libelle;
+	private int numeroPromotion;
+	private int numeroFormation;
+	private static int nextPromotion=0;
+	//private String libelle;
 
 	/**
 	 * Conctructeur sans parametre.
@@ -32,12 +33,10 @@ public class Promotion {
 	 * @param libelle
 	 */
 
-	public Promotion(String numeroPromotion, String numeroFormation,
-			String libelle) {
+	public Promotion(int numeroPromotion, int numeroFormation) {
 
-		this.numeroPromotion = numeroPromotion;
+		this.numeroPromotion = this.nextPromotion++;
 		this.numeroFormation = numeroFormation;
-		this.libelle = libelle;
 
 	}
 
@@ -45,32 +44,27 @@ public class Promotion {
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public String getNumeroPromotion() {
+	public int getNumeroPromotion() {
 		return numeroPromotion;
 	}
 
-	public String getNumeroFormation() {
+	public int getNumeroFormation() {
 		return numeroFormation;
 	}
+	
 
-	public String getLibelle() {
-		return libelle;
+	
+	public static int getNextPromotion() {
+		return nextPromotion;
 	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroPromotion(String numeroPromotion) {
-		this.numeroPromotion = numeroPromotion;
-	}
-
-	public void setNumeroFormation(String numeroFormation) {
+	public void setNumeroFormation(int numeroFormation) {
 		this.numeroFormation = numeroFormation;
 	}
 
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
-
+	
 }
