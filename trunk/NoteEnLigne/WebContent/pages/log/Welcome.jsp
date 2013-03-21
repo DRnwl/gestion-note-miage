@@ -1,27 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-
-<html:html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title><bean:message key="welcome.title"/></title>
-<html:base/>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Note en ligne MIAGE </title>
+
+
+
 </head>
-<body bgcolor="white">
 
-<logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
-  <font color="red">
-    ERROR:  Application resources not loaded -- check servlet container
-    logs for error messages.
-  </font>
-</logic:notPresent>
+<body>
+	
+	
+		<h2>Bienvenue dans  l'application gestion des notes MIAGE Nanterre</h2><br>
+	       
+		<form method="POST" action="Authentification.do">
+			
+			
+			<br />
+			
+			
+				<h4>Login </h4><input id="login" type="text" name="login" /> 
+				<h4>Mot de passe </h4><input id="mdp" type="password" name="mdp" />
+                               <div> <input type="submit" value="soumettre"/></div>
+			
+			<br>
+			
+		</form>
+		
+	
+	
 
-                <html:form action="/InputSubmit">
-                Login <html:text property="login"></html:text><br>
-                mot de passe <html:text property="mdp"></html:text>
-              <html:submit value="soumettre"></html:submit>    
-           </html:form>
 
 </body>
-</html:html>
+
+
+
+</html>
