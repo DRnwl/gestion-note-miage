@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionMessage;
 
 /**
  *
- * @author keberne
+ * @author lydie
  */
 public class ConnectionForm extends ActionForm {
     
