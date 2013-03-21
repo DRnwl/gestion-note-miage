@@ -42,28 +42,18 @@
     <action-mappings>
             <!-- Default "Welcome" action -->
             <!-- Forwards to Welcome.jsp -->
-       <action
-            path="/Welcome"
-            forward="/pages/log/Welcome.jsp"/> 
-            
-        
+        <action path="/Welcome" forward="/pages/log/Welcome.jsp" />
 
-  
 
-        <action
-            path="/InputSubmit"
-            type="fr.paris10.miage.gnote.univcmp.controleur.loginAction"
-            name="WelcomeForm"
-            scope="request"
-            attribute="login"
-            input="/pages/log/Welcome.jsp">
-            <forward name="success" path="/pages/log/loginSucess.jsp"></forward>
+
+  <action path="/Authentification" 
+		type="fr.paris10.miage.gnote.univcmp.controleur.loginAction"
+		name="LoginForm"
+		input="/pages/log/Welcome.jsp"
+			scope="request">
+			  <forward name="success" path="/pages/log/loginSucess.jsp"></forward>
             <forward name="erreur" path="/pages/erreur/erreurlog.jsp"></forward>
            </action>  
-           
-    </action-mappings>
-
-
 <!-- ======================================== Message Resources Definitions -->
 
     <message-resources parameter="MessageResources_fr_FR" />

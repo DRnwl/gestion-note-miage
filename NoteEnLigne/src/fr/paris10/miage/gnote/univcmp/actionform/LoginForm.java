@@ -1,8 +1,13 @@
 package fr.paris10.miage.gnote.univcmp.actionform;
 import org.apache.struts.action.ActionForm;
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts.action.ActionErrors;
+
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
 
-public class WelcomeForm extends ActionForm {
+public class LoginForm extends ActionForm {
 	private String login=null;
 	private String mdp=null;
 	public String getLogin() {
@@ -18,7 +23,7 @@ public class WelcomeForm extends ActionForm {
 		this.mdp = mdp;
 	}
 	
-	
+
 	
 
 }

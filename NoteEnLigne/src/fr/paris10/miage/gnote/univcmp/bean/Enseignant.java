@@ -1,7 +1,7 @@
 package fr.paris10.miage.gnote.univcmp.bean;
- import java.io.Serializable;
+
  
-public class Enseignant implements Serializable {
+public class Enseignant  {
 
 	
 	    private int numEnseignant;
