@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+    "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+
 <struts-config>
 
 
@@ -50,17 +54,12 @@
 		name="LoginForm"
 		input="/pages/log/Welcome.jsp"
 			scope="request">
-			  <forward name="success" path="/pages/log/loginSucess.jsp"></forward>
+			  <forward name="enseignant" path="/pages/log/enseignant.jsp"></forward>
+			  <forward name="etudiant" path="/pages/log/etudiant.jsp"></forward>
+			  <forward name="seretariat" path="/pages/log/secretariat.jsp"></forward>
             <forward name="erreur" path="/pages/erreur/erreurlog.jsp"></forward>
            </action>  
-  <action path="/ConnectionAction" input="/index.jsp" 
-               name="ConnectionForm" scope="request" 
-               type="action.ConnectionAction">
-               <forward name="index" path="/index.jsp"/>
-               <forward name="etudiant" path="/etudiant.jsp"/>
-               <forward name="enseignant" path="/enseignant.jsp"/>
-   </action>
-</action-mappings>
+ </action-mappings> 
 <!-- ======================================== Message Resources Definitions -->
 
     <message-resources parameter="MessageResources_fr_FR" />
