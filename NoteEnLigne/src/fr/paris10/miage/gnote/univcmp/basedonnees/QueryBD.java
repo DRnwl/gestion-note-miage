@@ -20,14 +20,16 @@ public class QueryBD {
 	public QueryBD(String path) {
 		Properties prop = new Properties();
 		FileInputStream in = null;
+		
 		try {
-			in = new FileInputStream(path + "/WEB-INF/Base.properties");
+			in = new FileInputStream(path +"/WEB-INF/Base.properties");
 		} catch (Exception e) {
 			System.out.println("Probleme lors de l'ouverture du fichier Base.properties" + e.toString());
+			
 		}
 		try {
 			prop.load(in);
-			driver= prop.getProperty("BdDrive");
+			driver= prop.getProperty("BdDriver");
 			url = prop.getProperty("BdUrl");
 			login = prop.getProperty("BDlogin");
 			pwd = prop.getProperty("BDpwd");
@@ -36,13 +38,13 @@ public class QueryBD {
 			System.out.println("Erreur lors de la r�cup�ration des donn�es contenues dans le fichier properties :" + e.toString());
 		}
 		try {
-			Class.forName(driver);
+			Class.forName(driver);//driver
 		} catch (Exception ex) {
 			System.err.println(ex.getMessage());
 			System.exit(1);
 		}
 		try {
-			cx = DriverManager.getConnection(url, login, pwd);
+			cx = DriverManager.getConnection(url,login,pwd);// url login pwd
 
 		} catch (SQLException ex) {
 			System.out.println("Erreur de connexion : " + ex.toString());
