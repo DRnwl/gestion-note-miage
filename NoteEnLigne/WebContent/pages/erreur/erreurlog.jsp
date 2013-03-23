@@ -12,5 +12,6 @@
 
 <h1><bean:message key="errors.mdpIn"/></h1>
 <html:link href="../log/Welcome.jsp">Recommencez</html:link>
+<jsp:forward    page="Welcome.do"/>
 </body>
 </html:html>
