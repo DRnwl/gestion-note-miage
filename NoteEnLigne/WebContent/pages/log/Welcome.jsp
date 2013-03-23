@@ -18,7 +18,7 @@
          <div id="authpage">	
 		<h2>Bienvenue dans  l'application gestion des notes MIAGE Nanterre</h2><br>
 	       
-		<form method="POST" action="Authentification.do">
+		<form id="auth" method="POST" action="Authentification.do">
 			
 			
 			<br />
