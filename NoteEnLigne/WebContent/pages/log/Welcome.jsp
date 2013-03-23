@@ -8,12 +8,14 @@
 <title>Note en ligne MIAGE </title>
 
 
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<%@ include file="../headers/header.jsp"%>
 
 </head>
 
 <body>
 	
-	
+         <div id="authpage">	
 		<h2>Bienvenue dans  l'application gestion des notes MIAGE Nanterre</h2><br>
 	       
 		<form method="POST" action="Authentification.do">
@@ -21,16 +23,16 @@
 			
 			<br />
 			
-			
+			    <fieldset id="input">
 				<h4>Login </h4><input id="login" type="text" name="login" /> 
 				<h4>Mot de passe </h4><input id="mdp" type="password" name="mdp" />
-                               <div> <input type="submit" value="soumettre"/></div>
-			
+                             <div> <input type="submit" value="soumettre"/></div>
+			                </fieldset> 
 			<br>
 			
 		</form>
 		
-	
+	</div>
 	
 
 

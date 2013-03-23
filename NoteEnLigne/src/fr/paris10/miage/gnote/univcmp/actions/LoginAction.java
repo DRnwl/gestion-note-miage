@@ -1,6 +1,7 @@
-package fr.paris10.miage.gnote.univcmp.controleur;
+package fr.paris10.miage.gnote.univcmp.actions;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
