@@ -10,8 +10,8 @@
 
     <form-beans>
 
-        <form-bean name="WelcomeForm" type="fr.paris10.miage.gnote.univcmp.actionform"/>
-        <form-bean name="ConnectionForm" type="form.ConnectionForm"/>
+        <form-bean name="LoginForm" type="fr.paris10.miage.gnote.univcmp.actionform.LoginForm"/>
+        
      
  
     </form-beans>
@@ -50,7 +50,7 @@
 
 
   <action path="/Authentification" 
-		type="fr.paris10.miage.gnote.univcmp.controleur.loginAction"
+		type="fr.paris10.miage.gnote.univcmp.actions.loginAction"
 		name="LoginForm"
 		input="/pages/log/Welcome.jsp"
 			scope="request">
@@ -71,13 +71,11 @@
 
 
   <!-- =================================================== Validator plugin -->
-
-  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
-    <set-property
-        property="pathnames"
-        value="/org/apache/struts/validator/validator-rules.xml,
-               /WEB-INF/validation.xml"/>
-  </plug-in>
+ <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
 
 </struts-config>
 
