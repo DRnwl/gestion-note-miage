@@ -17,7 +17,7 @@ import fr.paris10.miage.gnote.univcmp.bean.ResultatExamen;
  * @version 1.1
  *
  */
-public class Etudiant{
+public class Etudiant extends Candidat{
 
     /**
      * Clé primaire géré par la base et accessible uniquement en lecture.
@@ -73,11 +73,16 @@ public class Etudiant{
      ******************************************************SETTERS******************************************************
      ***********************************************************************************************************************/
     
+    
     public void setCandidat(Candidat candidat) {
         this.candidat = candidat;
     }
 
-    public void setModeEvaluation(String modeEvaluation) {
+    public void setNumeroEtudiant(int numeroEtudiant) {
+		this.numeroEtudiant = numeroEtudiant;
+	}
+
+	public void setModeEvaluation(String modeEvaluation) {
         this.modeEvaluation = modeEvaluation;
     }
 
@@ -114,6 +119,17 @@ public class Etudiant{
         return result;
     }
     
+    /***********************************************************************************************************************
+     ******************************************************Add Promotion******************************************************
+     ***********************************************************************************************************************/
+        /**
+         * Ajouter une note a un Etudiant
+         * @param re : the grade
+         * @return true si la note a ete ajoutee
+         */
+        public boolean addPromotionEtudiant(PromotionEtudiant pe) {
+            return this.listPromotionEtudiant.add(pe);
+        }
  /***********************************************************************************************************************
      ******************************************************Affichage******************************************************
      ***********************************************************************************************************************/
