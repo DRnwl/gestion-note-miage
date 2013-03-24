@@ -7,6 +7,7 @@ import java.util.Date;
 
 import fr.paris10.miage.gnote.univcmp.bean.Examen;
 import fr.paris10.miage.gnote.univcmp.bean.Promotion;
+import fr.paris10.miage.gnote.univcmp.bean.PromotionEtudiant;
 import fr.paris10.miage.gnote.univcmp.bean.ResultatExamen;
 
 /**
@@ -22,10 +23,10 @@ public class Etudiant{
      * Clé primaire géré par la base et accessible uniquement en lecture.
      */
     private int numeroEtudiant;
-    private static int nextEtudiant=0;
     private Candidat candidat;                                          
     private String modeEvaluation;   
     private ArrayList<ResultatExamen> listResultatExamen;
+    private ArrayList<PromotionEtudiant> listPromotionEtudiant;
 
     /**
      * Constructeur sans parametre.
@@ -40,9 +41,9 @@ public class Etudiant{
      * @param numeroEtudiant
      * @param promtion
      */
-    public Etudiant(Candidat candidat, String modeEvaluation) {
+    public Etudiant(int numeroEtudiant,Candidat candidat, String modeEvaluation) {
     	this.listResultatExamen = new ArrayList<ResultatExamen>();
-    	this.numeroEtudiant=this.nextEtudiant++;
+    	this.numeroEtudiant=this.numeroEtudiant;
     	this.candidat = candidat;
         this.modeEvaluation = modeEvaluation;
     }
