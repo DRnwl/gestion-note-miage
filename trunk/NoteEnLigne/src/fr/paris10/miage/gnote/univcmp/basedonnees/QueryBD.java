@@ -35,7 +35,7 @@ public class QueryBD {
 			pwd = prop.getProperty("BDpwd");
 			in.close();
 		} catch (IOException e) {
-			System.out.println("Erreur lors de la r�cup�ration des donn�es contenues dans le fichier properties :" + e.toString());
+			System.out.println("Erreur lors de la rï¿½cupï¿½ration des donnï¿½es contenues dans le fichier properties :" + e.toString());
 		}
 		try {
 			Class.forName(driver);//driver
@@ -59,7 +59,7 @@ public class QueryBD {
 		}
 	}
 
-	/**** requete vers la base de données ***/ 
+	/**** requete vers la base de donnÃ©es ***/ 
 	public boolean executerRequete(String requete) {
 		try {
 			Statement st = cx.createStatement();
@@ -102,6 +102,32 @@ public class QueryBD {
 		}
 
 		return "identifiant non valide";
+
+	}
+	public ResultSet recupIdentite ( String type,String login, String pwd) throws SQLException{
+		String requete ;
+		ResultSet rs;
+		if(type=="etudiant"){
+			requete ="SELECT * FROM CANDIDAT WHERE LOG_IN = '" + login + "' AND MOT_DE_PASSE = '" + pwd + "'";
+
+		}else{
+			if(type=="scretatriat"){
+				requete = "SELECT * FROM type_poste INNER JOIN enseignant ON " 
+						+ "type_poste.nposte = enseignant.nposte WHERE " 
+						+ "type_poste.type_poste = 'secretaire' AND " 
+						+ "enseignant.login = '"+login+"' AND enseignant.pwd = '"+pwd+"'";
+
+			}else{
+				requete = "SELECT * FROM ENSEIGNANT WHERE LOGIN = '" + login + "' AND PWD = '" + pwd + "'";
+
+			}
+
+		} 
+
+		Statement st = cx.createStatement();
+		rs = st.executeQuery(requete);
+		return rs;
+
 
 	}
 
