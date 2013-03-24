@@ -101,7 +101,7 @@ public class Etudiant{
      ******************************************************Set Note******************************************************
      ***********************************************************************************************************************/
    
-    public boolean setNote(Examen e, double note) {
+    public boolean setResultatExamen(Examen e, double note) {
         boolean result = false;
         for (ResultatExamen re : listResultatExamen) {
             if (re.getExamen().getNumeroExamen() == e.getNumeroExamen()) {
