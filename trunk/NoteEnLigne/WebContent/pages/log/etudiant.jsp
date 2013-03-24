@@ -1,22 +1,17 @@
-<-- 
-    Document   : Etudiant
-    Created on : 24/03/2013
-    Author     : Lydie
---%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Etudiant consultation notes</title>
-    </head>
-    <body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+        <h1>Consultation</h1> 
         <jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="request" />
-        <h1>Bonjour <%= user.getCandidat().getPrenom() %> <%= user.getCandidat().getNom() %></h1>
-        <h3>Résultat:</h3>
-        <%= user.toString() %>
+        <h2>Bonjour <%= user.getCandidat().getPrenom() %> <%= user.getCandidat().getNom() %></h2>
+        <h3>Veuillez selectionner l'année désirée</h3>
+        
+        
     </body>
 </html>
