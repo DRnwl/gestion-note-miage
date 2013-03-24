@@ -16,7 +16,7 @@ public class ResultatExamen {
 	 */
 	private Examen examen;
 	private Etudiant etudiant;
-	private float note;
+	private double note;
 
 	/**
 	 * Conctructeur sans parametre.
@@ -33,7 +33,7 @@ public class ResultatExamen {
 	 * @param note
 	 */
 
-	public ResultatExamen(Examen examen, Etudiant etudiant, float note) {
+	public ResultatExamen(Examen examen, Etudiant etudiant, double note) {
 		super();
 		this.examen = examen;
 		this.etudiant = etudiant;
@@ -53,7 +53,7 @@ public class ResultatExamen {
 		return this.etudiant;
 	}
 
-	public float getNote() {
+	public double getNote() {
 		return this.note;
 	}
 	
@@ -70,7 +70,7 @@ public class ResultatExamen {
 		this.etudiant = etudiant;
 	}
 
-	public void setNote(float note) {
+	public void setNote(double note) {
 		this.note = note;
 	}
 	
