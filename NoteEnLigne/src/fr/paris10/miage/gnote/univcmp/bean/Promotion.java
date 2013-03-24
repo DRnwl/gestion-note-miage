@@ -14,7 +14,7 @@ public class Promotion {
 	 */
 
 	private int numeroPromotion;
-	private int numeroFormation;
+	private Formation formation;
 	private static int nextPromotion=0;
 	//private String libelle;
 
@@ -33,10 +33,10 @@ public class Promotion {
 	 * @param libelle
 	 */
 
-	public Promotion(int numeroPromotion, int numeroFormation) {
+	public Promotion(int numeroPromotion, Formation formation) {
 
 		this.numeroPromotion = this.nextPromotion++;
-		this.numeroFormation = numeroFormation;
+		this.formation = formation;
 
 	}
 
@@ -48,8 +48,8 @@ public class Promotion {
 		return numeroPromotion;
 	}
 
-	public int getNumeroFormation() {
-		return numeroFormation;
+	public Formation getFormation() {
+		return formation;
 	}
 	
 
@@ -62,8 +62,8 @@ public class Promotion {
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroFormation(int numeroFormation) {
-		this.numeroFormation = numeroFormation;
+	public void setNumeroFormation(Formation numeroFormation) {
+		this.formation = formation;
 	}
 
 	
