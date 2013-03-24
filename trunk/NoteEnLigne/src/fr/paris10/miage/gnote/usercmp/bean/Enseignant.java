@@ -12,7 +12,6 @@ public class Enseignant {
      * Clé primaire géré par la base et accessible uniquement en lecture.
      */
     private int numeroEnseignant;
-    private static int nextEnseignant=0;
     private int numeroPoste;
     private String nom;
     private String prenom;
@@ -39,9 +38,9 @@ public class Enseignant {
      * @param login
      * @param pwd
      */
-    public Enseignant(String nom, String prenom, String adresse,
+    public Enseignant(int nnumeroEnseignant,String nom, String prenom, String adresse,
             String telephone, String dateNaissance, int numeroPoste, String login, String pwd) {
-    	this.numeroEnseignant=this.nextEnseignant++;
+    	this.numeroEnseignant=this.numeroEnseignant;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -127,5 +126,11 @@ public class Enseignant {
     public void setPwd(String pwd){
         this.pwd = pwd;
     }
+
+	public void setNumeroEnseignant(int numeroEnseignant) {
+		this.numeroEnseignant = numeroEnseignant;
+	}
+    
+    
     
 }
