@@ -16,10 +16,10 @@ public class Examen {
 	private int numeroExamen;
 	private static int nextExamen=0;
 	private Date dateExamen;
-	private int numeroType;
-	private int numeroFormation;
-	private int numeroUE;
-	private int numeroEC;
+	private TypeT type;
+	private Formation formation;
+	private UE ue;
+	private EC ec;
 	private String libelle;
 	private String horaire;
 	private float poucentage;
@@ -31,21 +31,32 @@ public class Examen {
 	public Examen() {
 	}
 
-	public Examen(int numeroExamen, Date dateExamen, int numeroType,
-			int numeroFormation, int numeroUE, int numeroEC, String libelle,
-			String horaire, float poucentage) {
+	
+	/**
+     * Constructeur avec parametres.
+     * @param dateExamen
+     * @param type
+     * @param formation
+     * @param ue
+     * @param ec
+     * @param libelle
+     * @param horaire
+     * @param poucentage
+     */
+
+	public Examen(Date dateExamen, TypeT type, Formation formation, UE ue,
+			EC ec, String libelle, String horaire, float poucentage) {
 		super();
 		this.numeroExamen = this.nextExamen++;
 		this.dateExamen = dateExamen;
-		this.numeroType = numeroType;
-		this.numeroFormation = numeroFormation;
-		this.numeroUE = numeroUE;
-		this.numeroEC = numeroEC;
+		this.type = type;
+		this.formation = formation;
+		this.ue = ue;
+		this.ec = ec;
 		this.libelle = libelle;
 		this.horaire = horaire;
 		this.poucentage = poucentage;
 	}
-	
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS/SETTERS******************************************************
@@ -56,76 +67,88 @@ public class Examen {
 		return numeroExamen;
 	}
 
-
 	public static int getNextExamen() {
 		return nextExamen;
 	}
-
 
 	public Date getDateExamen() {
 		return dateExamen;
 	}
 
+
 	public void setDateExamen(Date dateExamen) {
 		this.dateExamen = dateExamen;
 	}
 
-	public int getNumeroType() {
-		return numeroType;
+
+	public TypeT getType() {
+		return type;
 	}
 
-	public void setNumeroType(int numeroType) {
-		this.numeroType = numeroType;
+
+	public void setType(TypeT type) {
+		this.type = type;
 	}
 
-	public int getNumeroFormation() {
-		return numeroFormation;
+
+	public Formation getFormation() {
+		return formation;
 	}
 
-	public void setNumeroFormation(int numeroFormation) {
-		this.numeroFormation = numeroFormation;
+
+	public void setFormation(Formation formation) {
+		this.formation = formation;
 	}
 
-	public int getNumeroUE() {
-		return numeroUE;
+
+	public UE getUe() {
+		return ue;
 	}
 
-	public void setNumeroUE(int numeroUE) {
-		this.numeroUE = numeroUE;
+
+	public void setUe(UE ue) {
+		this.ue = ue;
 	}
 
-	public int getNumeroEC() {
-		return numeroEC;
+
+	public EC getEc() {
+		return ec;
 	}
 
-	public void setNumeroEC(int numeroEC) {
-		this.numeroEC = numeroEC;
+
+	public void setEc(EC ec) {
+		this.ec = ec;
 	}
+
 
 	public String getLibelle() {
 		return libelle;
 	}
 
+
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+
 
 	public String getHoraire() {
 		return horaire;
 	}
 
+
 	public void setHoraire(String horaire) {
 		this.horaire = horaire;
 	}
+
 
 	public float getPoucentage() {
 		return poucentage;
 	}
 
+
 	public void setPoucentage(float poucentage) {
 		this.poucentage = poucentage;
 	}
-
 
 
 }
