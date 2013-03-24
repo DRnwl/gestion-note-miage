@@ -1,5 +1,7 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
+import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
+
 /**
  * Classe repésentant le resultat d'examen passé par un étudiant
  * Correspond à la table A_PASSE de la BDD * 
@@ -12,8 +14,8 @@ public class ResultatExamen {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private int numeroExamen;
-	private int numeroEtudiant;
+	private Examen examen;
+	private Etudiant etudiant;
 	private float note;
 
 	/**
@@ -31,10 +33,10 @@ public class ResultatExamen {
 	 * @param note
 	 */
 
-	public ResultatExamen(int numeroExamen, int numeroEtudiant, float note) {
+	public ResultatExamen(Examen examen, Etudiant etudiant, float note) {
 		super();
-		this.numeroExamen = numeroExamen;
-		this.numeroEtudiant = numeroEtudiant;
+		this.examen = examen;
+		this.etudiant = etudiant;
 		this.note = note;
 	}
 
@@ -42,17 +44,17 @@ public class ResultatExamen {
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public int getNumeroExamen() {
-		return numeroExamen;
+	public Examen getExamen() {
+		return this.examen;
 	}
 
 
-	public int getNumeroEtudiant() {
-		return numeroEtudiant;
+	public Etudiant getEtudiant() {
+		return this.etudiant;
 	}
 
 	public float getNote() {
-		return note;
+		return this.note;
 	}
 	
 
@@ -60,16 +62,25 @@ public class ResultatExamen {
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroExamen(int numeroExamen) {
-		this.numeroExamen = numeroExamen;
+	public void setExamen(Examen examen) {
+		this.examen = examen;
 	}
 
-	public void setNumeroEtudiant(int numeroEtudiant) {
-		this.numeroEtudiant = numeroEtudiant;
+	public void setEtudiant(Etudiant etudiant) {
+		this.etudiant = etudiant;
 	}
 
 	public void setNote(float note) {
 		this.note = note;
 	}
+	
+	/***********************************************************************************************************************
+	 ****************************************************** Affichage******************************************************
+	 ***********************************************************************************************************************/
+	
+	@Override
+    public String toString() {
+        return "<tr><td>" + this.examen.getLibelle() + "</td><td>" + this.note + "</td></tr>";
+    }
 
 }
