@@ -1,6 +1,8 @@
 
 package fr.paris10.miage.gnote.univcmp.bean;
 
+import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
+
 /**
  * Classe représentant la promotion d'un étudiant
  * Correspond à la table EST_DANS de la BDD
@@ -13,8 +15,8 @@ public class PromotionEtudiant {
 	/**
 	 * Les différents attributs ainsi que leur visibilité
 	 */
-	private int numeroEtudiant;
-	private int numeroPromotion;
+	private Etudiant etudiant;
+	private Promotion promotion;
 	
 	
 
@@ -33,10 +35,10 @@ public class PromotionEtudiant {
 	 * @param libelle
 	 */
 
-	public PromotionEtudiant(int numeroEtudiant, int numeroPromotion) {
+	public PromotionEtudiant(Etudiant etudiant, Promotion promotion) {
 
-		this.numeroEtudiant = numeroEtudiant;
-		this.numeroPromotion = numeroPromotion;
+		this.etudiant = etudiant;
+		this.promotion = promotion;
 		
 		
 	}
@@ -45,22 +47,22 @@ public class PromotionEtudiant {
 	 ****************************************************** LES GETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public int getNumeroEtudiant() {
-		return numeroEtudiant;
+	public Etudiant getEtudiant() {
+		return etudiant;
 	}
 
-	public int getNumeroPromotion() {
-		return numeroPromotion;
+	public Promotion getPromotion() {
+		return promotion;
 	}
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setNumeroEtudiant(int numeroEtudiant) {
-		this.numeroEtudiant = numeroEtudiant;
+	public void setEtudiant(Etudiant etudiant) {
+		this.etudiant = etudiant;
 	}
 
-	public void setNumeroPromotion(int numeroPromotion) {
-		this.numeroPromotion = numeroPromotion;
+	public void setPromotion(Promotion promotion) {
+		this.promotion = promotion;
 	}
 }
