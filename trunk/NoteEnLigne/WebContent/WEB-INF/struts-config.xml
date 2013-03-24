@@ -11,8 +11,6 @@
     <form-beans>
 
         <form-bean name="LoginForm" type="fr.paris10.miage.gnote.univcmp.actionform.LoginForm"/>
-        
-     
  
     </form-beans>
 
@@ -54,7 +52,7 @@
 		name="LoginForm"
 		input="/pages/log/Welcome.jsp"
 			scope="request">
-			  <forward name="enseignant" path="/pages/log/enseignant.jsp"></forward>
+			  <forward name="enseignant" path="/pages/log/accueilenseignant.jsp"></forward>
 			  <forward name="etudiant" path="/pages/log/etudiant.jsp"></forward>
 			  <forward name="seretariat" path="/pages/log/secretariat.jsp"></forward>
             <forward name="erreur" path="/pages/erreur/erreurlog.jsp"></forward>
