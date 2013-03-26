@@ -67,12 +67,7 @@
 	
 	<aside id="sidebar" class="column">
 		
-		
-		<footer>
-			<hr />
-			<p><strong>Copyright &copy; Miage UPO 2013 </strong></p>
-			<p><a href="#"></a></p>
-		</footer>
+
 	</aside><!-- end of sidebar -->
 	
 	
@@ -95,8 +90,13 @@
 				
 			
 		</article><!-- end of post new article -->
-
+<footer>
+			<hr />
+			<p><strong>Copyright &copy; Miage UPO 2013 </strong></p>
+			<p><a href="#"></a></p>
+		</footer>
 	</section>
+	
 
 
 </body>
