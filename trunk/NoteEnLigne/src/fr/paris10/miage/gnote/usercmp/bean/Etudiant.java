@@ -69,6 +69,11 @@ public class Etudiant extends Candidat{
     }
 
 
+	public ArrayList<PromotionEtudiant> getListPromotionEtudiant() {
+		return listPromotionEtudiant;
+	}
+
+
 	/***********************************************************************************************************************
      ******************************************************SETTERS******************************************************
      ***********************************************************************************************************************/
@@ -90,6 +95,10 @@ public class Etudiant extends Candidat{
 		this.listResultatExamen = listNote;
 	}
 
+	public void setListPromotionEtudiant(
+			ArrayList<PromotionEtudiant> listPromotionEtudiant) {
+		this.listPromotionEtudiant = listPromotionEtudiant;
+	}
 /***********************************************************************************************************************
  ******************************************************Add Note******************************************************
  ***********************************************************************************************************************/
@@ -134,11 +143,19 @@ public class Etudiant extends Candidat{
      ******************************************************Affichage******************************************************
      ***********************************************************************************************************************/
 
-    @Override
-    public String toString() {
+    public String affResultatExamen() {
 	    String s = "<table><tr><td>Libelle Examen</td><td>Note</td></tr>";
 	    for (ResultatExamen re : listResultatExamen) {
 	        s = s + re.toString() ;
+	    }
+	    s = s + "</table>";
+	    return s;
+    }
+    
+    public String affPromotion() {
+	    String s = "<table><tr><td>Libelle Examen</td><td>Note</td></tr>";
+	    for (PromotionEtudiant pe : listPromotionEtudiant) {
+	        s = s + pe.toString() ;
 	    }
 	    s = s + "</table>";
 	    return s;
