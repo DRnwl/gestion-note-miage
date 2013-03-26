@@ -9,10 +9,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Accueil Etudiant</title>
 </head>
 
-<body><div id="contenu">
+<body>
                    
    <section id="secondary_bar">
 		<div class="user">
@@ -24,10 +24,7 @@
 		<div class="breadcrumbs_container">
 			<article class="breadcrumbs"><a href="index.html">Accueil</a> <div class="breadcrumb_divider"></div> <a class="current">Affichage note</a></article>
 		</div>
-	</section><!-- end of secondary bar -->         
-           
-          
-        </p>
+	</section><!-- end of secondary bar -->
         <h3>UE 1</h3>
 		<ul class="toggle">
 			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
@@ -72,14 +69,15 @@
 			<p><a href="#"></a></p>
 		</footer>
 	</aside><!-- end of sidebar -->
+	<article class="module width_full">
+	<h2>Bienvenue sur l'espace Etudiant</h2><br>
+ 
+            Consultation des notes <br>
+     </article>
 	</section>
-                    
-                </tbody>
-            </table>
-        </article>
+  
         <br/>
         <a class ="btn btn-danger" href="index.jsp">Deconnection</a>
-    </div>
 </body>
 
 </html>
