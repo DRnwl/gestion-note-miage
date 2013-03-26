@@ -13,7 +13,6 @@ public class Candidat {
      * 
      */
     private int numeroCandidat;
-    private static int nextCandidat=0;
     private String nom;
     private String prenom;
     private String adresse;
@@ -45,9 +44,9 @@ public class Candidat {
      * @param etatDossier
      * @param date
      */
-    public Candidat(String nom, String prenom, String adresse, String telephone, Date dateNaissance, String login, String password, 
+    public Candidat(int numeroCandidat,String nom, String prenom, String adresse, String telephone, Date dateNaissance, String login, String password, 
             Date date, String etatDossier, String email) {
-    	this.numeroCandidat= this.nextCandidat++;
+    	this.numeroCandidat= numeroCandidat;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -112,7 +111,9 @@ public class Candidat {
     /***********************************************************************************************************************
      ******************************************************LES SETTERS******************************************************
      ***********************************************************************************************************************/
-    
+    public void setNumeroCandidat(int numeroCandidat){
+    	this.numeroCandidat=numeroCandidat;
+    }
    
     public void setNom(String nom) {
         this.nom = nom;
