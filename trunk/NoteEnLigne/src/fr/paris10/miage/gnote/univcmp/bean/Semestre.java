@@ -15,17 +15,8 @@ public class Semestre {
 	public Semestre() {
 	}
 
-	/**
-	 * Le constructeur
-	 * 
-	 * @param libelle
-	 */
+	
 
-	public Semestre(String libelle) {
-
-		this.numeroSemestre = this.nextSemestre++;
-		this.libelle = libelle;
-	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************

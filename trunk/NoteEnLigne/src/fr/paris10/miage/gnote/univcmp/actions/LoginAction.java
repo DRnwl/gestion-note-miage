@@ -66,10 +66,10 @@ public class LoginAction extends Action  {
 						candidat.setEtatDossier(rs.getString("ETAT_DU_DOSSIER"));
 						candidat.setEmail(rs.getString("EMAIL"));
 						user.setCandidat(candidat);
-						//user.setNumeroEtudiant(rs.getInt("NETUDIANT"));
-						//user.setModeEvaluation(rs.getString("MODEEVALUATION"));
+						user.setNumeroEtudiant(rs.getInt("NETUDIANT"));
+						user.setModeEvaluation(rs.getString("MODEEVALUATION"));
 					}
-					//request.setAttribute("user", user);
+					request.setAttribute("user", user);
 		            request.setAttribute("candidat",candidat);
 
 					return mapping.findForward("etudiant");

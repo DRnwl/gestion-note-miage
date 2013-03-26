@@ -18,20 +18,6 @@ public class Promotion {
 	public Promotion() {
 	}
 
-	/**
-	 * Le constructeur avec paramètres
-	 * 
-	 * @param numeroPromotion
-	 * @param numeroFormation
-	 * @param libelle
-	 */
-
-	public Promotion(int numeroPromotion, Formation formation) {
-
-		this.numeroPromotion = this.nextPromotion++;
-		this.formation = formation;
-
-	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************
