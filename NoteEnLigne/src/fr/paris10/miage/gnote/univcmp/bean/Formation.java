@@ -15,17 +15,7 @@ public class Formation {
 	}
 
 
-	public Formation( int numeroContrat,String libelle, String niveau,
-			String type, String parcours) {
 
-		this.numeroFormation = this.nextFormation++;
-		this.numeroContrat=numeroContrat;
-		this.libelle = libelle;
-		this.niveau = niveau;
-		this.type = type;
-		this.parcours = parcours;
-
-	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************

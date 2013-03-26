@@ -25,22 +25,11 @@ public class Etudiant{
     /**
      * Constructeur sans parametre.
      */
-    public Etudiant() {
+   
     	
-    }
-
-    /**
-     * Constructeur avec parametres.
-     * @param nom
-     * @param numeroEtudiant
-     * @param promtion
-     */
-    public Etudiant(int numeroEtudiant,Candidat candidat, String modeEvaluation) {
-    	this.listResultatExamen = new ArrayList<ResultatExamen>();
-    	this.numeroEtudiant=this.numeroEtudiant;
-    	this.candidat = candidat;
-        this.modeEvaluation = modeEvaluation;
-    }
+    	public Etudiant(){
+    	
+    	}
 
     /***********************************************************************************************************************
      ******************************************************LES GETTERS******************************************************

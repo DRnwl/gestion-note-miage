@@ -26,19 +26,7 @@ public class Candidat {
     public Candidat() {
     }
 
-    /**
-     * Constructeur avec parametres.
-     * @param nom
-     * @param prenom
-     * @param adresse
-     * @param telephone
-     * @param login
-     * @param email
-     * @param dateNaissance
-     * @param password
-     * @param etatDossier
-     * @param date
-     */
+  
   
 
     /***********************************************************************************************************************

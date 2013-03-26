@@ -17,22 +17,6 @@ public class UE {
 	public UE() {
 	}
 
-	/**
-	 * Le constructeur avec paramètre
-	 * 
-	 * @param numeroUE
-	 * @param numeroSemestre
-	 * @param numeroFormation
-	 * @param libelle
-	 */
-	public UE(int numeroUE,int numeroSemestre, int numeroFormation,
-			String libelle) {
-		
-		this.numeroUE = numeroUE;
-		this.numeroSemestre = numeroSemestre;
-		this.numeroFormation = numeroFormation;
-		this.libelle = libelle;
-	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS******************************************************

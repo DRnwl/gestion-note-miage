@@ -17,16 +17,7 @@ public class TypeT {
 	public TypeT() {
 	}
 
-	
-	/**
-	 * Le constructeur
-	 * 
-	 * @param libelle
-	 */
-	public TypeT(String libelle) {
-		this.numeroType=this.nextType++;
-		this.libelle = libelle;
-	}
+
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS/SETTERS******************************************************

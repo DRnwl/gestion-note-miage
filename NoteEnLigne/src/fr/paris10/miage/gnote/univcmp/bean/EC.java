@@ -19,24 +19,7 @@ public class EC {
 	public EC() {
 	}
 
-	/**
-	 * Le constructeur avec param�tres
-	 * @param numeroEC
-	 * @param numeroUE
-	 * @param numeroFormation
-	 * @param libelle
-	 * @param coef
-	 */
-	public EC(int numeroEC, int numeroFormation, int numeroUE, String libelle,
-			float coef) {
-		super();
-		this.numeroEC = numeroEC;
-		this.numeroFormation = numeroFormation;
-		this.numeroUE = numeroUE;
-		this.libelle = libelle;
-		this.coef = coef;
-	}
-	
+
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS/SETTERS******************************************************
 	 ***********************************************************************************************************************/
