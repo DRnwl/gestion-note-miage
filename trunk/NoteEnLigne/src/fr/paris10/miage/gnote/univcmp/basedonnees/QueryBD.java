@@ -108,7 +108,7 @@ public class QueryBD {
 		String requete ;
 		ResultSet rs;
 		if(type=="etudiant"){
-			requete ="SELECT * FROM CANDIDAT WHERE LOG_IN = '" + login + "' AND MOT_DE_PASSE = '" + pwd + "'";
+			requete ="SELECT * FROM CANDIDAT inner join ETUDIANT on CANDIDAT.NCANDIDAT=ETUDIANT.NCANDIDAT WHERE CANDIDAT.LOG_IN = '" + login + "' AND CANDIDAT.MOT_DE_PASSE = '" + pwd + "'";
 
 		}else{
 			if(type=="scretatriat"){
