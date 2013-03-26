@@ -37,11 +37,23 @@ public class LoginAction extends Action  {
 			}else {
 				if((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("etudiant")){
 					rs= conBase.recupIdentite("etudiant",monLoginForm.getLogin(),monLoginForm.getMdp());
-					Candidat user =new Candidat();
+					Etudiant user=new Etudiant();
+					Candidat candidat =new Candidat();
 					while (rs.next()) {
-
-						user.setNom(rs.getString("NOM"));
-						user.setPrenom(rs.getString("PRENOM"));
+						candidat.setNumeroCandidat(rs.getInt("NCANDIDAT"));
+						candidat.setNom(rs.getString("NOM"));
+						candidat.setPrenom(rs.getString("PRENOM"));
+						candidat.setAdresse(rs.getString("ADRESSE"));
+						candidat.setTelephone(rs.getString("TELEPHONE"));
+						candidat.setDateNaissance(rs.getDate("DATENAISSANCE"));
+						candidat.setLogin(rs.getString("LOG_IN"));
+						candidat.setPassword(rs.getString("MOT_DE_PASSE"));
+						candidat.setDate(rs.getDate("DATE_CANDIDAT"));
+						candidat.setEtatDossier(rs.getString("ETAT_DU_DOSSIER"));
+						candidat.setEmail(rs.getString("EMAIL"));
+						user.setCandidat(candidat);
+						user.setNumeroEtudiant(rs.getInt("NETUDIANT"));
+						user.setModeEvaluation(rs.getString("MODEEVALUATION"));
 					}
 					request.setAttribute("user", user);
 					return mapping.findForward("etudiant");
