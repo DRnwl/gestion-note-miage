@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
   
@@ -21,7 +21,7 @@
 	<section id="secondary_bar">
 		<div class="user">
 			<p><h2>Bonjour <bean:write name="user" property="nom" scope="request"/>
-                    <bean:write name="user" property="prenom" scope="request"/></h2> (<a href="#">Etudiant</a>)</p>
+                    <bean:write name="user" property="prenom" scope="request"/></h2>(<a href="#">Etudiant</a>)</p>
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">

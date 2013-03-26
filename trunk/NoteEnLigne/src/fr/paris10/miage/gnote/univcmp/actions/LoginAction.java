@@ -11,6 +11,7 @@ import org.apache.struts.action.ActionMapping;
 import fr.paris10.miage.gnote.univcmp.actionform.LoginForm;
 import fr.paris10.miage.gnote.univcmp.basedonnees.QueryBD;
 import fr.paris10.miage.gnote.usercmp.bean.Candidat;
+import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 
@@ -27,12 +28,25 @@ public class LoginAction extends Action  {
 
 
 		if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("enseignant")) {
-			//rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
+			rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
+              Enseignant user=new Enseignant();
+              while (rs.next()) {
 
+					user.setNom(rs.getString("NOM"));
+					user.setPrenom(rs.getString("PRENOM"));
+				}
+              request.setAttribute("user", user); 
 			return mapping.findForward("enseignant");
 		} else {
 			if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("secretariat"))  {
-				//rs= conBase.recupIdentite("secretariat",monLoginForm.getLogin(),monLoginForm.getMdp());
+				rs= conBase.recupIdentite("secretariat",monLoginForm.getLogin(),monLoginForm.getMdp());
+				Enseignant user=new Enseignant();
+	              while (rs.next()) {
+
+						user.setNom(rs.getString("NOM"));
+						user.setPrenom(rs.getString("PRENOM"));
+					}
+				
 				return mapping.findForward("secretariat");
 			}else {
 				if((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("etudiant")){
@@ -52,11 +66,12 @@ public class LoginAction extends Action  {
 						candidat.setEtatDossier(rs.getString("ETAT_DU_DOSSIER"));
 						candidat.setEmail(rs.getString("EMAIL"));
 						user.setCandidat(candidat);
-						user.setNumeroEtudiant(rs.getInt("NETUDIANT"));
-						user.setModeEvaluation(rs.getString("MODEEVALUATION"));
+						//user.setNumeroEtudiant(rs.getInt("NETUDIANT"));
+						//user.setModeEvaluation(rs.getString("MODEEVALUATION"));
 					}
-					request.setAttribute("user", user);
-					request.setAttribute("candidat", candidat);
+					//request.setAttribute("user", user);
+		            request.setAttribute("candidat",candidat);
+
 					return mapping.findForward("etudiant");
 				}else{
 					return mapping.findForward("erreur");

@@ -1,12 +1,6 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
-/**
- * Classe représentant l'EU
- * 
- * @author Lydie Tiago
- * @version 1.0
- * 
- */
+
 public class UE {
 	/**
 	 * Les différents attributs ainsi que leur visibilité

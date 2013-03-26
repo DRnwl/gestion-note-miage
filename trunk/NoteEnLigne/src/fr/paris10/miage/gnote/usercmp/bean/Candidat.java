@@ -2,11 +2,6 @@ package fr.paris10.miage.gnote.usercmp.bean;
 
 import java.util.Date;
 
-/**
- * Encapsule  les utilisateurs du système.
- * @author Lydie Tiago
- * @version 1.0
- */
 public class Candidat {
 
     /**
@@ -44,21 +39,7 @@ public class Candidat {
      * @param etatDossier
      * @param date
      */
-    public Candidat(int numeroCandidat,String nom, String prenom, String adresse, String telephone, Date dateNaissance, String login, String password, 
-            Date date, String etatDossier, String email) {
-    	this.numeroCandidat= numeroCandidat;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.telephone = telephone;
-        this.dateNaissance = dateNaissance;
-        this.login = login;
-        this.password = password;
-        this.date = date;
-        this.etatDossier = etatDossier;
-        this.email = email;
-
-    }
+  
 
     /***********************************************************************************************************************
      ******************************************************LES GETTERS******************************************************

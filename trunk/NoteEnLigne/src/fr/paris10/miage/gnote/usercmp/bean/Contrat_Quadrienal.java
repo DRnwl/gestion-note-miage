@@ -2,10 +2,6 @@ package fr.paris10.miage.gnote.usercmp.bean;
 
 import java.sql.Date;
 
-/**
- * @author Lydie Tiago
- * @version 1.0
- */
 
 public class Contrat_Quadrienal {
 	private int numeroContrat;

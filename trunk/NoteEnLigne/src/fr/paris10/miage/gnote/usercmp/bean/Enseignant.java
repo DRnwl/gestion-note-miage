@@ -1,11 +1,6 @@
 package fr.paris10.miage.gnote.usercmp.bean;
 
-/**
- * Classe représentant un enseignant.
- * @author Lydie Tiago
- * @version 1.1
- *
- */
+
 public class Enseignant {
 
     /**

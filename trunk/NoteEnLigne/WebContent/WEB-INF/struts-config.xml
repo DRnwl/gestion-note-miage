@@ -54,7 +54,7 @@
 			scope="request">
 			  <forward name="enseignant" path="/pages/JSP_Enseignant/AccueilEnseignant.jsp"></forward>
 			  <forward name="etudiant" path="/pages/JSP_etudiant/AccueilEtudiant.jsp"></forward>
-			  <forward name="seretariat" path="/pages/log/secretariat.jsp"></forward>
+			  <forward name="seretariat" path="/pages/JSP_Secretariat.jsp/secretariat.jsp"></forward>
             <forward name="erreur" path="/pages/erreur/erreurlog.jsp"></forward>
            </action>  
  </action-mappings> 

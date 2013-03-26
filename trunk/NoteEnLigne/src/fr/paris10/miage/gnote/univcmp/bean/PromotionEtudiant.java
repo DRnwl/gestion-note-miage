@@ -3,13 +3,7 @@ package fr.paris10.miage.gnote.univcmp.bean;
 
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
-/**
- * Classe représentant la promotion d'un étudiant
- * Correspond à la table EST_DANS de la BDD
- * @author Lydie Tiago
- * @version 1.0
- * 
- */
+
 public class PromotionEtudiant {
 
 	/**

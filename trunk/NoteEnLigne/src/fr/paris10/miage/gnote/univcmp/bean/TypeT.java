@@ -1,12 +1,6 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
-/**
- * Classe representant le type
- * 
- * @author Lydie Tiago
- * @version 1.0
- * 
- */
+
 
 public class TypeT {
 	/**

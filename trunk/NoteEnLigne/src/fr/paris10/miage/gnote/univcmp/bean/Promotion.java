@@ -1,12 +1,5 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
-/**
- * Classe représentant la promotion d'un étudiant
- * 
- * @author Lydie Tiago
- * @version 1.0
- * 
- */
 public class Promotion {
 
 	/**
