@@ -17,7 +17,7 @@ import fr.paris10.miage.gnote.univcmp.bean.ResultatExamen;
  * @version 1.1
  *
  */
-public class Etudiant extends Candidat{
+public class Etudiant{
 
     /**
      * Clé primaire géré par la base et accessible uniquement en lecture.
