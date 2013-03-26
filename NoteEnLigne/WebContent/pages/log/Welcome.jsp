@@ -65,11 +65,6 @@
 		</div>
 	</section><!-- end of secondary bar -->
 	
-	<aside id="sidebar" class="column">
-		
-
-	</aside><!-- end of sidebar -->
-	
 	
 	
 	
