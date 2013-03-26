@@ -2,13 +2,7 @@ package fr.paris10.miage.gnote.univcmp.bean;
 
 import java.sql.Date;
 
-/**
- * Classe représentant l'Examen pass� par un étudiant
- * 
- * @author Lydie Tiago
- * @version 1.0
- * 
- */
+
 public class Examen {
 	/**
 	 * Les différents attributs ainsi que leur visibilité

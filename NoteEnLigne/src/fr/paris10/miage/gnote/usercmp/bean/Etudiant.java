@@ -10,13 +10,7 @@ import fr.paris10.miage.gnote.univcmp.bean.Promotion;
 import fr.paris10.miage.gnote.univcmp.bean.PromotionEtudiant;
 import fr.paris10.miage.gnote.univcmp.bean.ResultatExamen;
 
-/**
- * Classe représentant un étudiant. 
- * Dans cette version ont été rajouté les attributs id
- * @author Lydie Tiago
- * @version 1.1
- *
- */
+
 public class Etudiant{
 
     /**

@@ -4,14 +4,7 @@ import java.sql.Date;
 
 import fr.paris10.miage.gnote.univcmp.bean.EC;
 
-/**
- * Classe représentant le creneau d'un enseignant.
- * Elle associe un enseignant à l'EC qu'il enseigne ou sens enseigner
- * 
- * @author Lydie Tiago
- * @version 1.1
- *
- */
+
 public class Creneau {
 
     /**

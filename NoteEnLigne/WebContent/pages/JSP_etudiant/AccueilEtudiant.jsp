@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
   
@@ -16,10 +16,13 @@
                    
    <section id="secondary_bar">
 		<div class="user">
-		<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="request" />
+
 			<h1>Bonjour<br/><br/></h1>        
-        <h2>Bonjour <bean:write name="candidat" property="nom" scope="request"/>
-                    <bean:write name="candidat" property="prenom" scope="request"/></h2>
+
+     <h2>  <bean:write name="user" property="nom" scope="request"/>
+          <bean:write name="user" property="prenom" scope="request"/></h2>
+
+
         <h2>Bienvenue sur l'espace Etudiant</h2><br/>
 		</div>
 		<div class="breadcrumbs_container">
@@ -71,9 +74,7 @@
 		</footer>
 	</aside><!-- end of sidebar -->
 	<article class="module width_full">
-	<h2>Bienvenue sur l'espace Etudiant</h2><br>
- 
-            Consultation des notes <br>
+
      </article>
 	</section>
   

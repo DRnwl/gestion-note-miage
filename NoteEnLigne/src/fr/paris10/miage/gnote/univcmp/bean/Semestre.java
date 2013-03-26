@@ -1,12 +1,5 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
-/**
- * Classe représentant le semestre
- * 
- * @author Lydie Tiago
- * @version 1.0
- * 
- */
 public class Semestre {
 	/**
 	 * Les différents attributs ainsi que leur visibilité

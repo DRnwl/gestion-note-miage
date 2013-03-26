@@ -2,13 +2,8 @@ package fr.paris10.miage.gnote.univcmp.bean;
 
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
-/**
- * Classe repésentant le resultat d'examen passé par un étudiant
- * Correspond à la table A_PASSE de la BDD * 
- * @author Lydie Tiago
- * @version 1.0
- * 
- */
+
+
 public class ResultatExamen {
 
 	/**

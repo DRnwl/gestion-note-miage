@@ -1,12 +1,6 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
-/**
- * Class repésentant la formation suivie par un étudiant
- * 
- * @author Lydie Tiago
- * @version 1.0
- * 
- */
+
 public class Formation {
 
 	private int numeroFormation;
