@@ -90,7 +90,7 @@
 				
 			
 		</article><!-- end of post new article -->
-<footer>
+         <footer>
 			<hr />
 			<p><strong>Copyright &copy; Miage UPO 2013 </strong></p>
 			<p><a href="#"></a></p>
