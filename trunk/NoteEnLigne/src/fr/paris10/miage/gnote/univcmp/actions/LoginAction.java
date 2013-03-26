@@ -56,6 +56,7 @@ public class LoginAction extends Action  {
 						user.setModeEvaluation(rs.getString("MODEEVALUATION"));
 					}
 					request.setAttribute("user", user);
+					request.setAttribute("candidat", candidat);
 					return mapping.findForward("etudiant");
 				}else{
 					return mapping.findForward("erreur");
