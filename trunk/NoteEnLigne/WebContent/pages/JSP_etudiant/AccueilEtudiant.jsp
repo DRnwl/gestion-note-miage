@@ -19,8 +19,8 @@
 
 			<h1>Bonjour<br/><br/></h1>        
 
-     <h2>  <bean:write name="user" property="nom" scope="request"/>
-          <bean:write name="user" property="prenom" scope="request"/></h2>
+     <h2>  <bean:write name="candidat" property="nom" scope="request"/>
+          <bean:write name="candidat" property="prenom" scope="request"/></h2>
 
 
         <h2>Bienvenue sur l'espace Etudiant</h2><br/>
