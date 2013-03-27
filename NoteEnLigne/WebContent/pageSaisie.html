@@ -1,0 +1,199 @@
+	<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Note MIAGE UPO</title>
+	
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+	<script src="js/hideshow.js" type="text/javascript"></script>
+	<script src="js/jquery.tablesorter.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquc
+      	  $(".tablesorter").tablesorter(); 
+   	 } 
+	);
+	$(document).ready(function() {
+
+	//When page loads...
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+
+	//On Click Event
+	$("ul.tabs li").click(function() {
+
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+
+		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active ID content
+		return false;
+	});
+
+});>
+    </script>
+    <script type="text/javascript">
+    $(function(){
+        $('.column').equalHeight();
+    });
+</script>
+
+</head>
+
+
+<body>
+
+	<header id="header">
+		<hgroup>
+			<h1 class="site_title"><a href="index.html"><img width="80%" height="80%" src="images/logo.png" title="Note Miage"/></a></h1>
+			<h2 class="section_title"> Gestion des notes de la miage </h2></div>
+		</hgroup>
+	</header> <!-- end of header bar -->
+	
+	<section id="secondary_bar">
+		<div class="user">
+		</div>
+		<div class="breadcrumbs_container">
+			<article class="breadcrumbs"><a href="index.html">Note</a> <div class="breadcrumb_divider"></div> <a class="current">Examen</a></article>
+		</div>
+	</section><!-- end of secondary bar -->
+	
+	<aside id="sidebar" class="column">
+	
+		<hr/>
+		<h3>UE 1</h3>
+		<ul class="toggle">
+			<li class="icn_new_article_active"><a  href="pageSaisie.html">EC 1</a></li>
+			<li class="icn_add_user"><a href="saisie.html"> EC 2</a></li>
+			<li class="icn_categories"><a href="#">EC 3</a></li>
+			<li class="icn_view_users"><a href="#">EC 4</a></li>
+		</ul>
+		<h3>UE 2</h3>
+		<ul class="toggle">
+			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
+			<li class="icn_add_user"><a href="#"> EC 2</a></li>
+			<li class="icn_categories"><a href="#">EC 3</a></li>
+			<li class="icn_view_users"><a href="#">EC 4</a></li>
+		</ul>
+		<h3>UE 3</h3>
+		<ul class="toggle">
+			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
+			<li class="icn_add_user"><a href="#"> EC 2</a></li>
+			<li class="icn_categories"><a href="#">EC 3</a></li>
+			<li class="icn_view_users"><a href="#">EC 4</a></li>
+			
+		</ul>
+		<h3>EU 4</h3>
+		<ul class="toggle">
+			<li class="icn_settings"><a href="#">xxx </a></li>
+			<li class="icn_security"><a href="#">xxx </a></li>
+			<li class="icn_jump_back"><a href="#">xxx</a></li>
+			<li class="icn_jump_back"><a href="#">xxx</a></li>
+		</ul>
+		
+		<h3>UE 5</h3>
+		<ul class="toggle">
+			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
+			<li class="icn_add_user"><a href="#"> EC 2</a></li>
+			<li class="icn_categories"><a href="#">EC 3</a></li>
+			<li class="icn_view_users"><a href="#">EC 4</a></li>
+		</ul>
+		
+		<footer>
+			<hr />
+			<p><strong>Copyright &copy; Miage UPO 2013 </strong></p>
+			<p><a href="#"></a></p>
+		</footer>
+	</aside><!-- end of sidebar -->
+	
+	
+	
+	
+		<article class="module width_full">
+		&nbsp;
+			<p align="center"> <table>
+	  <tr>
+		<td>&nbsp;Nom</td>
+		<td>Prenom</td>
+		<td>Module</td>
+		<td>Note</td>
+		
+	  </tr>
+	  <tr>
+		<td><input class="btn_post_message" ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input class="btn_post_message" ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input class="btn_post_message" ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input class="btn_post_message" ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  <tr>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+		<td><input ></td>
+	  </tr>
+	  
+	</table>
+	<p>			
+			
+		</article><!-- end of post new article -->
+
+	</section>
+
+
+</body>
+
+</html>
