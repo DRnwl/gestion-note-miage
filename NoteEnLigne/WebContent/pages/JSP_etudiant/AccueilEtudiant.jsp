@@ -9,62 +9,76 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+	<script src="js/hideshow.js" type="text/javascript"></script>
+	<script src="js/jquery.tablesorter.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquc
+      	  $(".tablesorter").tablesorter(); 
+   	 } 
+	);
+	$(document).ready(function() {
+
+	//When page loads...
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+
+	//On Click Event
+	$("ul.tabs li").click(function() {
+
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+
+		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active ID content
+		return false;
+	});
+
+});>
+    </script>
+    <script type="text/javascript">
+    $(function(){
+        $('.column').equalHeight();
+    });
+</script>
 <title>Accueil Etudiant</title>
 </head>
 
 <body>
-                   
+         <header id="header">
+		<hgroup>
+			<h1 class="site_title"><a href="index.html"><img width="60%" height="60%" src="images/logo.png" title="Note Miage"/></a></h1>
+			<h2 class="section_title"> Gestion des notes de la miage </h2></div>
+		</hgroup>
+	</header> <!-- end of header bar -->          
    <section id="secondary_bar">
 		<div class="user">
-
-			<h1>Bonjour<br/><br/></h1>        
-
-     <h2>  <bean:write name="candidat" property="nom" scope="request"/>
-          <bean:write name="candidat" property="prenom" scope="request"/></h2>
-
-
-        <h2>Bienvenue sur l'espace Etudiant</h2><br/>
+			
+        
 		</div>
 		<div class="breadcrumbs_container">
 			<article class="breadcrumbs"><a href="index.html">Accueil</a> <div class="breadcrumb_divider"></div> <a class="current">Affichage note</a></article>
 		</div>
 	</section><!-- end of secondary bar -->
-        <h3>UE 1</h3>
+       <aside id="sidebar" class="column">
+       <a class ="btn btn-danger" href="index.jsp">Deconnection</a>
+       <br>
+	      <p align="center">Bonjour       
+          <bean:write name="candidat" property="nom" scope="request"/>
+          <bean:write name="candidat" property="prenom" scope="request"/></p>
+ 
+		<h3><img src="images/buro.png"/>&nbsp;&nbsp; Promotion</h3>
 		<ul class="toggle">
-			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
-			<li class="icn_add_user"><a href="#"> EC 2</a></li>
-			<li class="icn_categories"><a href="#">EC 3</a></li>
-			<li class="icn_view_users"><a href="#">EC 4</a></li>
-		</ul>
-		<h3>UE 2</h3>
-		<ul class="toggle">
-			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
-			<li class="icn_add_user"><a href="#"> EC 2</a></li>
-			<li class="icn_categories"><a href="#">EC 3</a></li>
-			<li class="icn_view_users"><a href="#">EC 4</a></li>
-		</ul>
-		<h3>UE 3</h3>
-		<ul class="toggle">
-			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
-			<li class="icn_add_user"><a href="#"> EC 2</a></li>
-			<li class="icn_categories"><a href="#">EC 3</a></li>
-			<li class="icn_view_users"><a href="#">EC 4</a></li>
-			
-		</ul>
-		<h3>EU 4</h3>
-		<ul class="toggle">
-			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
-			<li class="icn_add_user"><a href="#"> EC 2</a></li>
-			<li class="icn_categories"><a href="#">EC 3</a></li>
-			<li class="icn_view_users"><a href="#">EC 4</a></li>
-		</ul>
-		
-		<h3>UE 5</h3>
-		<ul class="toggle">
-			<li class="icn_new_article_active"><a  href="#">EC 1</a></li>
-			<li class="icn_add_user"><a href="#"> EC 2</a></li>
-			<li class="icn_categories"><a href="#">EC 3</a></li>
-			<li class="icn_view_users"><a href="#">EC 4</a></li>
+			<li class="icn_new_article"><a href="afnote.html">2009/2010</a></li>
+			<li class="icn_folder"><a href="afnote.html">2010/2011</a></li>
+			<li class="icn_photo"><a href="afnote.html">2011/2012</a></li>
+			<li class="icn_add_user"><a href="afnote.html">2012/2013</a></li>
 		</ul>
 		
 		<footer>
@@ -73,13 +87,21 @@
 			<p><a href="#"></a></p>
 		</footer>
 	</aside><!-- end of sidebar -->
-	<article class="module width_full">
-
-     </article>
+	
+	
+	
+	
+		<article class="module width_full">
+		<br><br><br><br><br><br>
+			<h3><p align="center"> Bienvenue sur l'espace Etudiant</p></h3>
+				
+			
+		</article><!-- end of post new article -->
+	
 	</section>
   
         <br/>
-        <a class ="btn btn-danger" href="index.jsp">Deconnection</a>
+        
 </body>
 
 </html>
