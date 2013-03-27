@@ -48,6 +48,7 @@ public class LoginAction extends Action  {
 					}
 				
 				return mapping.findForward("secretariat");
+
 			}else {
 				if((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("etudiant")){
 					rs= conBase.recupIdentite("etudiant",monLoginForm.getLogin(),monLoginForm.getMdp());
