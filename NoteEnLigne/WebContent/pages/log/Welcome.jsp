@@ -74,8 +74,8 @@
 			<br />
 			
 			    <fieldset id="input">
-				<h4>Login </h4><input id="login" type="text" name="login" /> 
-				<h4>Mot de passe </h4><input id="mdp" type="password" name="mdp" />
+				<h5>Login </h5><input id="," type="text" name="login" /> 
+				<h5>Mot de passe </h5><input id="mdp" type="password" name="mdp" />
                              <div> <input type="submit" value="soumettre"/></div>
 			                </fieldset> 
 			<br>
