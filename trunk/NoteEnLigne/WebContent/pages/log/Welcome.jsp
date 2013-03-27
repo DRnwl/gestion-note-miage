@@ -61,6 +61,8 @@
 			<article class="breadcrumbs"><a href="index.html">Note</a> <div class="breadcrumb_divider"></div> <a class="current">Examen</a></article>
 		</div>
 	</section><!-- end of secondary bar -->
+	<aside id="sidebar" class="column">
+	</aside>
 	
 	
 	
