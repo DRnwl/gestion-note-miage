@@ -35,6 +35,17 @@
         <forward
             name="welcome"
             path="/Welcome.do"/>
+        <forward
+            name="enseignant"
+            path="/enseignant.do"/>
+        <forward
+            name="etudiant"
+            path="/etudiant.do"/>
+        <forward
+            name="secretariat"
+            path="/secretariat.do"/>
+        
+        
     </global-forwards>
 
 
