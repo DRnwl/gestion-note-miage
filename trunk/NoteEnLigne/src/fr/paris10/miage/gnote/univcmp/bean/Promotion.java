@@ -8,8 +8,7 @@ public class Promotion {
 
 	private int numeroPromotion;
 	private Formation formation;
-	private static int nextPromotion=0;
-	//private String libelle;
+
 
 	/**
 	 * Conctructeur sans parametre.
@@ -18,32 +17,40 @@ public class Promotion {
 	public Promotion() {
 	}
 
-
+	/**
+	 * Le constructeur avec param�tres
+	 * 
+	 * @param numeroPromotion
+	 * @param formation
+	 */
+	public Promotion(int numeroPromotion, Formation formation) {
+		super();
+		this.numeroPromotion = numeroPromotion;
+		this.formation = formation;
+	}
+	
 	/***********************************************************************************************************************
-	 ****************************************************** LES GETTERS******************************************************
+	 ****************************************************** LES GETTERS/LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
+
 
 	public int getNumeroPromotion() {
 		return numeroPromotion;
 	}
 
+
+	public void setNumeroPromotion(int numeroPromotion) {
+		this.numeroPromotion = numeroPromotion;
+	}
+
+
 	public Formation getFormation() {
 		return formation;
 	}
-	
 
-	
-	public static int getNextPromotion() {
-		return nextPromotion;
-	}
 
-	/***********************************************************************************************************************
-	 ****************************************************** LES SETTERS******************************************************
-	 ***********************************************************************************************************************/
-
-	public void setNumeroFormation(Formation numeroFormation) {
+	public void setFormation(Formation formation) {
 		this.formation = formation;
 	}
-
 	
 }
