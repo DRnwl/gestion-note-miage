@@ -4,8 +4,10 @@ import java.sql.Date;
 
 
 public class Contrat_Quadrienal {
+	/**
+	 * Les différents attributs ainsi que leur visibilité
+	 */
 	private int numeroContrat;
-	private static int nextContrat=0;
 	private Date dateContrat;
 	private float duree;
 	
@@ -19,26 +21,26 @@ public class Contrat_Quadrienal {
 
 	/**
      * Constructeur avec parametres.
+     * @param numeroContrat
      * @param duree
      * @param date
      */
 	
-	public Contrat_Quadrienal(Date dateContrat, float duree) {
-		this.numeroContrat=this.nextContrat++;
+	public Contrat_Quadrienal(int numeroContrat,Date dateContrat, float duree) {
+		this.numeroContrat=numeroContrat;
 		this.dateContrat = dateContrat;
 		this.duree = duree;
 	}
-	
+
 	/***********************************************************************************************************************
      ******************************************************LES GETTERS/SETTERS******************************************************/
-    
-
+   
 	public int getNumeroContrat() {
 		return numeroContrat;
 	}
 
-	public static int getNextContrat() {
-		return nextContrat;
+	public void setNumeroContrat(int numeroContrat) {
+		this.numeroContrat = numeroContrat;
 	}
 
 	public Date getDateContrat() {
@@ -56,10 +58,6 @@ public class Contrat_Quadrienal {
 	public void setDuree(float duree) {
 		this.duree = duree;
 	}
-	
-	
-	
-	
 	
 	
 	
