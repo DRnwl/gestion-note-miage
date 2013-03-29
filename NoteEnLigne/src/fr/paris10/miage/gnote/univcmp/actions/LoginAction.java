@@ -70,6 +70,7 @@ public class LoginAction extends Action  {
 						user.setNumeroEtudiant(rs.getInt("NETUDIANT"));
 						user.setModeEvaluation(rs.getString("MODEEVALUATION"));
 					}
+					conBase.affectPromotionEtudiant(user);
 					request.setAttribute("user", user);
 		            request.setAttribute("candidat",candidat);
 
