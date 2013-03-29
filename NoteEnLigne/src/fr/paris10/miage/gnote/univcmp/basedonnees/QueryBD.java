@@ -138,7 +138,7 @@ public class QueryBD {
 
 	}
 	
-	private void affectPromotionEtudiant(Etudiant st) throws SQLException{
+	public void affectPromotionEtudiant(Etudiant st) throws SQLException{
         try {
             PreparedStatement pst = cx.prepareStatement("SELECT * FROM EST_DANS inner join (PROMOTION inner join (FORMATION inner join CONTRAT_QUADRIENNAL on FORMATION.NCONTRAT=CONTRAT_QUADRIENNAL.NCONTRAT) on PROMOTION.NFORMATION=FORMATION.NFORMATION) on EST_DANS.NPROMOTION=PROMOTION.NPROMOTION WHERE netudiant=?");
             pst.setInt(1, st.getNumeroEtudiant());
