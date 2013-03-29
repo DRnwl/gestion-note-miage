@@ -4,10 +4,17 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+
+import fr.paris10.miage.gnote.univcmp.bean.Formation;
+import fr.paris10.miage.gnote.univcmp.bean.Promotion;
+import fr.paris10.miage.gnote.univcmp.bean.PromotionEtudiant;
+import fr.paris10.miage.gnote.usercmp.bean.Contrat_Quadrienal;
+import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 public class QueryBD {
 
@@ -130,6 +137,40 @@ public class QueryBD {
 
 
 	}
+	
+	private void affectPromotionEtudiant(Etudiant st) throws SQLException{
+        try {
+            PreparedStatement pst = cx.prepareStatement("SELECT * FROM EST_DANS inner join (PROMOTION inner join (FORMATION inner join CONTRAT_QUADRIENNAL on FORMATION.NCONTRAT=CONTRAT_QUADRIENNAL.NCONTRAT) on PROMOTION.NFORMATION=FORMATION.NFORMATION) on EST_DANS.NPROMOTION=PROMOTION.NPROMOTION WHERE netudiant=?");
+            pst.setInt(1, st.getNumeroEtudiant());
+            if (pst.execute()) {
+                ResultSet rs = pst.getResultSet();
+                Contrat_Quadrienal contrat= new Contrat_Quadrienal();
+                Formation formation=new Formation();
+                Promotion promotion=new Promotion();
+                PromotionEtudiant promotionEtudiant= new PromotionEtudiant();
+                while (rs.next()) {
+                    contrat.setNumeroContrat(rs.getInt("NCONTRAT"));
+                    contrat.setDateContrat(rs.getDate("DATE_CONTRAT"));
+                    contrat.setDuree(rs.getFloat("DUREE"));
+                    formation.setContrat(contrat);
+                    formation.setNumeroFormation(rs.getInt("NFORMATION"));
+                    formation.setLibelle(rs.getString("LIBELLE"));
+                    formation.setNiveau(rs.getString("NIVEAU"));
+                    formation.setType(rs.getString("TYPE_FORMATION"));
+                    formation.setParcours(rs.getString("PARCOURS"));
+                    promotion.setFormation(formation);
+                    promotion.setNumeroPromotion(rs.getInt("NPROMOTION"));
+                    promotionEtudiant.setEtudiant(st);
+                    promotionEtudiant.setPromotion(promotion);
+                    st.addPromotionEtudiant(promotionEtudiant);
+                }
+                rs.close();
+            }
+            pst.close();
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+    }
 
 
 }
