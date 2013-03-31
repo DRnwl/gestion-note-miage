@@ -6,8 +6,8 @@ public class UE {
 	 * Les différents attributs ainsi que leur visibilité
 	 */
 	private int numeroUE;
-	private int numeroSemestre;
-	private int numeroFormation;
+	private Semestre semestre;
+	private Formation formation;
 	private String libelle;
 
 	/**
@@ -26,13 +26,17 @@ public class UE {
 		return numeroUE;
 	}
 
-	public int getNumeroSemestre() {
-		return numeroSemestre;
+	
+
+	public Semestre getSemestre() {
+		return semestre;
 	}
 
-	public int getNumeroFormation() {
-		return numeroFormation;
+
+	public Formation getFormation() {
+		return formation;
 	}
+
 
 	public String getLibelle() {
 		return libelle;
@@ -44,16 +48,23 @@ public class UE {
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-
-	public void setNumeroSemestre(int numeroSemestre) {
-		this.numeroSemestre = numeroSemestre;
-	}
-
-	public void setNumeroFormation(int numeroFormation) {
-		this.numeroFormation = numeroFormation;
-	}
-
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+
+
+	public void setNumeroUE(int numeroUE) {
+		this.numeroUE = numeroUE;
+	}
+
+
+	public void setSemestre(Semestre semestre) {
+		this.semestre = semestre;
+	}
+
+
+	public void setFormation(Formation formation) {
+		this.formation = formation;
+	}
+	
 }
