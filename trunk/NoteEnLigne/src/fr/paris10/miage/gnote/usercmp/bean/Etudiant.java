@@ -140,10 +140,10 @@ public class Etudiant{
      * Afficher les promotions de l'étudiant
      * @return String sous forme de liste à puce
      */
-    public String afficherPromotion() {
+    public String afficherListPromotion() {
     	String s="<ul>";
     	for(PromotionEtudiant pe: listPromotionEtudiant){
-    		s=s+pe.toString();
+    		s=s+pe.afficherPromotion();
     	}
     	s=s+"</ul>";
     	return s;
