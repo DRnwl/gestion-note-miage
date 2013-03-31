@@ -81,6 +81,7 @@
 			<li class="icn_add_user"><a href="afnote.html">2012/2013</a></li>
 		</ul>
 		
+		
 		<footer>
 			<hr />
 			<p><strong>Copyright &copy; Miage UPO 2013 </strong></p>
@@ -93,8 +94,10 @@
 	
 		<article class="module width_full">
 		<br><br><br><br><br><br>
+			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="request" />
 			<h3><p align="center"> Bienvenue sur l'espace Etudiant</p></h3>
-				
+			<p align="left"> Veuillez choisir l'année de consultation parmis les <%= user.getListPromotionEtudiant().size() %> suivantes:</p>	
+			<%= user.afficherListPromotion() %>
 			
 		</article><!-- end of post new article -->
 	
