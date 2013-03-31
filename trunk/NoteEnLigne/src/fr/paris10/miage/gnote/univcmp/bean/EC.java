@@ -7,8 +7,8 @@ public class EC {
 	 * Les différents attributs ainsi que leur visibilité
 	 */
 	private int numeroEC;
-	private int numeroFormation;
-	private int numeroUE;
+	private Formation formation;
+	private UE ue;
 	private String libelle;
 	private float coef;
 
@@ -19,13 +19,9 @@ public class EC {
 	public EC() {
 	}
 
-
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS/SETTERS******************************************************
 	 ***********************************************************************************************************************/
-
-	
-
 
 	public int getNumeroEC() {
 		return numeroEC;
@@ -35,20 +31,20 @@ public class EC {
 		this.numeroEC = numeroEC;
 	}
 
-	public int getNumeroFormation() {
-		return numeroFormation;
+	public Formation getFormation() {
+		return formation;
 	}
 
-	public void setNumeroFormation(int numeroFormation) {
-		this.numeroFormation = numeroFormation;
+	public void setFormation(Formation formation) {
+		this.formation = formation;
 	}
 
-	public int getNumeroUE() {
-		return numeroUE;
+	public UE getUe() {
+		return ue;
 	}
 
-	public void setNumeroUE(int numeroUE) {
-		this.numeroUE = numeroUE;
+	public void setUe(UE ue) {
+		this.ue = ue;
 	}
 
 	public String getLibelle() {
@@ -68,4 +64,5 @@ public class EC {
 	}
 
 
+	
 }
