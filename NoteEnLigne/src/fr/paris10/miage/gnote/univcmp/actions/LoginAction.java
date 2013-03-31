@@ -71,6 +71,7 @@ public class LoginAction extends Action  {
 						user.setModeEvaluation(rs.getString("MODEEVALUATION"));
 					}
 					conBase.affectPromotionEtudiant(user);
+					System.out.println(user.getListPromotionEtudiant().size());
 					request.setAttribute("user", user);
 		            request.setAttribute("candidat",candidat);
 
