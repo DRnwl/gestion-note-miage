@@ -5,7 +5,6 @@ public class Semestre {
 	 * Les différents attributs ainsi que leur visibilité
 	 */
 	private int numeroSemestre;
-	private static int nextSemestre=0;
 	private String libelle;
 
 	/**
@@ -14,8 +13,6 @@ public class Semestre {
 
 	public Semestre() {
 	}
-
-	
 
 
 	/***********************************************************************************************************************
@@ -30,11 +27,7 @@ public class Semestre {
 		return libelle;
 	}
 	
-	
 
-	public static int getNextSemestre() {
-		return nextSemestre;
-	}
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
@@ -44,5 +37,11 @@ public class Semestre {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+
+
+	public void setNumeroSemestre(int numeroSemestre) {
+		this.numeroSemestre = numeroSemestre;
+	}
+	
 
 }
