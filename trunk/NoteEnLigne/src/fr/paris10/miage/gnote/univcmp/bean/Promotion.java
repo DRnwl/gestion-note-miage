@@ -57,7 +57,7 @@ public class Promotion {
 	 ****************************************************** AFFICHAGE******************************************************
 	 ***********************************************************************************************************************/
 	public String toString(){
-		String s="<li>"+this.formation.getType()+this.formation.getNiveau()+" "+this.formation.getLibelle()+" "+this.formation.getParcours()+"</li>";
+		String s="<li><a href=afnote.html>"+this.formation.getType()+this.formation.getNiveau()+" "+this.formation.getLibelle()+" "+this.formation.getParcours()+"</a></li>";
 		return s;
 	}
 	
