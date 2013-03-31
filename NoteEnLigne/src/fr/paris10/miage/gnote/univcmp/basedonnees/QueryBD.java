@@ -140,15 +140,19 @@ public class QueryBD {
 	
 	public void affectPromotionEtudiant(Etudiant st) throws SQLException{
         try {
+        	System.out.println(cx);
             PreparedStatement pst = cx.prepareStatement("SELECT * FROM EST_DANS inner join (PROMOTION inner join (FORMATION inner join CONTRAT_QUADRIENNAL on FORMATION.NCONTRAT=CONTRAT_QUADRIENNAL.NCONTRAT) on PROMOTION.NFORMATION=FORMATION.NFORMATION) on EST_DANS.NPROMOTION=PROMOTION.NPROMOTION WHERE netudiant=?");
             pst.setInt(1, st.getNumeroEtudiant());
-            if (pst.execute()) {
-                ResultSet rs = pst.getResultSet();
-                Contrat_Quadrienal contrat= new Contrat_Quadrienal();
-                Formation formation=new Formation();
-                Promotion promotion=new Promotion();
-                PromotionEtudiant promotionEtudiant= new PromotionEtudiant();
+            System.out.println("pst.execute() vaut: "+pst.execute());
+            
+            	ResultSet rs = pst.executeQuery();
+            	System.out.println(rs);
+                System.out.println("rs.next() vaut "+rs.next());
                 while (rs.next()) {
+                	Contrat_Quadrienal contrat= new Contrat_Quadrienal();
+                    Formation formation=new Formation();
+                    Promotion promotion=new Promotion();
+                    PromotionEtudiant promotionEtudiant= new PromotionEtudiant();
                     contrat.setNumeroContrat(rs.getInt("NCONTRAT"));
                     contrat.setDateContrat(rs.getDate("DATE_CONTRAT"));
                     contrat.setDuree(rs.getFloat("DUREE"));
@@ -162,11 +166,10 @@ public class QueryBD {
                     promotion.setNumeroPromotion(rs.getInt("NPROMOTION"));
                     promotionEtudiant.setEtudiant(st);
                     promotionEtudiant.setPromotion(promotion);
-                    st.addPromotionEtudiant(promotionEtudiant);
+                    st.addPromotionEtudiant(promotionEtudiant);                    
                 }
                 rs.close();
-            }
-            pst.close();
+                pst.close();
         } catch (SQLException e) {
             e.getMessage();
         }
