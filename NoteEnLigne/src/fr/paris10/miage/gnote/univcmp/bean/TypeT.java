@@ -7,7 +7,6 @@ public class TypeT {
 	 * Les différents attributs ainsi que leur visibilité
 	 */
 	private int numeroType;
-	private static int nextType=0;
 	private String libelle;
 
 	/**
@@ -26,10 +25,14 @@ public class TypeT {
 	public int getNumeroType() {
 		return numeroType;
 	}
+	
+	
 
-	public static int getNextType() {
-		return nextType;
+
+	public void setNumeroType(int numeroType) {
+		this.numeroType = numeroType;
 	}
+
 
 
 	public String getLibelle() {
