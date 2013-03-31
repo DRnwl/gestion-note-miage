@@ -7,7 +7,7 @@ import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 public class PromotionEtudiant {
 
 	/**
-	 * Les différents attributs ainsi que leur visibilité
+	 * Les diffï¿½rents attributs ainsi que leur visibilitï¿½
 	 */
 	private Etudiant etudiant;
 	private Promotion promotion;
@@ -22,7 +22,7 @@ public class PromotionEtudiant {
 	}
 
 	/**
-	 * Le constructeur avec paramètres
+	 * Le constructeur avec paramï¿½tres
 	 * 
 	 * @param numeroPromotion
 	 * @param numeroFormation
@@ -64,8 +64,8 @@ public class PromotionEtudiant {
 	 ****************************************************** Affichage******************************************************
 	 ***********************************************************************************************************************/
 
-	public String toString(){
-		return "a completer";
+	public String afficherPromotion(){
+		return this.promotion.toString();
 	}
 	
 }
