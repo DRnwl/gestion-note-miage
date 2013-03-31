@@ -19,8 +19,8 @@ public class Etudiant{
     private int numeroEtudiant;
     private Candidat candidat;                                          
     private String modeEvaluation;   
-    private ArrayList<ResultatExamen> listResultatExamen;
-    private ArrayList<PromotionEtudiant> listPromotionEtudiant;
+    private ArrayList<ResultatExamen> listResultatExamen=new ArrayList<ResultatExamen>();
+    private ArrayList<PromotionEtudiant> listPromotionEtudiant=new ArrayList<PromotionEtudiant>();
 
     /**
      * Constructeur sans parametre.
@@ -135,12 +135,17 @@ public class Etudiant{
 	    return s;
     }
     
-    public String affPromotion() {
-	    String s = "<table><tr><td>Libelle Examen</td><td>Note</td></tr>";
-	    for (PromotionEtudiant pe : listPromotionEtudiant) {
-	        s = s + pe.toString() ;
-	    }
-	    s = s + "</table>";
-	    return s;
+
+    /**
+     * Afficher les promotions de l'étudiant
+     * @return String sous forme de liste à puce
+     */
+    public String afficherPromotion() {
+    	String s="<ul>";
+    	for(PromotionEtudiant pe: listPromotionEtudiant){
+    		s=s+pe.toString();
+    	}
+    	s=s+"</ul>";
+    	return s;
     }
 }
