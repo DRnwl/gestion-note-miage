@@ -2,12 +2,14 @@ package fr.paris10.miage.gnote.univcmp.bean;
 
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
-
+/**
+ * correspond Ã  la table A_PASSE de la BDD
+ */
 
 public class ResultatExamen {
 
 	/**
-	 * Les différents attributs ainsi que leur visibilité
+	 * Les diffï¿½rents attributs ainsi que leur visibilitï¿½
 	 */
 	private Examen examen;
 	private Etudiant etudiant;
