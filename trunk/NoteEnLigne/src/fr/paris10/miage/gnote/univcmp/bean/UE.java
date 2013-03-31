@@ -8,7 +8,7 @@ public class UE {
 	private int numeroUE;
 	private Semestre semestre;
 	private Formation formation;
-	private String libelle;
+	//private String libelle;
 
 	/**
 	 * Conctructeur sans parametre.
@@ -38,9 +38,9 @@ public class UE {
 	}
 
 
-	public String getLibelle() {
+	/*public String getLibelle() {
 		return libelle;
-	}
+	}*/
 
 	
 
@@ -48,9 +48,9 @@ public class UE {
 	 ****************************************************** LES SETTERS******************************************************
 	 ***********************************************************************************************************************/
 
-	public void setLibelle(String libelle) {
+	/*public void setLibelle(String libelle) {
 		this.libelle = libelle;
-	}
+	}*/
 
 
 	public void setNumeroUE(int numeroUE) {
