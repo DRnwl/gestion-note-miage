@@ -98,6 +98,8 @@
 			<h3><p align="center"> Bienvenue sur l'espace Etudiant</p></h3>
 			<p align="left"> Veuillez choisir l'année de consultation parmis les <%= user.getListPromotionEtudiant().size() %> suivantes:</p>	
 			<%= user.afficherListPromotion() %>
+			<p align="left"> ci-dessous un test qui récupère les notes de l'étudiant sur toutes ses promotions</p>
+			<%= user.affResultatExamen() %>
 			
 		</article><!-- end of post new article -->
 	
