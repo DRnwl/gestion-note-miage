@@ -87,7 +87,7 @@
 		<h3><img src="images/buro.png"/>&nbsp; &nbsp;Examen</h3>
 		<ul class="toggle">
 			<li class="icn_folder"><a href="#">Saisir</a></li>
-			<li class="icn_new_article"><a href="#">Creer</a></li>
+			<li class="icn_new_article"><a href="pages/JSP_Enseignant/creationExam.jsp">Creer</a></li>
 			<li class="icn_photo"><a href="#">Modifier</a></li>
 			
 		</ul>
