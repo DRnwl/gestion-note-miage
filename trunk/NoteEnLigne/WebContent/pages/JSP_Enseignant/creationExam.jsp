@@ -61,11 +61,17 @@
 		<div class="breadcrumbs_container">
 			<article class="breadcrumbs"><a href="../../index.html">Accueil</a> <div class="breadcrumb_divider"></div> <a class="current">Affichage note</a></article>
 		</div>
+		     
+		     
+		    <h3>*champs obligatoire</h3> 
+			
+			
+		
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
 	 <a class ="btn btn-danger" href="../../index.jsp">Deconnection</a>
-     
+        
 		
 		<footer>
 			<hr />
@@ -76,6 +82,54 @@
 	<article class="module width_full">
 	<br><br><br><br><br>
 	<h2><p align="center"></p></h2><br>
+	<form id="auth" method="POST" action="Authentification.do">
+			
+			
+		<TABLE class="formulaire">
+ <TR>
+  <TD>*Pourcentage :</TD>
+     <TD><input id="pour" type="text" name="pour" /> 
+        
+    </TD>
+    </TR>
+    <tr>
+    <td>Date de l'examen: </td>
+    <td>
+  
+        <input id="date" type="text" name="date" /> 
+    </td>
+    </tr>
+    <tr>
+    <td>*UE</td>
+    <td>
+			<input id="ue" type="text" name="ue" /> 
+    </td>
+    </tr>
+     <tr>
+    <td>*EC:</td>
+    <td>
+    	<input id="ec" type="text" name="ec" /> 
+    </td>
+    </tr>
+     <tr>
+    <td>*Numero de formation :</td>
+    <td ><input id="numf" type="text" name="numf" /> 
+      </td>
+    </tr>
+    <tr>
+    <td>*Numero  type :</td>
+    <td ><input id="numt" type="text" name="numt" /> 
+      </td>
+    </tr>
+     <td>*horaire :</td>
+    <td ><input id="heure" type="text" name="heure" /> 
+      </td>
+    </tr>
+
+</TABLE>
+			
+		</form>
+				
 
      </article>
 	</section>
