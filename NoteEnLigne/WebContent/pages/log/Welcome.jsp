@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Note en ligne MIAGE</title>
-	<link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 	
 	<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
 	<script src="js/hideshow.js" type="text/javascript"></script>
