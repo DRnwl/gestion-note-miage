@@ -164,6 +164,18 @@ height: 38px;
 
 }
 
+
+TD.label {
+FONT-WEIGHT: bold;
+FONT-SIZE: 12pt;
+text-COLOR: black;
+FONT-FAMILY: Verdana, Arial
+}
+
+article.module width_full{
+	text-COLOR: black;
+	
+}
 article.breadcrumbs {
 float: left;
 padding: 0 10px;
