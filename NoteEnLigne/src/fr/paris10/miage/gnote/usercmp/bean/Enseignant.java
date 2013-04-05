@@ -22,14 +22,29 @@ public class Enseignant {
     private String dateNaissance;
     private String login;
     private String pwd;
-    private ArrayList<EC>listeEc;
+    private ArrayList<EC>listeEC;
 	private ArrayList<UE>listeEU;
 	private ArrayList<Promotion>listePromo;
-	private ArrayList<Formation>listForm;
+	private ArrayList<Formation>listeForm;
     /**
      * Constructeur sans parametre.
      */
     public Enseignant() {
+    	this.numeroEnseignant=0;
+        this.nom ="";
+        this.prenom ="";
+        this.adresse ="";
+        this.telephone ="";
+        this.dateNaissance ="";
+        this.numeroPoste =0;
+        this.login="";
+        this.pwd="";
+        this.listePromo= new ArrayList<Promotion>();
+        this.listeForm= new ArrayList<Formation>();
+        this.listeEC= new ArrayList<EC>();
+        this.listeEU= new ArrayList<UE>();
+        
+        
     }
 
     /**
@@ -137,11 +152,11 @@ public class Enseignant {
 	}
 
 	public ArrayList<EC> getListeEc() {
-		return listeEc;
+		return listeEC;
 	}
 
 	public void setListeEc(ArrayList<EC> listeEc) {
-		this.listeEc = listeEc;
+		this.listeEC = listeEc;
 	}
 
 	public ArrayList<UE> getListeEU() {
@@ -161,11 +176,11 @@ public class Enseignant {
 	}
 
 	public ArrayList<Formation> getListForm() {
-		return listForm;
+		return listeForm;
 	}
 
 	public void setListForm(ArrayList<Formation> listForm) {
-		this.listForm = listForm;
+		this.listeForm = listForm;
 	}
     
     

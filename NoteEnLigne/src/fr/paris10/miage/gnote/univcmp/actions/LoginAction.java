@@ -43,11 +43,15 @@ public class LoginAction extends Action  {
               rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
              
               while (rs.next()) {
-                  Promotion prom=new Promotion();
                   Formation forma=new Formation();
                   UE ue=new UE();
                   EC ec=new EC();
-                  
+                  forma.setNumeroFormation(rs.getInt("NFORMATION"));
+                  ue.setNumeroUE(rs.getInt("NUE"));
+                  ec.setNumeroEC(rs.getInt("NEC"));
+                  user.getListForm().add(forma);
+                  user.getListeEc().add(ec);
+                  user.getListeEU().add(ue);
                   
 				}
               
