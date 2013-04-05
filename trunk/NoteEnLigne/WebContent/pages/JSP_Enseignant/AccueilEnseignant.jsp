@@ -58,8 +58,8 @@
 	
 	<section id="secondary_bar">
 		<div class="user">
-		 <p align="center"> Bonjour <bean:write name="user" property="nom" scope="request"/>
-                    <bean:write name="user" property="prenom" scope="request"/></p>
+		 <p align="center"> Bonjour <bean:write name="user" property="nom" scope="session"/>
+                    <bean:write name="user" property="prenom" scope="session"/></p>
 
 		</div>
 		<div class="breadcrumbs_container">

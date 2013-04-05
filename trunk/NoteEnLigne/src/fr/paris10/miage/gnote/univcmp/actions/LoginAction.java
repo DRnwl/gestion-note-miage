@@ -2,6 +2,8 @@ package fr.paris10.miage.gnote.univcmp.actions;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.sql.ResultSet;
 
 import org.apache.struts.action.Action;
@@ -25,7 +27,7 @@ public class LoginAction extends Action  {
 		ServletContext context = getServlet().getServletContext();
 		QueryBD conBase = new QueryBD(context.getRealPath(""));
 
-
+		HttpSession session = request.getSession(true);
 
 		if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("enseignant")) {
 			rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
@@ -35,7 +37,7 @@ public class LoginAction extends Action  {
 					user.setNom(rs.getString("NOM"));
 					user.setPrenom(rs.getString("PRENOM"));
 				}
-              request.setAttribute("user", user); 
+              session.setAttribute("user", user); 
 			return mapping.findForward("enseignant");
 		} else {
 			if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("secretariat"))  {
