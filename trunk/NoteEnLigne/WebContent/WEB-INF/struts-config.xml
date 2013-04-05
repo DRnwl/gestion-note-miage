@@ -45,7 +45,6 @@
             name="secretariat"
             path="/secretariat.do"/>
         
-        
     </global-forwards>
 
 
@@ -55,7 +54,7 @@
             <!-- Default "Welcome" action -->
             <!-- Forwards to Welcome.jsp -->
         <action path="/Welcome" forward="/pages/log/Welcome.jsp" />
-
+        
 
 
   <action path="/Authentification" 
