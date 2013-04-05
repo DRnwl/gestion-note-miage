@@ -57,6 +57,11 @@
 	</header> <!-- end of header bar -->
 	
 	<section id="secondary_bar">
+		<div class="user">
+		 <p align="center"> Bonjour <bean:write name="user" property="nom" scope="session"/>
+                    <bean:write name="user" property="prenom" scope="session"/></p>
+
+		</div>
 		
 		<div class="breadcrumbs_container">
 			<article class="breadcrumbs"><a href="../../index.html">Accueil</a> <div class="breadcrumb_divider"></div> <a class="current">Affichage note</a></article>
