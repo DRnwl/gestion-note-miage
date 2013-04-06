@@ -280,5 +280,55 @@ public class QueryBD {
 		return rs;
 
 	}
+	
+	public String recupNonForm(int numform){
+		String requete ;
+		String nom="";
+		ResultSet rs=null;
+		requete = "SELECT LIBELLE FROM FORMATION WHERE NFORMATION= '" +numform+ "' ";
+		try {
+			Statement st = cx.createStatement();
+			rs = st.executeQuery(requete);
+			
+			while (rs.next()) {
+               
+                nom=rs.getString("LIBELLE");
+                
+			}
+			rs.close();
+			st.close();
+		}
+		catch (SQLException e) {
+			e.getMessage();
+		}
+		
+		
+		return nom;
+        
+        
+	}
+	public String recupNonEC(int numEC){
+		String requete ;
+		ResultSet rs=null;
+		String nom="";
+		requete = "SELECT LIBELLE FROM EC WHERE NEC= '" +numEC+ "' ";
+		try {
+			Statement st = cx.createStatement();
+			rs = st.executeQuery(requete);
+			while (rs.next()) {
+	               
+                nom=rs.getString("LIBELLE");
+                
+			}
+			rs.close();
+			st.close();
+		}
+		catch (SQLException e) {
+			e.getMessage();
+		}
+
+		return nom;
+
+	}
 }
 
