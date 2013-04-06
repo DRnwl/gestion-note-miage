@@ -65,10 +65,12 @@
 		
 		<div class="breadcrumbs_container">
 			<article class="breadcrumbs"><a href="../../index.html">Accueil</a> <div class="breadcrumb_divider"></div> <a class="current">Affichage note</a></article>
+		
+		
 		</div>
 		     
 		     
-		    <h3>*champs obligatoire</h3> 
+		    
 			
 			
 		
@@ -86,6 +88,7 @@
 	</aside><!-- end of sidebar -->
 	<article class="module width_full">
 	<br><br><br><br><br>
+	<h3>*champs obligatoire</h3> 
 	<h2><p align="center"></p></h2><br>
 	<form id="auth" method="POST" action="Authentification.do">
 			
