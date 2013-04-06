@@ -34,7 +34,7 @@ public class LoginAction extends Action  {
 		HttpSession session = request.getSession(true);
 
 		if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("enseignant")) {
-			rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
+			 rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
               Enseignant user=new Enseignant();
               while (rs.next()) {
                     user.setNumeroEnseignant(rs.getInt("NENSEIGNANT"));
@@ -43,7 +43,7 @@ public class LoginAction extends Action  {
 				}
               
               rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
-             
+              
               while (rs.next()) {
                   Formation forma=new Formation();
                   UE ue=new UE();
@@ -51,6 +51,8 @@ public class LoginAction extends Action  {
                   forma.setNumeroFormation(rs.getInt("NFORMATION"));
                   ue.setNumeroUE(rs.getInt("NUE"));
                   ec.setNumeroEC(rs.getInt("NEC"));
+                  forma.setLibelle(conBase.recupNonForm(forma.getNumeroFormation()));
+                  ec.setLibelle(conBase.recupNonEC(ec.getNumeroEC()));
                   user.getListForm().add(forma);
                   user.getListeEc().add(ec);
                   user.getListeEU().add(ue);
