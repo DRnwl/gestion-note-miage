@@ -48,6 +48,7 @@
 </script>
 <title>Accueil Responsable</title>
 </head>
+<jsp:useBean id="user" scope="request" class="fr.paris10.miage.gnote.usercmp.bean.Enseignant"/>
 <body>
   <header id="header">
 		<hgroup>
@@ -110,18 +111,49 @@
     <tr>
     <td>*UE</td>
     <td>
-			<input id="ue" type="text" name="ue" /> 
+			<select name="form">
+    <%  
+            for(int i = 0; i < user.getListeEU().size(); i++) 
+		{
+            		
+	%>
+	<option value="<%=user.getListeEU().get(i).getNumeroUE() %>"><%=user.getListeEU().get(i).getNumeroUE() %></option>
+    <% 
+	}
+    %>
+    </select>
     </td>
     </tr>
      <tr>
     <td>*EC:</td>
     <td>
-    	<input id="ec" type="text" name="ec" /> 
+    	<select name="ec">
+    <%  
+            for(int i = 0; i < user.getListeEc().size(); i++) 
+		{
+            		
+	%>
+	<option value="<%=user.getListeEc().get(i).getLibelle() %>"><%=user.getListeEc().get(i).getLibelle() %></option>
+    <% 
+	}
+    %>
+    </select>
+ 
     </td>
     </tr>
      <tr>
-    <td>*Numero de formation :</td>
-    <td ><input id="numf" type="text" name="numf" /> 
+    <td>*Libellé formation :</td>
+    <td >	<select name="form">
+    <%  
+            for(int i = 0; i < user.getListForm().size(); i++) 
+		{
+            		
+	%>
+	<option value="<%=user.getListForm().get(i).getLibelle() %>"><%=user.getListForm().get(i).getLibelle() %></option>
+    <% 
+	}
+    %>
+    </select>
       </td>
     </tr>
     <tr>
