@@ -3,6 +3,9 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.Formation"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.UE"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.EC"%>
   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -48,7 +51,7 @@
 </script>
 <title>Accueil Responsable</title>
 </head>
-<jsp:useBean id="user" scope="request" class="fr.paris10.miage.gnote.usercmp.bean.Enseignant"/>
+<jsp:useBean id="user" scope="session" class="fr.paris10.miage.gnote.usercmp.bean.Enseignant"/>
 <body>
   <header id="header">
 		<hgroup>
@@ -113,11 +116,12 @@
     <td>
 			<select name="form">
     <%  
+            fr.paris10.miage.gnote.univcmp.bean.UE temp = new fr.paris10.miage.gnote.univcmp.bean.UE();
             for(int i = 0; i < user.getListeEU().size(); i++) 
 		{
-            		
-	%>
-	<option value="<%=user.getListeEU().get(i).getNumeroUE() %>"><%=user.getListeEU().get(i).getNumeroUE() %></option>
+            	temp=(fr.paris10.miage.gnote.univcmp.bean.UE) user.getListeEU().get(i);
+	%>                      
+	<option value="<%=temp.getNumeroUE() %>"><%=temp.getNumeroUE() %></option>
     <% 
 	}
     %>

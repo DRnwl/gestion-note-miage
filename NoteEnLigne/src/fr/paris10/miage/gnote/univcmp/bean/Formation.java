@@ -16,6 +16,13 @@ public class Formation {
      * Constructeur sans parametre.
      */
 	public Formation() {
+		numeroFormation=0;
+		contrat=null;
+		libelle="";
+		niveau="";
+		type="";
+		parcours="";
+
 	}
 
 	/**

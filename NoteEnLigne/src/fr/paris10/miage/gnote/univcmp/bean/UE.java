@@ -15,6 +15,9 @@ public class UE {
 	 */
 
 	public UE() {
+		numeroUE=0;
+		semestre=null;
+		formation=null;
 	}
 
 

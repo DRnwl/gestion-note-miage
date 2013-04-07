@@ -1,6 +1,7 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 
 public class Examen {
@@ -17,6 +18,8 @@ public class Examen {
 	private String libelle;
 	private String horaire;
 	private float poucentage;
+	
+	
 
 	/**
 	 * Conctructeur sans parametre.
