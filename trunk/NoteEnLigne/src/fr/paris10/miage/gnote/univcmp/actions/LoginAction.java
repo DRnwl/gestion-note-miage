@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -43,8 +44,8 @@ public class LoginAction extends Action  {
 				}
               
               rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
-              
-              while (rs.next()) {
+             
+                while (rs.next()) {
                   Formation forma=new Formation();
                   UE ue=new UE();
                   EC ec=new EC();
@@ -56,10 +57,9 @@ public class LoginAction extends Action  {
                   user.getListForm().add(forma);
                   user.getListeEc().add(ec);
                   user.getListeEU().add(ue);
-                  
-				}
-              
-              
+                 
+				} 
+             
               session.setAttribute("user", user); 
 			return mapping.findForward("enseignant");
 		} else {
