@@ -29,7 +29,7 @@ public class QueryBD {
 	private String url;
 	private String login;
 	private String pwd;
-
+    // connexion a la base lors de l'instanciation
 	public QueryBD(String path) {
 		Properties prop = new Properties();
 		FileInputStream in = null;
@@ -51,14 +51,13 @@ public class QueryBD {
 			System.out.println("Erreur lors de la rï¿½cupï¿½ration des donnï¿½es contenues dans le fichier properties :" + e.toString());
 		}
 		try {
-			Class.forName(driver);//driver
+			Class.forName(driver);
 		} catch (Exception ex) {
 			System.err.println(ex.getMessage());
 			System.exit(1);
 		}
 		try {
-			cx = DriverManager.getConnection(url,login,pwd);// url login pwd
-
+			cx = DriverManager.getConnection(url,login,pwd);
 		} catch (SQLException ex) {
 			System.out.println("Erreur de connexion : " + ex.toString());
 		}
@@ -72,7 +71,7 @@ public class QueryBD {
 		}
 	}
 
-	/**** requete vers la base de donnÃ©es ***/ 
+	// requete sur la base  
 	public boolean executerRequete(String requete) {
 		try {
 			Statement st = cx.createStatement();
@@ -92,7 +91,7 @@ public class QueryBD {
 		return false;
 	}
 
-
+// comparaison des identifiant t recuperation du statut en vue d'une redirection
 	public String comparerIdentifiant(String login, String pwd) throws SQLException {
 		String requete = "SELECT * FROM CANDIDAT WHERE LOG_IN = '" + login + "' AND MOT_DE_PASSE = '" + pwd + "'";
 		if(executerRequete(requete)){
@@ -117,6 +116,7 @@ public class QueryBD {
 		return "identifiant non valide";
 
 	}
+	// recuperation du nom prenom de la personne connectée pour affichage 
 	public ResultSet recupIdentite ( String type,String login, String pwd) throws SQLException{
 		String requete ;
 		ResultSet rs;
@@ -269,6 +269,8 @@ public class QueryBD {
 			e.getMessage();
 		}
 	}
+	/* recueration des identifiant formation, promotion , ue et Ec concernant 
+	un enseignant*/
 	public ResultSet recupNumFormPromUeEc(int numEns){
 		String requete ;
 		ResultSet rs=null;
@@ -285,7 +287,7 @@ public class QueryBD {
 		return rs;
 
 	}
-
+// extraction du libelle de la formation avec son id 
 	public String recupNonForm(int numform){
 		String requete ;
 		String nom="";
@@ -312,6 +314,7 @@ public class QueryBD {
 
 
 	}
+	// extraction du libelle de Ec avec son id 
 	public String recupNonEC(int numEC){
 		String requete ;
 		ResultSet rs=null;
@@ -335,7 +338,7 @@ public class QueryBD {
 		return nom;
 
 	}
-
+// insertion d'un examen 
 	public int InsertExam( String date,int numt, int numForm,int ue,
 			int ec,String heure,String libelle, int pour){
 		String requete="INSERT INTO EXAMEN (NEXAMEN, DATE_EXAMEN, NTYPE, NFORMATION, NUE, NEC, HORAIRE, LIBELLE, POURCENTAGE) VALUES (SEQ_EXAMEN.NEXTVAL, TO_DATE('"+date+"','DD/MM/RR'),"+numt+","+numForm+","+ue+","+ec+","+heure+",'"+libelle+"',"+pour+")";

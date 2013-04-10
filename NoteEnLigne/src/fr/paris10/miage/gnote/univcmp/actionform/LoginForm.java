@@ -6,7 +6,7 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
-
+/***** ceci est le form associé a la jsp welcome.jsp pour l'authentification******/
 public class LoginForm extends ActionForm {
 	private String login=null;
 	private String mdp=null;
