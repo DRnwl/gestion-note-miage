@@ -169,6 +169,11 @@
     <td ><input id="heure" type="text" name="heure" /> 
       </td>
     </tr>
+     <tr>
+    <td>*Libelle examen :</td>
+    <td ><input id="libExam" type="text" name="libExam" /> 
+      </td>
+    </tr>
 
 </TABLE>
 			

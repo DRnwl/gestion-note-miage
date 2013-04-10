@@ -14,8 +14,19 @@ public class CreationExamForm extends ActionForm  {
 	private String form="";
 	private String numt="";
 	private  String heure="";
+	private String libExam="";
 	
 	
+	public String getLibExam() {
+		return libExam;
+	}
+
+
+	public void setLibExam(String libExam) {
+		this.libExam = libExam;
+	}
+
+
 	public String getPour() {
 		return pour;
 	}
