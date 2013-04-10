@@ -72,6 +72,17 @@
               <forward name="erreur" path="/pages/erreur/erreurlog.jsp"></forward>
    </action>  
    
+ 
+   
+   <action path="/InsertionExam" 
+		type="fr.paris10.miage.gnote.univcmp.actions.CreationExamAction"
+		name="CreationExamForm"
+		input="/pages/JSP_Enseignant/creationExam.jsp"
+			scope="request">
+			 
+   </action>  
+   
+   
    <action 	path="/Affichage" 
 			type="fr.paris10.miage.gnote.univcmp.actions.AffResultatAction"
 			name="AffResultatForm"
