@@ -148,4 +148,31 @@ public class Etudiant{
     	s=s+"</ul>";
     	return s;
     }
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((candidat == null) ? 0 : candidat.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Etudiant other = (Etudiant) obj;
+		if (candidat == null) {
+			if (other.candidat != null)
+				return false;
+		} else if (!candidat.equals(other.candidat))
+			return false;
+		return true;
+	}
+    
 }
