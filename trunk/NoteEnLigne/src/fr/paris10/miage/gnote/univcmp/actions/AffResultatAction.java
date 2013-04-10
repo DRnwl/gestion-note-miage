@@ -43,7 +43,7 @@ public class AffResultatAction extends Action{
 		//ici remplissage du tableau de note de l'etudiant
 		System.out.println("je vais mettre à jour les notes");
 		conBase.affectResultatExamenFormation(st, numeroFormation);
-		System.out.println("Nombre de note de "+st.getCandidat().getPrenom()+" : "+st.getListPromotionEtudiant().size());
+		System.out.println("Nombre de note de "+st.getCandidat().getPrenom()+" : "+st.getResultatExamen().size());
 
 		return mapping.findForward("affichage");
 
