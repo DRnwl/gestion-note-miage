@@ -1,6 +1,7 @@
 package fr.paris10.miage.gnote.usercmp.bean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fr.paris10.miage.gnote.univcmp.bean.EC;
 import fr.paris10.miage.gnote.univcmp.bean.Formation;
@@ -22,10 +23,10 @@ public class Enseignant {
     private String dateNaissance;
     private String login;
     private String pwd;
-    private ArrayList<EC>listeEC;
-	private ArrayList<UE>listeEU;
-	private ArrayList<Promotion>listePromo;
-	private ArrayList<Formation>listeForm;
+    private List<EC>listeEC;
+	private List<UE>listeEU;
+	private List<Promotion>listePromo;
+	private List<Formation>listeForm;
     /**
      * Constructeur sans parametre.
      */
@@ -151,35 +152,35 @@ public class Enseignant {
 		this.numeroEnseignant = numeroEnseignant;
 	}
 
-	public ArrayList<EC> getListeEc() {
+	public List<EC> getListeEc() {
 		return listeEC;
 	}
 
-	public void setListeEc(ArrayList<EC> listeEc) {
+	public void setListeEc(List<EC> listeEc) {
 		this.listeEC = listeEc;
 	}
 
-	public ArrayList<UE> getListeEU() {
+	public List<UE> getListeEU() {
 		return listeEU;
 	}
 
-	public void setListeEU(ArrayList<UE> listeEU) {
+	public void setListeEU(List<UE> listeEU) {
 		this.listeEU = listeEU;
 	}
 
-	public ArrayList<Promotion> getListePromo() {
+	public List<Promotion> getListePromo() {
 		return listePromo;
 	}
 
-	public void setListePromo(ArrayList<Promotion> listePromo) {
+	public void setListePromo(List<Promotion> listePromo) {
 		this.listePromo = listePromo;
 	}
 
-	public ArrayList<Formation> getListForm() {
+	public List<Formation> getListForm() {
 		return listeForm;
 	}
 
-	public void setListForm(ArrayList<Formation> listForm) {
+	public void setListForm(List<Formation> listForm) {
 		this.listeForm = listForm;
 	}
     

@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
@@ -131,9 +132,10 @@
 				<td><select name="ue">
 						<%  
             fr.paris10.miage.gnote.univcmp.bean.UE temp = new fr.paris10.miage.gnote.univcmp.bean.UE();
-            for(int i = 0; i < user.getListeEU().size(); i++) 
-		{
-            	temp=(fr.paris10.miage.gnote.univcmp.bean.UE) user.getListeEU().get(i);
+						ArrayList<UE> listeuE= (ArrayList<UE>) user.getListeEU();
+          for(int i = 0; i < listeuE.size(); i++) 
+		{       
+            	temp=(fr.paris10.miage.gnote.univcmp.bean.UE) listeuE.get(i);
 	%>
 						<option value="<%=temp.getNumeroUE() %>"><%=temp.getNumeroUE() %></option>
 						<% 
@@ -145,11 +147,12 @@
 				<td>*EC:</td>
 				<td><select name="ec">
 						<%  
-            for(int i = 0; i < user.getListeEc().size(); i++) 
+						ArrayList<EC> listeEc= (ArrayList<EC>) user.getListeEc();
+            for(int i = 0; i < listeEc.size(); i++) 
 		{
             		
 	%>
-						<option value="<%=user.getListeEc().get(i).getLibelle() %>"><%=user.getListeEc().get(i).getLibelle() %></option>
+						<option value="<%=user.getListeEc().get(i).getLibelle() %>"><%=listeEc.get(i).getLibelle() %></option>
 						<% 
 	}
     %>
@@ -159,11 +162,12 @@
 				<td>*Libellé formation :</td>
 				<td><select name="form">
 						<%  
-            for(int i = 0; i < user.getListForm().size(); i++) 
+						ArrayList<Formation> listeform= (ArrayList<Formation>) user.getListForm();
+            for(int i = 0; i < listeform.size(); i++) 
 		{
             		
 	%>
-						<option value="<%=user.getListForm().get(i).getLibelle() %>"><%=user.getListForm().get(i).getLibelle() %></option>
+						<option value="<%=user.getListForm().get(i).getLibelle() %>"><%=listeform.get(i).getLibelle() %></option>
 						<% 
 	}
     %>
