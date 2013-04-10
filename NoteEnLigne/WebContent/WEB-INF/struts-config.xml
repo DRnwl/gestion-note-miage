@@ -11,7 +11,7 @@
     <form-beans>
 
         <form-bean name="LoginForm" type="fr.paris10.miage.gnote.univcmp.actionform.LoginForm"/>
- 
+ 		<form-bean name="AffResultatForm" type="fr.paris10.miage.gnote.univcmp.actionform.AffResultatForm"/>
     </form-beans>
 
 
@@ -44,6 +44,10 @@
         <forward
             name="secretariat"
             path="/secretariat.do"/>
+         <forward
+            name="affichage"
+            path="/affichage.do"/>   
+
         
     </global-forwards>
 
@@ -65,9 +69,19 @@
 			  <forward name="enseignant" path="/pages/JSP_Enseignant/AccueilEnseignant.jsp"></forward>
 			  <forward name="etudiant" path="/pages/JSP_etudiant/AccueilEtudiant.jsp"></forward>
 			  <forward name="seretariat" path="/pages/JSP_Secretariat.jsp/secretariat.jsp"></forward>
-            <forward name="erreur" path="/pages/erreur/erreurlog.jsp"></forward>
-           </action>  
+              <forward name="erreur" path="/pages/erreur/erreurlog.jsp"></forward>
+   </action>  
+   
+   <action 	path="/Affichage" 
+			type="fr.paris10.miage.gnote.univcmp.actions.AffResultatAction"
+			name="AffResultatForm"
+			input="/pages/JSP_etudiant/AccueilEtudiant.jsp"
+			scope="request">
+			  <forward name="affichage" path="/pages/JSP_etudiant/AffNote.jsp"></forward>
+   </action> 
+			
  </action-mappings> 
+ 
 <!-- ======================================== Message Resources Definitions -->
 
     <message-resources parameter="MessageResources_fr_FR" />
