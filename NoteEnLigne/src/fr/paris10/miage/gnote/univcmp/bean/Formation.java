@@ -13,8 +13,8 @@ public class Formation {
 	private String parcours;
 
 	/**
-     * Constructeur sans parametre.
-     */
+	 * Constructeur sans parametre.
+	 */
 	public Formation() {
 		numeroFormation=0;
 		contrat=null;
@@ -26,14 +26,14 @@ public class Formation {
 	}
 
 	/**
-     * Constructeur avec parametres.
-     * @param numeroFormation
-     * @param contrat
-     * @param libelle
-     * @param niveau
-     * @param type
-     * @param parcours
-     */
+	 * Constructeur avec parametres.
+	 * @param numeroFormation
+	 * @param contrat
+	 * @param libelle
+	 * @param niveau
+	 * @param type
+	 * @param parcours
+	 */
 	public Formation(int numeroFormation, Contrat_Quadrienal contrat,
 			String libelle, String niveau, String type, String parcours) {
 		super();
@@ -44,10 +44,10 @@ public class Formation {
 		this.type = type;
 		this.parcours = parcours;
 	}
-	
+
 	/***********************************************************************************************************************
-     ******************************************************LES GETTERS/SETTERS******************************************************/
-    
+	 ******************************************************LES GETTERS/SETTERS******************************************************/
+
 
 	public int getNumeroFormation() {
 		return numeroFormation;
@@ -96,7 +96,7 @@ public class Formation {
 	public void setParcours(String parcours) {
 		this.parcours = parcours;
 	}	
-	
+
 	/***********************************************************************************************************************
 	 ****************************************************** Affichage******************************************************
 	 ***********************************************************************************************************************/

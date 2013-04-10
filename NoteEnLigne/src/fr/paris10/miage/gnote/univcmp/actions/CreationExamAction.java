@@ -18,14 +18,14 @@ import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 public class CreationExamAction extends Action{
 	public ActionForward execute( ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response )throws Exception {
-		
+
 		Enseignant ensei= new Enseignant();
-		
+
 		int numForm=0;
 		CreationExamForm moExamForm =(CreationExamForm) form;
 		ServletContext context = getServlet().getServletContext();
 		QueryBD conBase = new QueryBD(context.getRealPath(""));
-		
+
 		HttpSession session = request.getSession(true);
 		ensei= (Enseignant )session.getAttribute("user");
 		int pour = Integer.parseInt(moExamForm.getPour());
@@ -38,22 +38,22 @@ public class CreationExamAction extends Action{
 		String libelle=moExamForm.getLibExam();
 		for (int i=0;i<ensei.getListForm().size();i++){
 			if(ensei.getListForm().get(i).getLibelle().equals(forma)){
-			numForm= ensei.getListForm().get(i).getNumeroFormation();
+				numForm= ensei.getListForm().get(i).getNumeroFormation();
 			}
 		}
-		
-		int ResulInsert=conBase.InsertExam(date,numt,numForm,ue,ec,heure,libelle,pour);
-            if(ResulInsert==0){
-            
-            
-    		return mapping.findForward("erreurinsertion");
-    		
-            }else{
-            	return mapping.findForward("creationExamen");
-            }
-		
-		
-		
 
-}
+		int ResulInsert=conBase.InsertExam(date,numt,numForm,ue,ec,heure,libelle,pour);
+		if(ResulInsert==0){
+
+
+			return mapping.findForward("erreurinsertion");
+
+		}else{
+			return mapping.findForward("creationExamen");
+		}
+
+
+
+
+	}
 }

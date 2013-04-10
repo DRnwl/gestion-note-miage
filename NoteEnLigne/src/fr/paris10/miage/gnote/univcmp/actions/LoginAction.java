@@ -35,43 +35,43 @@ public class LoginAction extends Action  {
 		HttpSession session = request.getSession(true);
 
 		if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("enseignant")) {
-			 rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
-              Enseignant user=new Enseignant();
-              while (rs.next()) {
-                    user.setNumeroEnseignant(rs.getInt("NENSEIGNANT"));
-					user.setNom(rs.getString("NOM"));
-					user.setPrenom(rs.getString("PRENOM"));
-				}
-              
-              rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
-             
-                while (rs.next()) {
-                  Formation forma=new Formation();
-                  UE ue=new UE();
-                  EC ec=new EC();
-                  forma.setNumeroFormation(rs.getInt("NFORMATION"));
-                  ue.setNumeroUE(rs.getInt("NUE"));
-                  ec.setNumeroEC(rs.getInt("NEC"));
-                  forma.setLibelle(conBase.recupNonForm(forma.getNumeroFormation()));
-                  ec.setLibelle(conBase.recupNonEC(ec.getNumeroEC()));
-                  user.getListForm().add(forma);
-                  user.getListeEc().add(ec);
-                  user.getListeEU().add(ue);
-                 
-				} 
-             
-              session.setAttribute("user", user); 
+			rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
+			Enseignant user=new Enseignant();
+			while (rs.next()) {
+				user.setNumeroEnseignant(rs.getInt("NENSEIGNANT"));
+				user.setNom(rs.getString("NOM"));
+				user.setPrenom(rs.getString("PRENOM"));
+			}
+
+			rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
+
+			while (rs.next()) {
+				Formation forma=new Formation();
+				UE ue=new UE();
+				EC ec=new EC();
+				forma.setNumeroFormation(rs.getInt("NFORMATION"));
+				ue.setNumeroUE(rs.getInt("NUE"));
+				ec.setNumeroEC(rs.getInt("NEC"));
+				forma.setLibelle(conBase.recupNonForm(forma.getNumeroFormation()));
+				ec.setLibelle(conBase.recupNonEC(ec.getNumeroEC()));
+				user.getListForm().add(forma);
+				user.getListeEc().add(ec);
+				user.getListeEU().add(ue);
+
+			} 
+
+			session.setAttribute("user", user); 
 			return mapping.findForward("enseignant");
 		} else {
 			if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("secretariat"))  {
 				rs= conBase.recupIdentite("secretariat",monLoginForm.getLogin(),monLoginForm.getMdp());
 				Enseignant user=new Enseignant();
-	              while (rs.next()) {
+				while (rs.next()) {
 
-						user.setNom(rs.getString("NOM"));
-						user.setPrenom(rs.getString("PRENOM"));
-					}
-				
+					user.setNom(rs.getString("NOM"));
+					user.setPrenom(rs.getString("PRENOM"));
+				}
+
 				return mapping.findForward("secretariat");
 
 			}else {
@@ -92,7 +92,7 @@ public class LoginAction extends Action  {
 						candidat.setEtatDossier(rs.getString("ETAT_DU_DOSSIER"));
 						candidat.setEmail(rs.getString("EMAIL"));
 						user.setCandidat(candidat);
-					    user.setNumeroEtudiant(rs.getInt("NETUDIANT"));
+						user.setNumeroEtudiant(rs.getInt("NETUDIANT"));
 						user.setModeEvaluation(rs.getString("MODEEVALUATION"));
 					}
 					conBase.affectPromotionEtudiant(user);
@@ -100,7 +100,7 @@ public class LoginAction extends Action  {
 					//conBase.affectResultatExamen(user);
 					System.out.println(user.getResultatExamen().size());
 					session.setAttribute("user", user);
-		            session.setAttribute("candidat",candidat);
+					session.setAttribute("candidat",candidat);
 
 					return mapping.findForward("etudiant");
 				}else{

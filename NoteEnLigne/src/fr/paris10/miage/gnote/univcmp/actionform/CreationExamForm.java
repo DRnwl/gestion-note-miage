@@ -15,8 +15,8 @@ public class CreationExamForm extends ActionForm  {
 	private String numt="";
 	private  String heure="";
 	private String libExam="";
-	
-	
+
+
 	public String getLibExam() {
 		return libExam;
 	}
@@ -103,9 +103,9 @@ public class CreationExamForm extends ActionForm  {
 				numt.isEmpty()||heure.isEmpty()){
 			errors.add("",new ActionMessage(""));
 		}
-               
-                
-                
+
+
+
 		return errors;
 	}
 
