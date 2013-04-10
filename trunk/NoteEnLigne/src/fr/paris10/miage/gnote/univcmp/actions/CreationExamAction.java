@@ -17,7 +17,8 @@ import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 
 public class CreationExamAction extends Action{
 	public ActionForward execute( ActionMapping mapping,ActionForm form,
-			HttpServletRequest request,HttpServletResponse response )throws Exception {
+			HttpServletRequest request,HttpServletResponse response )
+			throws Exception {
 
 		Enseignant ensei= new Enseignant();
 
