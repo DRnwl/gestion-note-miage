@@ -127,7 +127,7 @@ public class Etudiant{
      ***********************************************************************************************************************/
 
     public String affResultatExamen() {
-	    String s = "<table><tr><td>Libelle Examen</td><td>Note</td></tr>";
+	    String s = "<table><tr><td>Numero UE</td><td>Libelle EC</td><td>Libelle Examen</td><td>Pourcentage</td><td>Note</td></tr>";
 	    for (ResultatExamen re : listResultatExamen) {
 	        s = s + re.toString() ;
 	    }
