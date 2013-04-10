@@ -22,18 +22,18 @@ public class LoginForm extends ActionForm {
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
-	
+
 	public ActionErrors validate( ActionMapping mapping, HttpServletRequest request) {
 		ActionErrors errors = new ActionErrors();
 		if(login.isEmpty()||mdp.isEmpty()){
 			errors.add("",new ActionMessage(""));
 		}
-               
-                
-                
+
+
+
 		return errors;
 	}
 
-	
+
 
 }

@@ -18,8 +18,8 @@ public class Examen {
 	private String libelle;
 	private String horaire;
 	private float poucentage;
-	
-	
+
+
 
 	/**
 	 * Conctructeur sans parametre.
@@ -28,18 +28,18 @@ public class Examen {
 	public Examen() {
 	}
 
-	
+
 	/**
-     * Constructeur avec parametres.
-     * @param dateExamen
-     * @param type
-     * @param formation
-     * @param ue
-     * @param ec
-     * @param libelle
-     * @param horaire
-     * @param poucentage
-     */
+	 * Constructeur avec parametres.
+	 * @param dateExamen
+	 * @param type
+	 * @param formation
+	 * @param ue
+	 * @param ec
+	 * @param libelle
+	 * @param horaire
+	 * @param poucentage
+	 */
 
 	public Examen(Date dateExamen, TypeT type, Formation formation, UE ue,
 			EC ec, String libelle, String horaire, float poucentage) {

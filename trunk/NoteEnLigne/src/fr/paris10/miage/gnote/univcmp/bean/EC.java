@@ -1,6 +1,6 @@
 package fr.paris10.miage.gnote.univcmp.bean;
 
-	
+
 
 public class EC {
 	/**
@@ -17,10 +17,10 @@ public class EC {
 	 */
 
 	public EC() {
-		
+
 		numeroEC=0;
 		formation=null;
-		 ue=null;
+		ue=null;
 		libelle="";
 		coef=0;
 	}
@@ -70,5 +70,5 @@ public class EC {
 	}
 
 
-	
+
 }

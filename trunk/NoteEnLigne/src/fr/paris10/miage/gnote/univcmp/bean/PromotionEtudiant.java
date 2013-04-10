@@ -11,8 +11,8 @@ public class PromotionEtudiant {
 	 */
 	private Etudiant etudiant;
 	private Promotion promotion;
-	
-	
+
+
 
 	/**
 	 * Conctructeur sans parametre.
@@ -33,8 +33,8 @@ public class PromotionEtudiant {
 
 		this.etudiant = etudiant;
 		this.promotion = promotion;
-		
-		
+
+
 	}
 
 	/***********************************************************************************************************************
@@ -59,7 +59,7 @@ public class PromotionEtudiant {
 	public void setPromotion(Promotion promotion) {
 		this.promotion = promotion;
 	}
-	
+
 	/***********************************************************************************************************************
 	 ****************************************************** Affichage******************************************************
 	 ***********************************************************************************************************************/
@@ -67,5 +67,5 @@ public class PromotionEtudiant {
 	public String afficherPromotion(){
 		return this.promotion.toString();
 	}
-	
+
 }

@@ -29,7 +29,7 @@ public class UE {
 		return numeroUE;
 	}
 
-	
+
 
 	public Semestre getSemestre() {
 		return semestre;
@@ -45,7 +45,7 @@ public class UE {
 		return libelle;
 	}*/
 
-	
+
 
 	/***********************************************************************************************************************
 	 ****************************************************** LES SETTERS******************************************************
@@ -69,5 +69,5 @@ public class UE {
 	public void setFormation(Formation formation) {
 		this.formation = formation;
 	}
-	
+
 }
