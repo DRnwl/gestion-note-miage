@@ -151,17 +151,17 @@ public class QueryBD {
 							+st.getNumeroEtudiant()+ " et le numero de formation: "+numeroFormation);
         try {
             PreparedStatement pst = cx.prepareStatement("SELECT distinct a_passe.netudiant, a_passe.nexamen, " +
-            		"a_passe.note, examen.date_examen, examen.ntype, examen.nformation, examen.nue, " +
-            		"examen.nec, examen.horaire, examen.libelle as libelle_examen, examen.pourcentage, " +
+            		"a_passe.note, examen.date_examen, examen.ntype, examen.nue, examen.nec, examen.horaire, " +
+            		"examen.libelle as libelle_examen, examen.pourcentage,formation.nformation, " +
             		"formation.ncontrat, formation.libelle as libelle_formation, formation.niveau, " +
-            		"formation.type_formation, formation.parcours, contrat_quadriennal.date_contrat," +
-            		" contrat_quadriennal.duree, ue.nsemestre, ec.libelle as libelle_ec, ec.coef, " +
+            		"formation.type_formation, formation.parcours, contrat_quadriennal.date_contrat, " +
+            		"contrat_quadriennal.duree, ue.nsemestre, ec.libelle as libelle_ec, ec.coef, " +
             		"semestre.libelle as libelle_semestre, typet.libelle as libelle_type " +
-            		"FROM A_PASSE, EXAMEN,FORMATION,contrat_quadriennal, UE, EC, SEMESTRE, TYPET" +
-            		" Where A_PASSE.NEXAMEN=EXAMEN.NEXAMEN " +
-            		"and FORMATION.NCONTRAT=CONTRAT_QUADRIENNAL.NCONTRAT and EXAMEN.NEC=EC.NEC " +
-            		"and EC.NUE=UE.NUE and ue.nsemestre=semestre.nsemestre and examen.ntype=typet.ntype" +
-            		" and A_PASSE.netudiant=? and EXAMEN.NFORMATION=?");
+            		"FROM A_PASSE, EXAMEN,FORMATION,contrat_quadriennal, UE, EC, SEMESTRE, TYPET " +
+            		"Where A_PASSE.NEXAMEN=EXAMEN.NEXAMEN and EXAMEN.NFORMATION=FORMATION.NFORMATION " +
+            		"and FORMATION.NFORMATION=? and FORMATION.NCONTRAT=CONTRAT_QUADRIENNAL.NCONTRAT " +
+            		"and EXAMEN.NEC=EC.NEC and EC.NUE=UE.NUE and ue.nsemestre=semestre.nsemestre " +
+            		"and examen.ntype=typet.ntype and A_PASSE.netudiant=?");
             pst.setInt(1, st.getNumeroEtudiant());         
             pst.setInt(2, numeroFormation);
             ResultSet rs = pst.executeQuery();
