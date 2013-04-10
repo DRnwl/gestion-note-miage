@@ -12,6 +12,7 @@
 
         <form-bean name="LoginForm" type="fr.paris10.miage.gnote.univcmp.actionform.LoginForm"/>
  		<form-bean name="AffResultatForm" type="fr.paris10.miage.gnote.univcmp.actionform.AffResultatForm"/>
+         <form-bean name="CreationExamForm" type="fr.paris10.miage.gnote.univcmp.actionform.CreationExamForm"/>
     </form-beans>
 
 
@@ -47,6 +48,10 @@
          <forward
             name="affichage"
             path="/affichage.do"/>   
+            <forward
+            name="CreationExamForm"
+            path="/CreationExamForm.do"/>  
+          
            
         
     </global-forwards>

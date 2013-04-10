@@ -23,7 +23,8 @@ import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 public class LoginAction extends Action  {
 	public ActionForward execute( ActionMapping mapping,ActionForm form,
-			HttpServletRequest request,HttpServletResponse response )throws SQLException {
+			HttpServletRequest request,HttpServletResponse response )
+			throws SQLException {
 		ResultSet rs=null;
 		// instanciation de la form pour l'authentification
 		LoginForm monLoginForm =(LoginForm) form;
@@ -32,7 +33,7 @@ public class LoginAction extends Action  {
 		QueryBD conBase = new QueryBD(context.getRealPath(""));
 
 		HttpSession session = request.getSession(true);
-        /* verification dans la base de donnée du statut de la personne 
+		/* verification dans la base de donnée du statut de la personne 
 		 connecté*/ 
 		if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("enseignant")) {
 			rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
@@ -42,7 +43,9 @@ public class LoginAction extends Action  {
 				user.setNom(rs.getString("NOM"));
 				user.setPrenom(rs.getString("PRENOM"));
 			}
-            /* recuperation des information relatif à l'enseignant
+			
+			rs.close();
+			/* recuperation des information relatif à l'enseignant
 			connecté pour les afficher*/   
 			rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
 
@@ -60,7 +63,7 @@ public class LoginAction extends Action  {
 				user.getListeEU().add(ue);
 
 			} 
-
+			rs.close(); 
 			session.setAttribute("user", user); 
 			return mapping.findForward("enseignant");
 		} else {
@@ -72,7 +75,7 @@ public class LoginAction extends Action  {
 					user.setNom(rs.getString("NOM"));
 					user.setPrenom(rs.getString("PRENOM"));
 				}
-
+				rs.close();
 				return mapping.findForward("secretariat");
 
 			}else {
@@ -102,7 +105,7 @@ public class LoginAction extends Action  {
 					System.out.println(user.getResultatExamen().size());
 					session.setAttribute("user", user);
 					session.setAttribute("candidat",candidat);
-
+					rs.close(); 
 					return mapping.findForward("etudiant");
 				}else{
 					return mapping.findForward("erreur");
