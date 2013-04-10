@@ -57,7 +57,7 @@ public class Promotion {
 	 ****************************************************** AFFICHAGE******************************************************
 	 ***********************************************************************************************************************/
 	public String toString(){
-		String s="<li><a href=afnote.html>"+this.formation.getType()+this.formation.getNiveau()+" "+this.formation.getLibelle()+" "+this.formation.getParcours()+"</a><input type=radio name=choix value="+this.getFormation().getNumeroFormation()+ " /></li>";
+		String s="<li>"+this.formation.getType()+this.formation.getNiveau()+" "+this.formation.getLibelle()+" "+this.formation.getParcours()+"<input type=radio name=choix value="+this.getFormation().getNumeroFormation()+ " /></li>";
 		return s;
 	}
 	
