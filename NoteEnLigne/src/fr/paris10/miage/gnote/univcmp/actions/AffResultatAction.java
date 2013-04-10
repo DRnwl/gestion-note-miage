@@ -35,14 +35,15 @@ public class AffResultatAction extends Action{
 		//recupération du numéro de formation
 		int numeroFormation=Integer.parseInt(monAffResultatForm.getChoix());
 		
-		
+		System.out.println("numero de formation selectionne: "+numeroFormation);
 		//ici récupération de l'étudiant de la session 
 		HttpSession session = request.getSession(true);
 		Etudiant st=(Etudiant) session.getAttribute("user");
 
 		//ici remplissage du tableau de note de l'etudiant
-		//conBase.affectResultatExamenFormation(st, numeroFormation);
-		//System.out.println("Affichage du nombre de note de "+st.getCandidat().getPrenom()+" : "+st.getListPromotionEtudiant().size());
+		System.out.println("je vais mettre à jour les notes");
+		conBase.affectResultatExamenFormation(st, numeroFormation);
+		System.out.println("Nombre de note de "+st.getCandidat().getPrenom()+" : "+st.getListPromotionEtudiant().size());
 
 		return mapping.findForward("affichage");
 
