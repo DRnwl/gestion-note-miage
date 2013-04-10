@@ -70,13 +70,12 @@
        <a class ="btn btn-danger" href="index.jsp">Deconnection</a>
        <br>
 	      <p align="center">Bonjour       
-          <bean:write name="candidat" property="nom" scope="request"/>
-          <bean:write name="candidat" property="prenom" scope="request"/></p>
+          <bean:write name="candidat" property="nom" scope="session"/>
+          <bean:write name="candidat" property="prenom" scope="session"/></p>
  
 		<h3><img src="images/buro.png"/>&nbsp;&nbsp; Promotion</h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><a href="afnote.html">2009/2010</a></li>
-			<li class="icn_folder"><a href="afnote.html">2010/2011</a></li>
 			<li class="icn_photo"><a href="afnote.html">2011/2012</a></li>
 			<li class="icn_add_user"><a href="afnote.html">2012/2013</a></li>
 		</ul>
@@ -94,12 +93,15 @@
 	
 		<article class="module width_full">
 		<br><br><br><br><br><br>
-			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="request" />
-			<h3><p align="center"> Bienvenue sur l'espace Etudiant</p></h3>
+			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="session" />
+			<h3><p align="center"> Bienvenue sur l'espace Etudiant </p></h3>
 			<p align="left"> Veuillez choisir l'année de consultation parmis les <%= user.getListPromotionEtudiant().size() %> suivantes:</p>	
+			
+			<form id="Aff" method="POST" action="Affichage.do">
 			<%= user.afficherListPromotion() %>
-			<p align="left"> ci-dessous un test qui récupère les notes de l'étudiant sur toutes ses promotions</p>
-			<%= user.affResultatExamen() %>
+			<input type="submit" value="soumettre"/>
+			</form>
+			
 			
 		</article><!-- end of post new article -->
 	
