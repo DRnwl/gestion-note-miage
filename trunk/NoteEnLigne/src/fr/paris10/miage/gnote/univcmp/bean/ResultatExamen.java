@@ -77,7 +77,7 @@ public class ResultatExamen {
 	
 	@Override
     public String toString() {
-        return "<tr><td>" + this.examen.getLibelle() + "</td><td>" + this.note + "</td></tr>";
+        return "<tr><td>" + this.examen.getUe().getNumeroUE() + "</td><td>" + this.examen.getEc().getLibelle() + "</td><td>" + this.examen.getLibelle() + "</td><td>" + this.examen.getPoucentage() + "</td><td>" + this.note + "</td></tr>";
     }
 
 }
