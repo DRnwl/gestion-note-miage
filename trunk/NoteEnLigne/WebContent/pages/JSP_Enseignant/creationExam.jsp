@@ -114,7 +114,7 @@
     <tr>
     <td>*UE</td>
     <td>
-			<select name="form">
+			<select name="ue">
     <%  
             fr.paris10.miage.gnote.univcmp.bean.UE temp = new fr.paris10.miage.gnote.univcmp.bean.UE();
             for(int i = 0; i < user.getListeEU().size(); i++) 
