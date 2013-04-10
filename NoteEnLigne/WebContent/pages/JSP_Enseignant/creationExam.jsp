@@ -94,7 +94,7 @@
 	<br><br><br><br><br>
 	<h3>*champs obligatoire</h3> 
 	<h2><p align="center"></p></h2><br>
-	<form id="auth" method="POST" action="Authentification.do">
+	<form id="auth" method="POST" action="InsertionExam.do">
 			
 			
 		<TABLE class="formulaire">
