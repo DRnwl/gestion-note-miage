@@ -51,6 +51,13 @@ public class QueryBD {
 			System.out.println("Erreur lors de la rï¿½cupï¿½ration des donnï¿½es contenues dans le fichier properties :" + e.toString());
 		}
 		try {
+            if (in != null) {
+                in.close();
+            }
+        } catch (IOException e) {
+            e.getMessage();
+        }
+		try {
 			Class.forName(driver);
 		} catch (Exception ex) {
 			System.err.println(ex.getMessage());
