@@ -97,7 +97,7 @@ public class LoginAction extends Action  {
 					}
 					conBase.affectPromotionEtudiant(user);
 					System.out.println(user.getListPromotionEtudiant().size());
-					conBase.affectResultatExamen(user);
+					//conBase.affectResultatExamen(user);
 					System.out.println(user.getResultatExamen().size());
 					session.setAttribute("user", user);
 		            session.setAttribute("candidat",candidat);
