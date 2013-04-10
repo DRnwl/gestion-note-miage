@@ -5,8 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -15,25 +13,27 @@ import fr.paris10.miage.gnote.univcmp.actionform.LoginForm;
 import fr.paris10.miage.gnote.univcmp.basedonnees.QueryBD;
 import fr.paris10.miage.gnote.univcmp.bean.EC;
 import fr.paris10.miage.gnote.univcmp.bean.Formation;
-import fr.paris10.miage.gnote.univcmp.bean.Promotion;
 import fr.paris10.miage.gnote.univcmp.bean.UE;
 import fr.paris10.miage.gnote.usercmp.bean.Candidat;
 import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
-
+/*** ceci est la servelet qui traite l'authentification****/
 
 
 public class LoginAction extends Action  {
 	public ActionForward execute( ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response )throws SQLException {
-		ResultSet rs;
+		ResultSet rs=null;
+		// instanciation de la form pour l'authentification
 		LoginForm monLoginForm =(LoginForm) form;
 		ServletContext context = getServlet().getServletContext();
+		// intanciation de QueryBD de données 
 		QueryBD conBase = new QueryBD(context.getRealPath(""));
 
 		HttpSession session = request.getSession(true);
-
+        /* verification dans la base de donnée du statut de la personne 
+		 connecté*/ 
 		if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("enseignant")) {
 			rs= conBase.recupIdentite("enseignant",monLoginForm.getLogin(),monLoginForm.getMdp());
 			Enseignant user=new Enseignant();
@@ -42,7 +42,8 @@ public class LoginAction extends Action  {
 				user.setNom(rs.getString("NOM"));
 				user.setPrenom(rs.getString("PRENOM"));
 			}
-
+            /* recuperation des information relatif à l'enseignant
+			connecté pour les afficher*/   
 			rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
 
 			while (rs.next()) {

@@ -5,7 +5,7 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
-
+/***** ceci est le form associé a la jsp creationExamen******/
 public class CreationExamForm extends ActionForm  {
 	private String pour="";
 	private String date="";
