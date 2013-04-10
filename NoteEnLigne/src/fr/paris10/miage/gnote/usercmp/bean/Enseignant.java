@@ -60,7 +60,7 @@ public class Enseignant {
      */
     public Enseignant(int nnumeroEnseignant,String nom, String prenom, String adresse,
             String telephone, String dateNaissance, int numeroPoste, String login, String pwd) {
-    	this.numeroEnseignant=this.numeroEnseignant;
+    	this.numeroEnseignant=nnumeroEnseignant;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
