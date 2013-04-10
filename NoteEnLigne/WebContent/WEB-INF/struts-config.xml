@@ -47,7 +47,7 @@
          <forward
             name="affichage"
             path="/affichage.do"/>   
-
+           
         
     </global-forwards>
 
@@ -78,8 +78,11 @@
 		type="fr.paris10.miage.gnote.univcmp.actions.CreationExamAction"
 		name="CreationExamForm"
 		input="/pages/JSP_Enseignant/creationExam.jsp"
-			scope="request">
-			 
+		scope="request">
+
+		<forward name="creationExamen" path="/pages/JSP_Enseignant/creationExam.jsp"></forward>
+        <forward name="erreurinsertion" path="/pages/erreur/erreurInsertion.jsp"></forward>
+    
    </action>  
    
    
