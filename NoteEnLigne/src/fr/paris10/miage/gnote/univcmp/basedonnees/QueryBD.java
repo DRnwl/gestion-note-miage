@@ -37,7 +37,7 @@ public class QueryBD {
 		try {
 			in = new FileInputStream(path +"/WEB-INF/Base.properties");
 		} catch (Exception e) {
-			System.out.println("Probleme lors de l'ouverture du fichier Base.properties" + e.toString());
+			 e.toString();
 
 		}
 		try {
@@ -48,7 +48,7 @@ public class QueryBD {
 			pwd = prop.getProperty("BDpwd");
 			in.close();
 		} catch (IOException e) {
-			System.out.println("Erreur lors de la rï¿½cupï¿½ration des donnï¿½es contenues dans le fichier properties :" + e.toString());
+			 e.toString();
 		}
 		try {
 			Class.forName(driver);//driver
@@ -60,7 +60,7 @@ public class QueryBD {
 			cx = DriverManager.getConnection(url,login,pwd);// url login pwd
 
 		} catch (SQLException ex) {
-			System.out.println("Erreur de connexion : " + ex.toString());
+			 ex.toString();
 		}
 	}
 
@@ -68,7 +68,7 @@ public class QueryBD {
 		try {
 			cx.close();
 		} catch (SQLException ex) {
-			System.out.println("Probleme deconnexion" + ex.toString());
+			 ex.toString();
 		}
 	}
 
@@ -87,7 +87,7 @@ public class QueryBD {
 			st.close();
 			return false;
 		} catch (SQLException ex) {
-			System.out.println("Erreur d'execution :" + ex.toString());
+			 ex.toString();
 		}
 		return false;
 	}
