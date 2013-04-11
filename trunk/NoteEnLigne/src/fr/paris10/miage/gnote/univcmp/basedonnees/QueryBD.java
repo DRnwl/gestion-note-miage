@@ -53,8 +53,8 @@ public class QueryBD {
 		try {
 			Class.forName(driver);//driver
 		} catch (Exception ex) {
-			System.err.println(ex.getMessage());
-			System.exit(1);
+			ex.getMessage();
+			
 		}
 		try {
 			cx = DriverManager.getConnection(url,login,pwd);// url login pwd
@@ -324,13 +324,13 @@ public class QueryBD {
 		return nom;
 
 	}	// insertion d'un examen 
-	public int InsertExam( String date,int numt, int numForm,int ue,
+	public int insertExam( String date,int numt, int numForm,int ue,
 			int ec,String heure,String libelle, int pour)throws SQLException {
 		String requete="INSERT INTO EXAMEN (NEXAMEN, DATE_EXAMEN, NTYPE, NFORMATION, NUE, NEC, HORAIRE, LIBELLE, POURCENTAGE) VALUES (SEQ_EXAMEN.NEXTVAL, TO_DATE('"+date+"','DD/MM/RR'),"+numt+","+numForm+","+ue+","+ec+","+heure+",'"+libelle+"',"+pour+")";
-		int ResInsert=0;
+		int resInsert=0;
 		try {
 			Statement st = cx.createStatement();
-			ResInsert = st.executeUpdate(requete);
+			resInsert = st.executeUpdate(requete);
 			st.close();
 
 		}
@@ -339,7 +339,7 @@ public class QueryBD {
 			e.getMessage();
 		}
 
-		return ResInsert;
+		return resInsert;
 	}
 }
 
