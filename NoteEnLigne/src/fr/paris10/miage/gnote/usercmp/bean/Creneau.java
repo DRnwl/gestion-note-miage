@@ -2,7 +2,7 @@ package fr.paris10.miage.gnote.usercmp.bean;
 
 import java.sql.Date;
 
-import fr.paris10.miage.gnote.univcmp.bean.EC;
+
 
 
 public class Creneau {

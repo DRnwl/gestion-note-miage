@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
-
 import fr.paris10.miage.gnote.univcmp.bean.EC;
 import fr.paris10.miage.gnote.univcmp.bean.Examen;
 import fr.paris10.miage.gnote.univcmp.bean.Formation;
@@ -20,7 +19,6 @@ import fr.paris10.miage.gnote.univcmp.bean.Semestre;
 import fr.paris10.miage.gnote.univcmp.bean.TypeT;
 import fr.paris10.miage.gnote.univcmp.bean.UE;
 import fr.paris10.miage.gnote.usercmp.bean.Contrat_Quadrienal;
-import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 public class QueryBD {
