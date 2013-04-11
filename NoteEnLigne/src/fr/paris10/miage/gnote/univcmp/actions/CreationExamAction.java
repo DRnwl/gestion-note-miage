@@ -1,5 +1,7 @@
 package fr.paris10.miage.gnote.univcmp.actions;
 
+import java.sql.SQLException;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +20,7 @@ import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 public class CreationExamAction extends Action{
 	public ActionForward execute( ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response )
-			throws Exception {
+			throws SQLException {
 
 		Enseignant ensei= new Enseignant();
 
@@ -43,8 +45,8 @@ public class CreationExamAction extends Action{
 			}
 		}
 
-		int ResulInsert=conBase.insertExam(date,numt,numForm,ue,ec,heure,libelle,pour);
-		if(ResulInsert==0){
+		int resulInsert=conBase.insertExam(date,numt,numForm,ue,ec,heure,libelle,pour);
+		if(resulInsert==0){
 
 
 			return mapping.findForward("erreurinsertion");
