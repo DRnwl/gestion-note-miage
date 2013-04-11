@@ -1,8 +1,7 @@
 package fr.paris10.miage.gnote.usercmp.bean;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Date;
+
 
 
 import fr.paris10.miage.gnote.univcmp.bean.Examen;
