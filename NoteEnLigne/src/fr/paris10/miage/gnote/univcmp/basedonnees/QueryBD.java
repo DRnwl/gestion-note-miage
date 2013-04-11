@@ -145,8 +145,7 @@ public class QueryBD {
 	}
 
 	public void affectResultatExamenFormation(Etudiant st, int numeroFormation) throws SQLException{
-		System.out.println("je suis dans la fonction affectResultatExamenFormation de l'étudiant n°"
-				+st.getNumeroEtudiant()+ " et le numero de formation: "+numeroFormation);
+
 		try {
 			PreparedStatement pst = cx.prepareStatement("SELECT distinct a_passe.netudiant, a_passe.nexamen, " +
 					"a_passe.note, examen.date_examen, examen.ntype, examen.nue, examen.nec, examen.horaire, " +
@@ -176,36 +175,30 @@ public class QueryBD {
 				contrat.setNumeroContrat(rs.getInt("NCONTRAT"));
 				contrat.setDateContrat(rs.getDate("DATE_CONTRAT"));
 				contrat.setDuree(rs.getFloat("DUREE"));
-				System.out.println("contrat: "+contrat.getNumeroContrat());
-
+				
 				formation.setContrat(contrat);
 				formation.setNumeroFormation(rs.getInt("NFORMATION"));
 				formation.setLibelle(rs.getString("LIBELLE_FORMATION"));
 				formation.setNiveau(rs.getString("NIVEAU"));
 				formation.setType(rs.getString("TYPE_FORMATION"));
 				formation.setParcours(rs.getString("PARCOURS"));
-				System.out.println("formation: "+formation.getNumeroFormation());
-
+				
 				semestre.setNumeroSemestre(rs.getInt("NSEMESTRE"));
 				semestre.setLibelle(rs.getString("libelle_semestre"));
-				System.out.println("semestre: "+semestre.getNumeroSemestre());
-
+				
 				ue.setNumeroUE(rs.getInt("NUE"));
 				ue.setFormation(formation);
 				ue.setSemestre(semestre);
-				System.out.println("UE: "+ue.getNumeroUE());
-
+				
 				ec.setNumeroEC(rs.getInt("NEC"));
 				ec.setUe(ue);
 				ec.setFormation(formation);
 				ec.setLibelle(rs.getString("libelle_ec"));
 				ec.setCoef(rs.getFloat("coef"));
-				System.out.println("ec: "+ ec.getNumeroEC() + ", libelle: "+ec.getLibelle());
-
+				
 				type.setNumeroType(rs.getInt("NTYPE"));
 				type.setLibelle(rs.getString("libelle_type"));
-				System.out.println("type: "+type.getNumeroType()+ ", libelle: "+type.getLibelle()+ ", class: "+type.getClass());
-
+				
 				examen.setUe(ue);
 				examen.setEc(ec);
 				examen.setFormation(formation);
@@ -214,13 +207,11 @@ public class QueryBD {
 				examen.setHoraire(rs.getString("HORAIRE"));
 				examen.setPoucentage(rs.getFloat("POURCENTAGE"));
 				examen.setType(type);
-				System.out.println("examen: "+examen.getNumeroExamen() +", libelle: "+examen.getLibelle());
-
+				
 				note.setEtudiant(st);
 				note.setExamen(examen);
 				note.setNote(rs.getDouble("NOTE"));
-				System.out.println("note: "+ note.getNote());
-
+				
 				st.addResultatExamen(note);                    
 			}
 			rs.close();
@@ -228,19 +219,14 @@ public class QueryBD {
 		} catch (SQLException e) {
 			e.getMessage();
 		}
-		System.out.println("je suis dans la fonction affectResultatExamen");
 	}
 
 	public void affectPromotionEtudiant(Etudiant st) throws SQLException{
 		try {
-			System.out.println(cx);
 			PreparedStatement pst = cx.prepareStatement("SELECT * FROM EST_DANS inner join (PROMOTION inner join (FORMATION inner join CONTRAT_QUADRIENNAL on FORMATION.NCONTRAT=CONTRAT_QUADRIENNAL.NCONTRAT) on PROMOTION.NFORMATION=FORMATION.NFORMATION) on EST_DANS.NPROMOTION=PROMOTION.NPROMOTION WHERE netudiant=?");
 			pst.setInt(1, st.getNumeroEtudiant());
-			System.out.println("pst.execute() vaut: "+pst.execute());
-
+			
 			ResultSet rs = pst.executeQuery();
-			System.out.println(rs);
-			System.out.println("rs.next() vaut "+rs.next());
 			while (rs.next()) {
 				Contrat_Quadrienal contrat= new Contrat_Quadrienal();
 				Formation formation=new Formation();
