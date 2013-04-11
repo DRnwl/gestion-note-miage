@@ -124,7 +124,7 @@
 				<TD><input id="pour" type="text" name="pour" /></TD>
 			</TR>
 			<tr>
-				<td>Date de l'examen:</td>
+				<td>Date de l'examen<br>(jj/mm/aa):</td>
 				<td><input id="date" type="text" name="date" /></td>
 			</tr>
 			<tr>
@@ -174,8 +174,9 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td>*Numero type :</td>
+				<td>*Numero type :<br> (1=final|2=continu)</td>
 				<td><input id="numt" type="text" name="numt" /></td>
+				<td></td>
 			</tr>
 			<td>*horaire :</td>
 			<td><input id="heure" type="text" name="heure" /></td>
