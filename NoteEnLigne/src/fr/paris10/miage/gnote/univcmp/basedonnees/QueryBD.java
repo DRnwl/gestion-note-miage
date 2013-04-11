@@ -120,11 +120,11 @@ public class QueryBD {
 	public ResultSet recupIdentite ( String type,String login, String pwd) throws SQLException{
 		String requete ;
 		ResultSet rs;
-		if(type=="etudiant"){
+		if(type.equals("etudiant")){
 			requete ="SELECT * FROM CANDIDAT inner join ETUDIANT on CANDIDAT.NCANDIDAT=ETUDIANT.NCANDIDAT WHERE CANDIDAT.LOG_IN = '" + login + "' AND CANDIDAT.MOT_DE_PASSE = '" + pwd + "'";
 
 		}else{
-			if(type=="scretatriat"){
+			if(type.equals("scretatriat")){
 				requete = "SELECT * FROM type_poste INNER JOIN enseignant ON " 
 						+ "type_poste.nposte = enseignant.nposte WHERE " 
 						+ "type_poste.type_poste = 'secretaire' AND " 
