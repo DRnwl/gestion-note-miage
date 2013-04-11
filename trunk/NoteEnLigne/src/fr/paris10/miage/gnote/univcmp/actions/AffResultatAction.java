@@ -26,7 +26,7 @@ import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 public class AffResultatAction extends Action{
 	public ActionForward execute( ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response )throws Exception {
-		System.out.println("je suis dans AffResultatAction");
+
 		ResultSet rs;
 		AffResultatForm monAffResultatForm =(AffResultatForm) form;
 		ServletContext context = getServlet().getServletContext();
@@ -35,15 +35,14 @@ public class AffResultatAction extends Action{
 		//recupération du numéro de formation
 		int numeroFormation=Integer.parseInt(monAffResultatForm.getChoix());
 		
-		System.out.println("numero de formation selectionne: "+numeroFormation);
+
 		//ici récupération de l'étudiant de la session 
 		HttpSession session = request.getSession(true);
 		Etudiant st=(Etudiant) session.getAttribute("user");
 
 		//ici remplissage du tableau de note de l'etudiant
-		System.out.println("je vais mettre à jour les notes");
+
 		conBase.affectResultatExamenFormation(st, numeroFormation);
-		System.out.println("Nombre de note de "+st.getCandidat().getPrenom()+" : "+st.getResultatExamen().size());
 
 		return mapping.findForward("affichage");
 
