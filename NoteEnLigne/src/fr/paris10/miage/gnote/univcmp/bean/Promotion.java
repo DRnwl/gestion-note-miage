@@ -57,8 +57,8 @@ public class Promotion {
 	 ****************************************************** AFFICHAGE******************************************************
 	 ***********************************************************************************************************************/
 	public String toString(){
-		String s="<li>"+this.formation.getType()+this.formation.getNiveau()+" "+this.formation.getLibelle()+" "+this.formation.getParcours()+"<input type=radio name=choix value="+this.getFormation().getNumeroFormation()+ " /></li>";
-		return s;
+		return "<li>"+this.formation.getType()+this.formation.getNiveau()+" "+this.formation.getLibelle()+" "+this.formation.getParcours()+"<input type=radio name=choix value="+this.getFormation().getNumeroFormation()+ " /></li>";
+		
 	}
 
 	@Override
@@ -73,20 +73,26 @@ public class Promotion {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj){
 			return true;
-		if (obj == null)
+		}
+		if (obj == null){
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()){
 			return false;
+		}
 		Promotion other = (Promotion) obj;
 		if (formation == null) {
-			if (other.formation != null)
+			if (other.formation != null){
 				return false;
-		} else if (!formation.equals(other.formation))
+			}
+		} else if (!formation.equals(other.formation)){
 			return false;
-		if (numeroPromotion != other.numeroPromotion)
+		}
+		if (numeroPromotion != other.numeroPromotion){
 			return false;
+		}
 		return true;
 	}
 	
