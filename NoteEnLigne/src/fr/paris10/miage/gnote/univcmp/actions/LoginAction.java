@@ -47,23 +47,12 @@ public class LoginAction extends Action  {
 			rs.close();
 			/* recuperation des information relatif à l'enseignant
 			connecté pour les afficher*/   
-			rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
-
-			while (rs.next()) {
-				Formation forma=new Formation();
-				UE ue=new UE();
-				EC ec=new EC();
-				forma.setNumeroFormation(rs.getInt("NFORMATION"));
-				ue.setNumeroUE(rs.getInt("NUE"));
-				ec.setNumeroEC(rs.getInt("NEC"));
-				forma.setLibelle(conBase.recupNonForm(forma.getNumeroFormation()));
-				ec.setLibelle(conBase.recupNonEC(ec.getNumeroEC()));
-				user.getListForm().add(forma);
-				user.getListeEc().add(ec);
-				user.getListeEU().add(ue);
-
-			} 
-			rs.close(); 
+			Enseignant user1 =conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
+ 
+			user.setListeEc(user1.getListeEc());
+			user.setListeEU(user1.getListeEU());
+			user.setListForm(user1.getListForm());
+			 
 			session.setAttribute("user", user); 
 			return mapping.findForward("enseignant");
 		} else {
