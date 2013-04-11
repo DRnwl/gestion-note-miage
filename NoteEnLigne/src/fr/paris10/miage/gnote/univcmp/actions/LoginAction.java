@@ -100,9 +100,6 @@ public class LoginAction extends Action  {
 						user.setModeEvaluation(rs.getString("MODEEVALUATION"));
 					}
 					conBase.affectPromotionEtudiant(user);
-					System.out.println(user.getListPromotionEtudiant().size());
-					//conBase.affectResultatExamen(user);
-					System.out.println(user.getResultatExamen().size());
 					session.setAttribute("user", user);
 					session.setAttribute("candidat",candidat);
 					rs.close(); 
