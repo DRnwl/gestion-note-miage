@@ -24,13 +24,12 @@ import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 public class QueryBD {
-
 	private Connection cx;
 	private String driver;
 	private String url;
 	private String login;
 	private String pwd;
-    // connexion a la base lors de l'instanciation
+
 	public QueryBD(String path) {
 		Properties prop = new Properties();
 		FileInputStream in = null;
@@ -52,20 +51,14 @@ public class QueryBD {
 			System.out.println("Erreur lors de la rï¿½cupï¿½ration des donnï¿½es contenues dans le fichier properties :" + e.toString());
 		}
 		try {
-            if (in != null) {
-                in.close();
-            }
-        } catch (IOException e) {
-            e.getMessage();
-        }
-		try {
-			Class.forName(driver);
+			Class.forName(driver);//driver
 		} catch (Exception ex) {
 			System.err.println(ex.getMessage());
 			System.exit(1);
 		}
 		try {
-			cx = DriverManager.getConnection(url,login,pwd);
+			cx = DriverManager.getConnection(url,login,pwd);// url login pwd
+
 		} catch (SQLException ex) {
 			System.out.println("Erreur de connexion : " + ex.toString());
 		}
@@ -79,7 +72,7 @@ public class QueryBD {
 		}
 	}
 
-	// requete sur la base  
+	/**** requete vers la base de donnÃ©es ***/ 
 	public boolean executerRequete(String requete) {
 		try {
 			Statement st = cx.createStatement();
@@ -99,7 +92,7 @@ public class QueryBD {
 		return false;
 	}
 
-// comparaison des identifiant t recuperation du statut en vue d'une redirection
+
 	public String comparerIdentifiant(String login, String pwd) throws SQLException {
 		String requete = "SELECT * FROM CANDIDAT WHERE LOG_IN = '" + login + "' AND MOT_DE_PASSE = '" + pwd + "'";
 		if(executerRequete(requete)){
@@ -124,9 +117,8 @@ public class QueryBD {
 		return "identifiant non valide";
 
 	}
-	// recuperation du nom prenom de la personne connectée pour affichage 
 	public ResultSet recupIdentite ( String type,String login, String pwd) throws SQLException{
-		String requete="" ;
+		String requete ;
 		ResultSet rs;
 		if(type=="etudiant"){
 			requete ="SELECT * FROM CANDIDAT inner join ETUDIANT on CANDIDAT.NCANDIDAT=ETUDIANT.NCANDIDAT WHERE CANDIDAT.LOG_IN = '" + login + "' AND CANDIDAT.MOT_DE_PASSE = '" + pwd + "'";
@@ -146,15 +138,11 @@ public class QueryBD {
 		} 
 
 		Statement st = cx.createStatement();
-		
 		rs = st.executeQuery(requete);
-	
 		return rs;
-        
+
 
 	}
-
-
 
 	public void affectResultatExamenFormation(Etudiant st, int numeroFormation) throws SQLException{
 		System.out.println("je suis dans la fonction affectResultatExamenFormation de l'étudiant n°"
@@ -281,42 +269,25 @@ public class QueryBD {
 	}
 	/* recueration des identifiant formation, promotion , ue et Ec concernant 
 	un enseignant*/
-	public Enseignant recupNumFormPromUeEc(int numEns){
-		String requete="" ;
+	public ResultSet recupNumFormPromUeEc(int numEns){
+		String requete ;
 		ResultSet rs=null;
-		Enseignant user1= new Enseignant();
 		requete = "SELECT * FROM CRENEAU WHERE NENSEIGNANT="+numEns;
 		try {
 			Statement st = cx.createStatement();
 			rs = st.executeQuery(requete);
 
-			while (rs.next()) {
-				Formation forma=new Formation();
-				UE ue=new UE();
-				EC ec=new EC();
-				forma.setNumeroFormation(rs.getInt("NFORMATION"));
-				ue.setNumeroUE(rs.getInt("NUE"));
-				ec.setNumeroEC(rs.getInt("NEC"));
-				forma.setLibelle(this.recupNonForm(forma.getNumeroFormation()));
-				ec.setLibelle(this.recupNonEC(ec.getNumeroEC()));
-				user1.getListForm().add(forma);
-				user1.getListeEc().add(ec);
-				user1.getListeEU().add(ue);
-
-			}
-			rs.close();
-			st.close();
-
 		}
-	   
 		catch (SQLException e) {
 			e.getMessage();
 		}
 
-		return user1;
+		return rs;
 
 	}
-// extraction du libelle de la formation avec son id 
+
+	// extraction du libelle de la formation avec son id 
+	
 	public String recupNonForm(int numform){
 		String requete ;
 		String nom="";
@@ -343,7 +314,7 @@ public class QueryBD {
 
 
 	}
-	// extraction du libelle de Ec avec son id 
+	// recuperation du nom de l'uc
 	public String recupNonEC(int numEC){
 		String requete ;
 		ResultSet rs=null;
@@ -366,23 +337,22 @@ public class QueryBD {
 
 		return nom;
 
-	}
-// insertion d'un examen 
+	}	// insertion d'un examen 
 	public int InsertExam( String date,int numt, int numForm,int ue,
-			int ec,String heure,String libelle, int pour){
+			int ec,String heure,String libelle, int pour)throws SQLException {
 		String requete="INSERT INTO EXAMEN (NEXAMEN, DATE_EXAMEN, NTYPE, NFORMATION, NUE, NEC, HORAIRE, LIBELLE, POURCENTAGE) VALUES (SEQ_EXAMEN.NEXTVAL, TO_DATE('"+date+"','DD/MM/RR'),"+numt+","+numForm+","+ue+","+ec+","+heure+",'"+libelle+"',"+pour+")";
 		int ResInsert=0;
 		try {
 			Statement st = cx.createStatement();
 			ResInsert = st.executeUpdate(requete);
-			
+			st.close();
 
 		}
-		
+
 		catch (SQLException e) {
 			e.getMessage();
 		}
-		
+
 		return ResInsert;
 	}
 }
