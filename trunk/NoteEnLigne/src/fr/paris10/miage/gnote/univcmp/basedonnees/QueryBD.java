@@ -144,7 +144,8 @@ public class QueryBD {
 
 	}
 
-	public void affectResultatExamenFormation(Etudiant st, int numeroFormation) throws SQLException{
+	public void affectResultatExamenFormation(Etudiant st, int numeroFormation)
+			    throws SQLException{
 
 		try {
 			PreparedStatement pst = cx.prepareStatement("SELECT distinct a_passe.netudiant, a_passe.nexamen, " +
