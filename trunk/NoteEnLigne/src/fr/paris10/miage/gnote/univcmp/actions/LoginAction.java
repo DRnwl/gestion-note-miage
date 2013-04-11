@@ -22,8 +22,9 @@ import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 
 public class LoginAction extends Action  {
-	public ActionForward execute( ActionMapping mapping,ActionForm form,
-			HttpServletRequest request,HttpServletResponse response )
+	public ActionForward execute( ActionMapping mapping
+			,ActionForm form,HttpServletRequest request
+			,HttpServletResponse response )
 			throws SQLException {
 		ResultSet rs=null;
 		// instanciation de la form pour l'authentification
@@ -63,7 +64,7 @@ public class LoginAction extends Action  {
 				user.getListeEU().add(ue);
 
 			} 
-
+			rs.close();
 			session.setAttribute("user", user); 
 			return mapping.findForward("enseignant");
 		} else {
@@ -110,9 +111,9 @@ public class LoginAction extends Action  {
 			}
 
 		}
-
+		
 	}
 
-
+   
 }
 

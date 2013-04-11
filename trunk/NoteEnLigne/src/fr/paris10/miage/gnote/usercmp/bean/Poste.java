@@ -68,20 +68,26 @@ public class Poste {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj){
 			return true;
-		if (obj == null)
+		}
+		if (obj == null){
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()){
 			return false;
+		}
 		Poste other = (Poste) obj;
 		if (description == null) {
-			if (other.description != null)
+			if (other.description != null){
 				return false;
-		} else if (!description.equals(other.description))
+			}
+		} else if (!description.equals(other.description)){
 			return false;
-		if (numeroPoste != other.numeroPoste)
+		}
+		if (numeroPoste != other.numeroPoste){
 			return false;
+		}
 		return true;
 	}
 

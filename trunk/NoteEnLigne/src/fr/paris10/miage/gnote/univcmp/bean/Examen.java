@@ -41,20 +41,6 @@ public class Examen {
 	 * @param poucentage
 	 */
 
-	public Examen(Date dateExamen, TypeT type, Formation formation, UE ue,
-			EC ec, String libelle, String horaire, float poucentage) {
-		super();
-		this.numeroExamen = this.nextExamen++;
-		this.dateExamen = dateExamen;
-		this.type = type;
-		this.formation = formation;
-		this.ue = ue;
-		this.ec = ec;
-		this.libelle = libelle;
-		this.horaire = horaire;
-		this.poucentage = poucentage;
-	}
-
 	/***********************************************************************************************************************
 	 ****************************************************** LES GETTERS/SETTERS******************************************************
 	 ***********************************************************************************************************************/
