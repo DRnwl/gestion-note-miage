@@ -19,18 +19,8 @@ public class Contrat_Quadrienal {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-     * Constructeur avec parametres.
-     * @param numeroContrat
-     * @param duree
-     * @param date
-     */
 	
-	public Contrat_Quadrienal(int numeroContrat,Date dateContrat, float duree) {
-		this.numeroContrat=numeroContrat;
-		this.dateContrat = dateContrat;
-		this.duree = duree;
-	}
+
 
 	/***********************************************************************************************************************
      ******************************************************LES GETTERS/SETTERS******************************************************/
@@ -69,15 +59,19 @@ public class Contrat_Quadrienal {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj){
 			return true;
-		if (obj == null)
+		}
+		if (obj == null){
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()){
 			return false;
+		}
 		Contrat_Quadrienal other = (Contrat_Quadrienal) obj;
-		if (numeroContrat != other.numeroContrat)
+		if (numeroContrat != other.numeroContrat){
 			return false;
+		}
 		return true;
 	}
 

@@ -79,15 +79,20 @@ public class EC {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj){
 			return true;
-		if (obj == null)
+		}
+		if (obj == null){
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()){
 			return false;
+		}
 		EC other = (EC) obj;
-		if (numeroEC != other.numeroEC)
+		
+		if (numeroEC != other.numeroEC){
 			return false;
+		}
 		return true;
 	}
 
