@@ -113,7 +113,7 @@
 	<ul class="toggle">
 		<li class="icn_folder"><a href="#">Saisir</a></li>
 		<li class="icn_new_article"><a
-			href="pages/JSP_Enseignant/creationExam.jsp">Creer</a></li>
+			href="creationExamf.do">Creer</a></li>
 		<li class="icn_photo"><a href="#">Modifier</a></li>
 
 	</ul>
