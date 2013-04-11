@@ -99,12 +99,13 @@ public class CreationExamForm extends ActionForm  {
 
 	public ActionErrors validate( ActionMapping mapping, HttpServletRequest request) {
 		ActionErrors errors = new ActionErrors();
-		if(pour.isEmpty()||date.isEmpty()||ue.isEmpty()||ec.isEmpty()||form.isEmpty()||
-				numt.isEmpty()||heure.isEmpty()){
+		if(pour.isEmpty()||date.isEmpty()||ue.isEmpty()){
 			errors.add("",new ActionMessage(""));
+		}else{
+        if(ec.isEmpty()||form.isEmpty()||numt.isEmpty()||heure.isEmpty()){
+        	errors.add("",new ActionMessage(""));
+        }
 		}
-
-
 
 		return errors;
 	}
