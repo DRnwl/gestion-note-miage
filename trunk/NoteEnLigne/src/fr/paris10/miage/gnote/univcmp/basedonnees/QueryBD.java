@@ -20,6 +20,7 @@ import fr.paris10.miage.gnote.univcmp.bean.Semestre;
 import fr.paris10.miage.gnote.univcmp.bean.TypeT;
 import fr.paris10.miage.gnote.univcmp.bean.UE;
 import fr.paris10.miage.gnote.usercmp.bean.Contrat_Quadrienal;
+import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 public class QueryBD {
@@ -125,7 +126,7 @@ public class QueryBD {
 	}
 	// recuperation du nom prenom de la personne connectée pour affichage 
 	public ResultSet recupIdentite ( String type,String login, String pwd) throws SQLException{
-		String requete ;
+		String requete="" ;
 		ResultSet rs;
 		if(type=="etudiant"){
 			requete ="SELECT * FROM CANDIDAT inner join ETUDIANT on CANDIDAT.NCANDIDAT=ETUDIANT.NCANDIDAT WHERE CANDIDAT.LOG_IN = '" + login + "' AND CANDIDAT.MOT_DE_PASSE = '" + pwd + "'";
@@ -145,9 +146,11 @@ public class QueryBD {
 		} 
 
 		Statement st = cx.createStatement();
+		
 		rs = st.executeQuery(requete);
+	
 		return rs;
-
+        
 
 	}
 
@@ -278,20 +281,39 @@ public class QueryBD {
 	}
 	/* recueration des identifiant formation, promotion , ue et Ec concernant 
 	un enseignant*/
-	public ResultSet recupNumFormPromUeEc(int numEns){
-		String requete ;
+	public Enseignant recupNumFormPromUeEc(int numEns){
+		String requete="" ;
 		ResultSet rs=null;
+		Enseignant user1= new Enseignant();
 		requete = "SELECT * FROM CRENEAU WHERE NENSEIGNANT="+numEns;
 		try {
 			Statement st = cx.createStatement();
 			rs = st.executeQuery(requete);
 
+			while (rs.next()) {
+				Formation forma=new Formation();
+				UE ue=new UE();
+				EC ec=new EC();
+				forma.setNumeroFormation(rs.getInt("NFORMATION"));
+				ue.setNumeroUE(rs.getInt("NUE"));
+				ec.setNumeroEC(rs.getInt("NEC"));
+				forma.setLibelle(this.recupNonForm(forma.getNumeroFormation()));
+				ec.setLibelle(this.recupNonEC(ec.getNumeroEC()));
+				user1.getListForm().add(forma);
+				user1.getListeEc().add(ec);
+				user1.getListeEU().add(ue);
+
+			}
+			rs.close();
+			st.close();
+
 		}
+	   
 		catch (SQLException e) {
 			e.getMessage();
 		}
 
-		return rs;
+		return user1;
 
 	}
 // extraction du libelle de la formation avec son id 
@@ -353,12 +375,14 @@ public class QueryBD {
 		try {
 			Statement st = cx.createStatement();
 			ResInsert = st.executeUpdate(requete);
-
+			
 
 		}
+		
 		catch (SQLException e) {
 			e.getMessage();
 		}
+		
 		return ResInsert;
 	}
 }
