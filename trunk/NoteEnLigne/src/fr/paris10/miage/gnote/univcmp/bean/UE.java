@@ -86,25 +86,33 @@ public class UE {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj){
 			return true;
-		if (obj == null)
+		}
+		if (obj == null){
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()){
 			return false;
+		}
 		UE other = (UE) obj;
 		if (formation == null) {
-			if (other.formation != null)
+			if (other.formation != null){
 				return false;
-		} else if (!formation.equals(other.formation))
+			}
+		} else if (!formation.equals(other.formation)){
 			return false;
-		if (numeroUE != other.numeroUE)
+		}
+		if (numeroUE != other.numeroUE){
 			return false;
+		}
 		if (semestre == null) {
-			if (other.semestre != null)
+			if (other.semestre != null){
 				return false;
-		} else if (!semestre.equals(other.semestre))
+			}
+		} else if (!semestre.equals(other.semestre)){
 			return false;
+		}
 		return true;
 	}
 

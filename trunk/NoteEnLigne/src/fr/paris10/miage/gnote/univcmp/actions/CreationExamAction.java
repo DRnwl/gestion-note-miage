@@ -22,7 +22,7 @@ public class CreationExamAction extends Action{
 			HttpServletRequest request,HttpServletResponse response )
 			throws SQLException {
 
-		Enseignant ensei= new Enseignant();
+		
 
 		int numForm=0;
 		CreationExamForm moExamForm =(CreationExamForm) form;
@@ -30,7 +30,7 @@ public class CreationExamAction extends Action{
 		QueryBD conBase = new QueryBD(context.getRealPath(""));
 
 		HttpSession session = request.getSession(true);
-		ensei= (Enseignant )session.getAttribute("user");
+		Enseignant ensei= (Enseignant )session.getAttribute("user");
 		int pour = Integer.parseInt(moExamForm.getPour());
 		String date=moExamForm.getDate();
 		int ue=Integer.parseInt(moExamForm.getUe());
