@@ -43,7 +43,7 @@ public class CreationExamAction extends Action{
 			}
 		}
 
-		int ResulInsert=conBase.InsertExam(date,numt,numForm,ue,ec,heure,libelle,pour);
+		int ResulInsert=conBase.insertExam(date,numt,numForm,ue,ec,heure,libelle,pour);
 		if(ResulInsert==0){
 
 
