@@ -27,25 +27,7 @@ public class Creneau {
     public Creneau() {
     }
 
-    /**
-     * Constructeur avec parametres.
-     * @param numeroEnseignant
-     * @param numeroEC
-     */
-    public Creneau(int idCreneau, int numeroEnseignant, int numeroSalle,
-			int numeroFromation, int numeroUE, int numeroEC, int numeroType,
-			Date dateCreneau, String horaire) {
-		super();
-		this.idCreneau = this.nextCreneau++;
-		this.numeroEnseignant = numeroEnseignant;
-		this.numeroSalle = numeroSalle;
-		this.numeroFromation = numeroFromation;
-		this.numeroUE = numeroUE;
-		this.numeroEC = numeroEC;
-		this.numeroType = numeroType;
-		this.dateCreneau = dateCreneau;
-		this.horaire = horaire;
-	}
+
 
     
     public int getIdCreneau() {
@@ -139,37 +121,55 @@ public class Creneau {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj){
 			return true;
-		if (obj == null)
+		}
+		if (obj == null){
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()){
+			
+		
 			return false;
+		}
 		Creneau other = (Creneau) obj;
 		if (dateCreneau == null) {
-			if (other.dateCreneau != null)
+			if (other.dateCreneau != null){
 				return false;
-		} else if (!dateCreneau.equals(other.dateCreneau))
+			}
+		} else if (!dateCreneau.equals(other.dateCreneau)){
 			return false;
+		}
 		if (horaire == null) {
-			if (other.horaire != null)
+			if (other.horaire != null){
 				return false;
-		} else if (!horaire.equals(other.horaire))
+			}
+		} else if (!horaire.equals(other.horaire)){
 			return false;
-		if (idCreneau != other.idCreneau)
+		}
+		if (idCreneau != other.idCreneau){
 			return false;
-		if (numeroEC != other.numeroEC)
+		}
+		if (numeroEC != other.numeroEC){
 			return false;
-		if (numeroEnseignant != other.numeroEnseignant)
+		}
+		if (numeroEnseignant != other.numeroEnseignant){
 			return false;
-		if (numeroFromation != other.numeroFromation)
+		}
+		if (numeroFromation != other.numeroFromation){
+			
+		
 			return false;
-		if (numeroSalle != other.numeroSalle)
+		}
+		if (numeroSalle != other.numeroSalle){
 			return false;
-		if (numeroType != other.numeroType)
+		}
+		if (numeroType != other.numeroType){
 			return false;
-		if (numeroUE != other.numeroUE)
+		}
+		if (numeroUE != other.numeroUE){
 			return false;
+		}
 		return true;
 	}
 
