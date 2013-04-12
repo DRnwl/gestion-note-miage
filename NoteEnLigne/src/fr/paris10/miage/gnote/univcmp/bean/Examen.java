@@ -9,7 +9,7 @@ public class Examen {
 	 * Les différents attributs ainsi que leur visibilité
 	 */
 	private int numeroExamen;
-	private static int nextExamen=0;
+	
 	private Date dateExamen;
 	private TypeT type;
 	private Formation formation;
@@ -50,9 +50,7 @@ public class Examen {
 		return numeroExamen;
 	}
 
-	public static int getNextExamen() {
-		return nextExamen;
-	}
+	
 
 	public Date getDateExamen() {
 		return (Date) dateExamen.clone();
@@ -91,6 +89,12 @@ public class Examen {
 
 	public void setUe(UE ue) {
 		this.ue = ue;
+	}
+
+	
+
+	public void setNumeroExamen(int numeroExamen) {
+		this.numeroExamen = numeroExamen;
 	}
 
 
