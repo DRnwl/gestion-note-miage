@@ -55,12 +55,12 @@ public class Examen {
 	}
 
 	public Date getDateExamen() {
-		return dateExamen;
+		return (Date) dateExamen.clone();
 	}
 
 
 	public void setDateExamen(Date dateExamen) {
-		this.dateExamen = dateExamen;
+		this.dateExamen = (Date) dateExamen.clone();
 	}
 
 
