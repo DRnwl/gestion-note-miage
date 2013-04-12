@@ -73,7 +73,7 @@
 		</div>
 	</section><!-- end of secondary bar -->
        <aside id="sidebar" class="column">
-       <a class ="btn btn-danger" href="index.jsp">Deconnection</a>
+       <a class ="btn btn-danger" href="index.jsp">Deconnexion</a>
        <br>
 	      <p align="center">Bonjour       
           <bean:write name="candidat" property="nom" scope="session"/>
@@ -81,11 +81,10 @@
  
 		<h3><img src="images/buro.png"/>&nbsp;&nbsp; Promotion</h3>
 		<ul class="toggle">
-			
 			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="session" />
-			<br>
-			<p align="center"> Vous avez <%= user.getListPromotionEtudiant().size() %> promotion</p>	
-			<br>
+			
+			<p align="center"> Vous avez <%= user.getListPromotionEtudiant().size() %> promotion(s)</p>	
+		
 			<form id="Aff" method="POST" action="Affichage.do">
 			
 			
