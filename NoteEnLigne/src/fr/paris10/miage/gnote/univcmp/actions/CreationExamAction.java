@@ -11,6 +11,8 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
 
 
 import fr.paris10.miage.gnote.univcmp.actionform.CreationExamForm;
@@ -53,14 +55,19 @@ public class CreationExamAction extends Action{
 				numForm= ensei.getListForm().get(i).getNumeroFormation();
 			}
 		}
-
+        
 		int resulInsert=conBase.insertExam(date,numt,numForm,ue,numEc,heure,libelle,pour);
 		if(resulInsert==0){
-   
+			ActionMessages messages = new ActionMessages();
+			messages.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("erreurInsqertion"));
+			saveMessages(request, messages);
 
-			return mapping.findForward("erreurinsertion");
+			return mapping.findForward("creationExamen");
 
 		}else{
+			ActionMessages messages = new ActionMessages();
+			messages.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("succeInsertion"));
+			saveMessages(request, messages);
 			return mapping.findForward("creationExamen");
 		}
 
