@@ -71,12 +71,16 @@ public class QueryBD {
 		}
 	}
 
-	/**** requete vers la base de donnÃ©es ***/ 
-	public boolean executerRequete(String requete) {
+	/**** requete vers la base de donnÃ©es 
+	 * @throws SQLException ***/ 
+	public boolean executerRequete(String requete) throws SQLException {
+		Statement st=null;
+		ResultSet rs=null;
+		
 		try {
-			Statement st = cx.createStatement();
+			 st = cx.createStatement();
 
-			ResultSet rs = st.executeQuery(requete);
+			 rs = st.executeQuery(requete);
 			if (rs.next()) {
 				rs.close();
 				st.close();
@@ -87,6 +91,9 @@ public class QueryBD {
 			return false;
 		} catch (SQLException ex) {
 			 ex.toString();
+		}finally{
+			rs.close();
+			st.close();
 		}
 		
 		return false;
@@ -256,15 +263,16 @@ public class QueryBD {
 	}
 	/* recueration des identifiant formation, promotion , ue et Ec concernant 
 	un enseignant*/
-	public Enseignant recupNumFormPromUeEc(int numEns){
+	public Enseignant recupNumFormPromUeEc(int numEns) throws SQLException{
 		String requete ;
 		ResultSet rs=null;
+		Statement st=null;
 		Enseignant user= new Enseignant();
 		requete = "SELECT * FROM CRENEAU WHERE NENSEIGNANT="+numEns;
 		
 			
       try{
-    	    Statement st = cx.createStatement();
+    	    st = cx.createStatement();
 			rs = st.executeQuery(requete);
 			while (rs.next()) {
 				Formation forma=new Formation();
@@ -286,6 +294,10 @@ public class QueryBD {
 		}
 		catch (SQLException e) {
 			e.getMessage();
+		}finally{
+			rs.close();
+			st.close();
+			
 		}
 
 		return null;
@@ -294,13 +306,14 @@ public class QueryBD {
 
 	// extraction du libelle de la formation avec son id 
 	
-	public String recupNonForm(int numform){
+	public String recupNonForm(int numform) throws SQLException{
 		String requete ;
 		String nom="";
+		Statement st=null;
 		ResultSet rs=null;
 		requete = "SELECT LIBELLE FROM FORMATION WHERE NFORMATION="+numform;
 		try {
-			Statement st = cx.createStatement();
+		    st = cx.createStatement();
 			rs = st.executeQuery(requete);
 
 			while (rs.next()) {
@@ -313,6 +326,9 @@ public class QueryBD {
 		}
 		catch (SQLException e) {
 			e.getMessage();
+		}finally{
+			rs.close();
+			st.close();
 		}
 
 
@@ -321,13 +337,14 @@ public class QueryBD {
 
 	}
 	// recuperation du nom de l'uc
-	public String recupNonEC(int numEC){
+	public String recupNonEC(int numEC) throws SQLException{
 		String requete ;
 		ResultSet rs=null;
+		Statement st=null;
 		String nom="";
 		requete = "SELECT LIBELLE FROM EC WHERE NEC="+numEC;
 		try {
-			Statement st = cx.createStatement();
+			 st = cx.createStatement();
 			rs = st.executeQuery(requete);
 			while (rs.next()) {
 
@@ -339,6 +356,9 @@ public class QueryBD {
 		}
 		catch (SQLException e) {
 			e.getMessage();
+		}finally{
+			rs.close();
+			st.close();
 		}
 
 		return nom;
