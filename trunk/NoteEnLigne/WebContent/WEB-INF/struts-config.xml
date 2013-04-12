@@ -66,6 +66,7 @@
         <action path="/Welcome" forward="/pages/log/Welcome.jsp" />
         <action path="/creationExamf" forward="/pages/JSP_Enseignant/creationExam.jsp" />
          <action path="/style" forward="/css/style.css" />
+         
                 
 
 
