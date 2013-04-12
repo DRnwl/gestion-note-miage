@@ -50,32 +50,6 @@ public class Contrat_Quadrienal {
 	}
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + numeroContrat;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj){
-			return true;
-		}
-		if (obj == null){
-			return false;
-		}
-		if (getClass() != obj.getClass()){
-			return false;
-		}
-		Contrat_Quadrienal other = (Contrat_Quadrienal) obj;
-		if (numeroContrat != other.numeroContrat){
-			return false;
-		}
-		return true;
-	}
-
-	@Override
 	public String toString() {
 		return "Contrat_Quadrienal [numeroContrat=" + numeroContrat
 				+ ", dateContrat=" + dateContrat + ", duree=" + duree + "]";
