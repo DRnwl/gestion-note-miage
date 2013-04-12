@@ -42,7 +42,7 @@
 	</section>
 	
 	<aside id="sidebar" class="column">
-	 <a class="btn btn-danger" href="index.jsp">Deconnection</a>
+	 <a class="btn btn-danger" href="index.jsp">Deconnexion</a>
        <br/>
       
 		<hr/>
