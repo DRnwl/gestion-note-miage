@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.ResultatExamen"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.Formation"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.UE"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.EC"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.Examen"%>
 
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
@@ -86,14 +92,37 @@
 		<article class="module width_full">
 		<br><br><br><br><br><br>
 			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="session" />
-			<p align="center"> Voici vos notes:</p>
 			
-			<%= user.affResultatExamen() %>
+			<p align="center"> Voici vos notes:</p>
 		
+			<TABLE  align="center" class="formulaire">
+			<tr>
+				<td>Numero UE</td>
+				<td>Libelle EC</td>
+				<td>Libelle Examen</td>
+				<td>Pourcentage</td>
+				<td>Note</td>
+			</tr>
+			<tr>
+				<td>
+						<%  
+            for (ResultatExamen re : user.getResultatExamen()) {      
+	%>
+				<tr>
+					<td> <%= re.getExamen().getUe().getNumeroUE() %></td>
+					<td> <%= re.getExamen().getEc().getLibelle() %></td>
+					<td> <%= re.getExamen().getLibelle() %></td>
+					<td> <%= re.getExamen().getPoucentage() %></td>
+					<td> <%= re.getNote() %></td>
+				</tr>
+	<% 
+			}
+    %>
+				
+			</tr>
+       </TABLE>
 			
 		</article><!-- end of post new article -->
-	
-	</section>
   
         <br/>
         
