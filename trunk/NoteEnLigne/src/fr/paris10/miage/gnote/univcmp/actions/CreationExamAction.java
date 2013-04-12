@@ -26,6 +26,8 @@ public class CreationExamAction extends Action{
 
 		int numForm=0;
 		int numEc=0;
+		
+		
 		CreationExamForm moExamForm =(CreationExamForm) form;
 		ServletContext context = getServlet().getServletContext();
 		QueryBD conBase = new QueryBD(context.getRealPath(""));
@@ -54,7 +56,7 @@ public class CreationExamAction extends Action{
 
 		int resulInsert=conBase.insertExam(date,numt,numForm,ue,numEc,heure,libelle,pour);
 		if(resulInsert==0){
-    System.out.println(date+" "+numt+""+numForm+""+ue+""+numEc+""+heure+""+libelle+""+pour);
+   
 
 			return mapping.findForward("erreurinsertion");
 
