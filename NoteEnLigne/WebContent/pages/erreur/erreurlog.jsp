@@ -12,7 +12,7 @@
 	<h1>
 		<bean:message key="errors.mdpIn" />
 	</h1>
-	<html:link href="Welcome.do">Recommencez</html:link>
+	<html:link href="../log/Welcome.jsp">Recommencez</html:link>
 
 </body>
 </html:html>

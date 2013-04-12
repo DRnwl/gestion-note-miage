@@ -88,7 +88,7 @@
 
 	<div class="breadcrumbs_container">
 		<article class="breadcrumbs">
-		<a href="../../index.html">Accueil</a>
+		<a href="Welcome.do">Accueil</a>
 		<div class="breadcrumb_divider"></div>
 		<a class="current">Affichage note</a></article>
 
@@ -97,7 +97,7 @@
 	</section>
 	<!-- end of secondary bar -->
 
-	<aside id="sidebar" class="column"> <a class="btn btn-danger" href="../../index.jsp">Déconnexion</a> <footer>
+	<aside id="sidebar" class="column"> <a class="btn btn-danger" href="Welcome.do">Déconnexion</a> <footer>
 	<hr />
 	<p>
 		<strong>Copyright &copy; Miage UPO 2013 </strong>
@@ -168,8 +168,10 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td>*Numero type :<br> (1=final|2=continu)</td>
-				<td><input id="numt" type="text" name="numt" /></td>
+				<td>*Numero type :</td>
+				<td><select name="numt"><option value="1">Examen_final</option>
+				    <option value="2">Control_Continue</option></select>
+				</td>
 				<td></td>
 			</tr>
 			<td>*horaire :</td>
