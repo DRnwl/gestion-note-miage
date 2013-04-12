@@ -48,24 +48,13 @@ public class LoginAction extends Action  {
 			rs.close();
 			/* recuperation des information relatif à l'enseignant
 			connecté pour les afficher*/   
-			rs=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
+			Enseignant user1=conBase.recupNumFormPromUeEc(user.getNumeroEnseignant());
 
-			while (rs.next()) {
-				Formation forma=new Formation();
-				UE ue=new UE();
-				EC ec=new EC();
-				forma.setNumeroFormation(rs.getInt("NFORMATION"));
-				ue.setNumeroUE(rs.getInt("NUE"));
-				ec.setNumeroEC(rs.getInt("NEC"));
-				forma.setLibelle(conBase.recupNonForm(forma.getNumeroFormation()));
-				ec.setLibelle(conBase.recupNonEC(ec.getNumeroEC()));
-				user.getListForm().add(forma);
-				user.getListeEc().add(ec);
-				user.getListeEU().add(ue);
-
-			} 
-			rs.close();
+			user.setListForm(user1.getListForm());
+			user.setListeEc(user1.getListeEc());
+			user.setListeEU(user1.getListeEU());
 			session.setAttribute("user", user); 
+			conBase.fermerConnexio();
 			return mapping.findForward("enseignant");
 		} else {
 			if ((conBase.comparerIdentifiant(monLoginForm.getLogin(), monLoginForm.getMdp())).equals("secretariat"))  {
@@ -77,6 +66,7 @@ public class LoginAction extends Action  {
 					user.setPrenom(rs.getString("PRENOM"));
 				}
 				rs.close();
+				conBase.fermerConnexio();
 				return mapping.findForward("secretariat");
 
 			}else {
@@ -104,6 +94,7 @@ public class LoginAction extends Action  {
 					session.setAttribute("user", user);
 					session.setAttribute("candidat",candidat);
 					rs.close(); 
+					conBase.fermerConnexio();
 					return mapping.findForward("etudiant");
 				}else{
 					return mapping.findForward("erreur");

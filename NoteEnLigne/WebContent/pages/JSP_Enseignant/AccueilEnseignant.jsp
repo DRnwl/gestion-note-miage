@@ -80,7 +80,7 @@
 	</div>
 	<div class="breadcrumbs_container">
 		<article class="breadcrumbs">
-		<a href="index.html">Accueil</a>
+		<a href="Welcome.do">Accueil</a>
 		<div class="breadcrumb_divider"></div>
 		<a class="current">Affichage note</a></article>
 	</div>

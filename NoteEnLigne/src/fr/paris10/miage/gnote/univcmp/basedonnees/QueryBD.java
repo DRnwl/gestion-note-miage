@@ -19,6 +19,7 @@ import fr.paris10.miage.gnote.univcmp.bean.Semestre;
 import fr.paris10.miage.gnote.univcmp.bean.TypeT;
 import fr.paris10.miage.gnote.univcmp.bean.UE;
 import fr.paris10.miage.gnote.usercmp.bean.Contrat_Quadrienal;
+import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 public class QueryBD {
@@ -87,6 +88,7 @@ public class QueryBD {
 		} catch (SQLException ex) {
 			 ex.toString();
 		}
+		
 		return false;
 	}
 
@@ -116,8 +118,8 @@ public class QueryBD {
 
 	}
 	public ResultSet recupIdentite ( String type,String login, String pwd) throws SQLException{
-		String requete ;
-		ResultSet rs;
+		String requete="" ;
+		ResultSet rs=null;
 		if(type.equals("etudiant")){
 			requete ="SELECT * FROM CANDIDAT inner join ETUDIANT on CANDIDAT.NCANDIDAT=ETUDIANT.NCANDIDAT WHERE CANDIDAT.LOG_IN = '" + login + "' AND CANDIDAT.MOT_DE_PASSE = '" + pwd + "'";
 
@@ -254,20 +256,39 @@ public class QueryBD {
 	}
 	/* recueration des identifiant formation, promotion , ue et Ec concernant 
 	un enseignant*/
-	public ResultSet recupNumFormPromUeEc(int numEns){
+	public Enseignant recupNumFormPromUeEc(int numEns){
 		String requete ;
 		ResultSet rs=null;
+		Enseignant user= new Enseignant();
 		requete = "SELECT * FROM CRENEAU WHERE NENSEIGNANT="+numEns;
-		try {
-			Statement st = cx.createStatement();
+		
+			
+      try{
+    	    Statement st = cx.createStatement();
 			rs = st.executeQuery(requete);
+			while (rs.next()) {
+				Formation forma=new Formation();
+				UE ue=new UE();
+				EC ec=new EC();
+				forma.setNumeroFormation(rs.getInt("NFORMATION"));
+				ue.setNumeroUE(rs.getInt("NUE"));
+				ec.setNumeroEC(rs.getInt("NEC"));
+				forma.setLibelle(this.recupNonForm(forma.getNumeroFormation()));
+				ec.setLibelle(this.recupNonEC(ec.getNumeroEC()));
+				user.getListForm().add(forma);
+				user.getListeEc().add(ec);
+				user.getListeEU().add(ue);
 
+			} 
+			rs.close();
+			st.close();
+			return user;
 		}
 		catch (SQLException e) {
 			e.getMessage();
 		}
 
-		return rs;
+		return null;
 
 	}
 
@@ -340,6 +361,9 @@ public class QueryBD {
 		}
 
 		return resInsert;
+	}
+	public void fermerConnexio() throws SQLException{
+		cx.close();
 	}
 }
 
