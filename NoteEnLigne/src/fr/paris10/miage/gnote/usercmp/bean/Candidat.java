@@ -126,39 +126,6 @@ public class Candidat {
 
 
 
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + numeroCandidat;
-		return result;
-	}
-
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj){
-			return true;
-		}
-		if (obj == null){
-			return false;
-		}
-		if (getClass() != obj.getClass()){
-			return false;
-		}
-		Candidat other = (Candidat) obj;
-		if (numeroCandidat != other.numeroCandidat){
-			return false;
-		}
-		return true;
-	}
-
-
-
-
 	@Override
 	public String toString() {
 		return "Candidat [nom=" + nom + ", prenom=" + prenom + ", adresse="
