@@ -4,6 +4,13 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+
+<%@page import="java.util.ArrayList"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.PromotionEtudiant"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.Formation"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.UE"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.EC"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.Examen"%>
   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -98,7 +105,17 @@
 			<p align="left"> Veuillez choisir l'année de consultation parmis les <%= user.getListPromotionEtudiant().size() %> suivantes:</p>	
 			
 			<form id="Aff" method="POST" action="Affichage.do">
-			<%= user.afficherListPromotion() %>
+			
+			
+			<%  
+            for (PromotionEtudiant pe : user.getListPromotionEtudiant()) {      
+	%>
+				<li><%=pe.getPromotion().getFormation().getType()+ pe.getPromotion().getFormation().getNiveau()+" "+pe.getPromotion().getFormation().getLibelle()+" "+pe.getPromotion().getFormation().getParcours()%>
+					<input type="radio" name="choix" value="<%=pe.getPromotion().getFormation().getNumeroFormation()%>"/></li>
+	<% 
+			}
+    %>
+			
 			<input type="submit" value="soumettre"/>
 			</form>
 			
