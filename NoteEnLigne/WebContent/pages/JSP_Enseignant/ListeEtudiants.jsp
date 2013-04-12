@@ -64,6 +64,7 @@
 	<h2 class="section_title">Liste des étudiants</h2>
 	</div>
 	</hgroup> </header>
+	<a class="btn btn-danger" href="index.jsp">Déconnexion</a> <br>
         <br><br>
         <div>
             <FORM action="">
