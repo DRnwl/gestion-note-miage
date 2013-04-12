@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Properties;
 import fr.paris10.miage.gnote.univcmp.bean.EC;
 import fr.paris10.miage.gnote.univcmp.bean.Examen;
@@ -303,6 +304,43 @@ public class QueryBD {
 		return null;
 
 	}
+	
+	//recupération de l'ensemble des formations
+	public void affectListFormation(Enseignant e) throws SQLException{
+		String requete ;
+		Statement st=null;
+		ResultSet rs=null;
+		requete = "SELECT * FROM FORMATION";
+		try {
+		    st = cx.createStatement();
+			rs = st.executeQuery(requete);
+
+			while (rs.next()) {
+				int numero=rs.getInt("NFORMATION");
+				String libelle=rs.getString("LIBELLE");
+				String niveau=rs.getString("NIVEAU");
+				String type=rs.getString("TYPE_FORMATION");
+				String parcours=rs.getString("PARCOURS");
+				Formation form=new Formation();
+				form.setNumeroFormation(numero);
+				form.setLibelle(libelle);
+				form.setNiveau(niveau);
+				form.setType(type);
+				form.setParcours(parcours);
+				e.getListFormations().add(form);		
+
+			}
+			rs.close();
+			st.close();
+		}
+		catch (SQLException ex) {
+			ex.getMessage();
+		}finally{
+			rs.close();
+			st.close();
+		}
+
+	}
 
 	// extraction du libelle de la formation avec son id 
 	
@@ -363,7 +401,9 @@ public class QueryBD {
 
 		return nom;
 
-	}	// insertion d'un examen 
+	}
+	
+	// insertion d'un examen 
 	public int insertExam( String date,int numt, int numForm,int ue,
 			int ec,String heure,String libelle, int pour)throws SQLException {
 		String requete="";
