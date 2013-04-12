@@ -15,12 +15,12 @@
 <header id="header"> 
 <hgroup>
 	<h1 class="site_title">
-		<a href="index.html"><img width="50%" height="50%"
-			src="images/logo.png" title="Note Miage" /></a>
+		<a href="index.html"><img width="50%" height="50%" src="images/logo.png" title="Note Miage" /></a>
 	</h1>
 	<h2 class="section_title">Liste des étudiants</h2>
 	</hgroup>
 	</header>
+	<a class="btn btn-danger" href="index.jsp">Déconnexion</a> <br>
         <h2>Consulter  Fiche étudiante </h2>
         
         <table  border="9" >
