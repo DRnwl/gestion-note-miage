@@ -61,7 +61,7 @@
         $('.column').equalHeight();
     });
 </script>
-<title>Accueil Responsable</title>
+<title>Interface de creation d'un examens</title>
 </head>
 <jsp:useBean id="user" scope="session"
 	class="fr.paris10.miage.gnote.usercmp.bean.Enseignant" />
@@ -97,23 +97,17 @@
 	</section>
 	<!-- end of secondary bar -->
 
-	<aside id="sidebar" class="column"> <a class="btn btn-danger"
-		href="../../index.jsp">Deconnection</a> <footer>
+	<aside id="sidebar" class="column"> <a class="btn btn-danger" href="../../index.jsp">Déconnexion</a> <footer>
 	<hr />
 	<p>
 		<strong>Copyright &copy; Miage UPO 2013 </strong>
-	</p>
-	<p>
-		<a href="#"></a>
 	</p>
 	</footer> </aside>
 	<!-- end of sidebar -->
 	<article class="module width_full"> <br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<h3>*champs obligatoire</h3>
+	<h4>*champs obligatoire</h4>
 
 	<form id="Insert" method="POST" action="InsertionExam.do">
 
