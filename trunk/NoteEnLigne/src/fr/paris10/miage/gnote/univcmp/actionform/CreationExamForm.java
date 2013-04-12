@@ -103,7 +103,7 @@ public class CreationExamForm extends ActionForm  {
 			errors.add("",new ActionMessage(""));
 		}else{
         if(ec.isEmpty()||form.isEmpty()||numt.isEmpty()||heure.isEmpty()){
-        	errors.add("",new ActionMessage(""));
+        	errors.add("name",new ActionMessage("name"));
         }
 		}
 
