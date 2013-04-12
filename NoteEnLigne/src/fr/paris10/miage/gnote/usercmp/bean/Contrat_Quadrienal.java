@@ -34,11 +34,11 @@ public class Contrat_Quadrienal {
 	}
 
 	public Date getDateContrat() {
-		return dateContrat;
+		return (Date) dateContrat.clone();
 	}
 
 	public void setDateContrat(Date dateContrat) {
-		this.dateContrat = dateContrat;
+		this.dateContrat = (Date) dateContrat.clone();
 	}
 
 	public float getDuree() {
