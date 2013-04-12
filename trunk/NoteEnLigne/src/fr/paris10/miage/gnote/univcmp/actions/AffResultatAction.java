@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -14,7 +16,7 @@ import fr.paris10.miage.gnote.usercmp.bean.Etudiant;
 
 public class AffResultatAction extends Action{
 	public ActionForward execute( ActionMapping mapping,ActionForm form,
-			HttpServletRequest request,HttpServletResponse response )throws Exception {
+			HttpServletRequest request,HttpServletResponse response )throws SQLException {
 
 		AffResultatForm monAffResultatForm =(AffResultatForm) form;
 		ServletContext context = getServlet().getServletContext();
