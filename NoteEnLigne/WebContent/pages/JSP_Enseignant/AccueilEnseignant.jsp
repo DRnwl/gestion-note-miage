@@ -87,8 +87,7 @@
 	</section>
 	<!-- end of secondary bar -->
 
-	<aside id="sidebar" class="column"> <a class="btn btn-danger"
-		href="index.jsp">Deconnection</a> <br>
+	<aside id="sidebar" class="column"> <a class="btn btn-danger" href="index.jsp">Déconnexion</a> <br>
 
 	<hr />
 	<h3>
