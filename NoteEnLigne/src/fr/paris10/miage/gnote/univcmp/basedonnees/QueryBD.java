@@ -367,7 +367,7 @@ public class QueryBD {
 	public int insertExam( String date,int numt, int numForm,int ue,
 			int ec,String heure,String libelle, int pour)throws SQLException {
 		String requete="";
-		 requete="INSERT INTO EXAMEN (NEXAMEN, DATE_EXAMEN, NTYPE, NFORMATION, NUE, NEC, HORAIRE, LIBELLE, POURCENTAGE) VALUES (SEQ_EXAMEN.NEXTVAL, TO_DATE('"+date+"','DD/MM/RR'),"+numt+","+numForm+","+ue+","+ec+","+heure+",'"+libelle+"',"+pour+")";
+		 requete="INSERT INTO EXAMEN (NEXAMEN, DATE_EXAMEN, NTYPE, NFORMATION, NUE, NEC, HORAIRE, LIBELLE, POURCENTAGE) VALUES (SEQ_EXAMEN.NEXTVAL, TO_DATE('"+date+"','DD/MM/RR'),"+numt+","+numForm+","+ue+","+ec+",'"+heure+"','"+libelle+"',"+pour+")";
 		int resInsert=0;
 		try {
 			Statement st = cx.createStatement();

@@ -25,6 +25,7 @@ public class CreationExamAction extends Action{
 		
 
 		int numForm=0;
+		int numEc=0;
 		CreationExamForm moExamForm =(CreationExamForm) form;
 		ServletContext context = getServlet().getServletContext();
 		QueryBD conBase = new QueryBD(context.getRealPath(""));
@@ -34,20 +35,26 @@ public class CreationExamAction extends Action{
 		int pour = Integer.parseInt(moExamForm.getPour());
 		String date=moExamForm.getDate();
 		int ue=Integer.parseInt(moExamForm.getUe());
-		int ec=Integer.parseInt(moExamForm.getEc());
+		String  ec =moExamForm.getEc();
+		for (int i=0;i<ensei.getListeEc().size();i++){
+			if(ensei.getListeEc().get(i).getLibelle().equals(ec)){
+				numEc= ensei.getListeEc().get(i).getNumeroEC();
+			}
+		}
 		String forma =moExamForm.getForm();
 		int numt=Integer.parseInt(moExamForm.getNumt());
 		String heure=moExamForm.getHeure();
 		String libelle=moExamForm.getLibExam();
+		
 		for (int i=0;i<ensei.getListForm().size();i++){
 			if(ensei.getListForm().get(i).getLibelle().equals(forma)){
 				numForm= ensei.getListForm().get(i).getNumeroFormation();
 			}
 		}
 
-		int resulInsert=conBase.insertExam(date,numt,numForm,ue,ec,heure,libelle,pour);
+		int resulInsert=conBase.insertExam(date,numt,numForm,ue,numEc,heure,libelle,pour);
 		if(resulInsert==0){
-
+    System.out.println(date+" "+numt+""+numForm+""+ue+""+numEc+""+heure+""+libelle+""+pour);
 
 			return mapping.findForward("erreurinsertion");
 
