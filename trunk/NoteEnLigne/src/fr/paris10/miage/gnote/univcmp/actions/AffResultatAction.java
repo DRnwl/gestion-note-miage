@@ -29,9 +29,9 @@ public class AffResultatAction extends Action{
 		//ici récupération de l'étudiant de la session 
 		HttpSession session = request.getSession(true);
 		Etudiant st=(Etudiant) session.getAttribute("user");
-
+		
 		//ici remplissage du tableau de note de l'etudiant
-
+		st.getResultatExamen().clear();
 		conBase.affectResultatExamenFormation(st, numeroFormation);
 
 		return mapping.findForward("affichage");
