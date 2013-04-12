@@ -53,7 +53,7 @@ public class Candidat {
     }
 
     public Date getDateNaissance() {
-        return this.dateNaissance;
+        return (Date) dateNaissance.clone();
     }
 
     public String getLogin() {
@@ -101,7 +101,7 @@ public class Candidat {
     }
 
     public void setDateNaissance(Date dateNaissance) {
-        this.dateNaissance = dateNaissance;
+        this.dateNaissance = (Date) dateNaissance.clone();
     }
 
     public void setLogin(String login) {
