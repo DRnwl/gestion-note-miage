@@ -105,7 +105,7 @@
 			</tr>
 			<tr>
 				<td>
-						<%  
+	<%  
             for (ResultatExamen re : user.getResultatExamen()) {      
 	%>
 				<tr>
