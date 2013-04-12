@@ -1,11 +1,7 @@
 package fr.paris10.miage.gnote.usercmp.bean;
 
 import java.util.ArrayList;
-
-
-
 import fr.paris10.miage.gnote.univcmp.bean.Examen;
-import fr.paris10.miage.gnote.univcmp.bean.Promotion;
 import fr.paris10.miage.gnote.univcmp.bean.PromotionEtudiant;
 import fr.paris10.miage.gnote.univcmp.bean.ResultatExamen;
 
@@ -124,16 +120,7 @@ public class Etudiant{
  /***********************************************************************************************************************
      ******************************************************Affichage******************************************************
      ***********************************************************************************************************************/
-
-    public String affResultatExamen() {
-	    String s = "<table><tr><td>Numero UE</td><td>Libelle EC</td><td>Libelle Examen</td><td>Pourcentage</td><td>Note</td></tr>";
-	    for (ResultatExamen re : listResultatExamen) {
-	        s = s + re.toString() ;
-	    }
-	    s = s + "</table>";
-	    return s;
-    }
-    
+   
 
     /**
      * Afficher les promotions de l'étudiant
