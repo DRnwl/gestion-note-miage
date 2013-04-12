@@ -10,6 +10,8 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.PromotionEtudiant"%>
+
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -78,6 +80,28 @@
           <bean:write name="candidat" property="prenom" scope="session"/></p>
  
 		<h3><img src="images/buro.png"/>&nbsp;&nbsp; Promotion</h3>
+		<ul class="toggle">
+			
+			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="session" />
+			<br>
+			<p align="center"> Vous avez <%= user.getListPromotionEtudiant().size() %> promotion</p>	
+			<br>
+			<form id="Aff" method="POST" action="Affichage.do">
+			
+			
+			<%  
+            for (PromotionEtudiant pe : user.getListPromotionEtudiant()) {      
+	%>
+				<p align="center"><li class="icn_new_article"><%=pe.getPromotion().getFormation().getType()+ pe.getPromotion().getFormation().getNiveau()+" "+pe.getPromotion().getFormation().getLibelle()+" "+pe.getPromotion().getFormation().getParcours()%>
+					<input type="radio" name="choix" value="<%=pe.getPromotion().getFormation().getNumeroFormation()%>"/></li></p>
+	<% 
+			}
+    %>
+    <br>
+    <p align="center"><input type="submit" value="soumettre"/>
+			</form>
+		</ul>
+		
 		
 		<footer>
 			<hr />
@@ -91,7 +115,6 @@
 	
 		<article class="module width_full">
 		<br><br><br><br><br><br>
-			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="session" />
 			
 			<p align="center"> Voici vos notes:</p>
 		
