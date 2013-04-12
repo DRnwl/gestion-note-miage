@@ -87,11 +87,11 @@ public class Creneau {
 	}
 
 	public Date getDateCreneau() {
-		return dateCreneau;
+		return (Date) dateCreneau.clone();
 	}
 
 	public void setDateCreneau(Date dateCreneau) {
-		this.dateCreneau = dateCreneau;
+		this.dateCreneau = (Date)dateCreneau.clone();
 	}
 
 	public String getHoraire() {
