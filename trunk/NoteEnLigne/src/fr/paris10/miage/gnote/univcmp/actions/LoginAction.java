@@ -9,6 +9,9 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
+
 import fr.paris10.miage.gnote.univcmp.actionform.LoginForm;
 import fr.paris10.miage.gnote.univcmp.basedonnees.QueryBD;
 import fr.paris10.miage.gnote.univcmp.bean.EC;
@@ -97,7 +100,12 @@ public class LoginAction extends Action  {
 					conBase.fermerConnexio();
 					return mapping.findForward("etudiant");
 				}else{
-					return mapping.findForward("erreur");
+					ActionMessages messages = new ActionMessages();
+					messages.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("erreurAuth"));
+					saveMessages(request, messages);
+
+					return mapping.findForward("pageDep");
+					
 				}
 			}
 

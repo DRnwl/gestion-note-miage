@@ -107,6 +107,11 @@
 	<article class="module width_full"> <br>
 	<br>
 	<br>
+	<h2><logic:messagesPresent message="true">
+   <html:messages id="message" message="true">
+     <bean:write name="message"/><br/>
+   </html:messages>
+</logic:messagesPresent></h2>
 	<h4>*champs obligatoire</h4>
 
 	<form id="Insert" method="POST" action="InsertionExam.do">
