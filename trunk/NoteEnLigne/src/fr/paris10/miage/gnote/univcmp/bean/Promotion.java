@@ -53,12 +53,5 @@ public class Promotion {
 		this.formation = formation;
 	}
 	
-	/***********************************************************************************************************************
-	 ****************************************************** AFFICHAGE******************************************************
-	 ***********************************************************************************************************************/
-	public String toString(){
-		return "<li>"+this.formation.getType()+this.formation.getNiveau()+" "+this.formation.getLibelle()+" "+this.formation.getParcours()+"<input type=radio name=choix value="+this.getFormation().getNumeroFormation()+ " /></li>";
-		
-	}
 
 }
