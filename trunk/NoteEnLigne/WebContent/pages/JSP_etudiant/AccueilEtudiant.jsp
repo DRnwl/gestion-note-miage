@@ -82,9 +82,25 @@
  
 		<h3><img src="images/buro.png"/>&nbsp;&nbsp; Promotion</h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><a href="afnote.html">2009/2010</a></li>
-			<li class="icn_photo"><a href="afnote.html">2011/2012</a></li>
-			<li class="icn_add_user"><a href="afnote.html">2012/2013</a></li>
+			
+			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="session" />
+			<br>
+			<p align="center"> Vous avez <%= user.getListPromotionEtudiant().size() %> promotion</p>	
+			<br>
+			<form id="Aff" method="POST" action="Affichage.do">
+			
+			
+			<%  
+            for (PromotionEtudiant pe : user.getListPromotionEtudiant()) {      
+	%>
+				<p align="center"><li class="icn_new_article"><%=pe.getPromotion().getFormation().getType()+ pe.getPromotion().getFormation().getNiveau()+" "+pe.getPromotion().getFormation().getLibelle()+" "+pe.getPromotion().getFormation().getParcours()%>
+					<input type="radio" name="choix" value="<%=pe.getPromotion().getFormation().getNumeroFormation()%>"/></li></p>
+	<% 
+			}
+    %>
+    <br>
+    <p align="center"><input type="submit" value="soumettre"/>
+			</form>
 		</ul>
 		
 		
@@ -99,25 +115,10 @@
 	
 	
 		<article class="module width_full">
-		<br><br><br><br><br><br>
-			<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Etudiant" scope="session" />
+		<br><br><br><br><br>
 			<h3><p align="center"> Bienvenue sur l'espace Etudiant </p></h3>
-			<p align="left"> Veuillez choisir l'année de consultation parmis les <%= user.getListPromotionEtudiant().size() %> suivantes:</p>	
-			
-			<form id="Aff" method="POST" action="Affichage.do">
 			
 			
-			<%  
-            for (PromotionEtudiant pe : user.getListPromotionEtudiant()) {      
-	%>
-				<li><%=pe.getPromotion().getFormation().getType()+ pe.getPromotion().getFormation().getNiveau()+" "+pe.getPromotion().getFormation().getLibelle()+" "+pe.getPromotion().getFormation().getParcours()%>
-					<input type="radio" name="choix" value="<%=pe.getPromotion().getFormation().getNumeroFormation()%>"/></li>
-	<% 
-			}
-    %>
-			
-			<input type="submit" value="soumettre"/>
-			</form>
 			
 			
 		</article><!-- end of post new article -->
