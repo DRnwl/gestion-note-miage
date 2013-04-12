@@ -27,6 +27,7 @@ public class Enseignant {
 	private List<UE>listeEU;
 	private List<Promotion>listePromo;
 	private List<Formation>listeForm;
+	private List<Formation>listFormations;
     /**
      * Constructeur sans parametre.
      */
@@ -44,6 +45,7 @@ public class Enseignant {
         this.listeForm= new ArrayList<Formation>();
         this.listeEC= new ArrayList<EC>();
         this.listeEU= new ArrayList<UE>();
+        this.listFormations=new ArrayList<Formation>();
         
         
     }
@@ -183,7 +185,16 @@ public class Enseignant {
 	public void setListForm(List<Formation> listForm) {
 		this.listeForm = listForm;
 	}
+
+	public List<Formation> getListFormations() {
+		return listFormations;
+	}
+
+	public void setListFormations(List<Formation> listFormations) {
+		this.listFormations = listFormations;
+	}
     
+	
     
     
 }
