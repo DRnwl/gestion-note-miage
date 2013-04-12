@@ -12,7 +12,15 @@
 <title>Fiche Etudiante</title>
 </head>
 <body>
- <div id="contenu">
+<header id="header"> 
+<hgroup>
+	<h1 class="site_title">
+		<a href="index.html"><img width="50%" height="50%"
+			src="images/logo.png" title="Note Miage" /></a>
+	</h1>
+	<h2 class="section_title">Liste des étudiants</h2>
+	</hgroup>
+	</header>
         <h2>Consulter  Fiche étudiante </h2>
         
         <table  border="9" >
@@ -50,6 +58,5 @@
             </tr>
           
         </table>           
-    </div>
 </body>
 </html>
