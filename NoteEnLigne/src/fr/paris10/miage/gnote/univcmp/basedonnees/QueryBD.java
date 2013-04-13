@@ -462,10 +462,10 @@ public class QueryBD {
 	}
 	
 	//insertion de la modification d'un coefficient d'EC
-	public int ModifierCoefEC( int numeroFormation, int numeroEC,String coef)throws SQLException {
+	public int ModifierCoefEC( int numeroFormation, int numeroEC,float coef)throws SQLException {
 		String requete="";
 		 requete="Update EC set COEF="+coef+" WHERE NFORMATION="+numeroFormation+ "and NEC="+numeroEC;
-		int resInsert=0;
+		 int resInsert=0;
 		try {
 			Statement st = cx.createStatement();
 			resInsert = st.executeUpdate(requete);
