@@ -9,7 +9,7 @@ public class ModifierCoefECForm extends ActionForm{
 		return coef;
 	}
 
-	public void setChoix(String coef) {
+	public void setCoef(String coef) {
 		this.coef = coef;
 	}
 	
