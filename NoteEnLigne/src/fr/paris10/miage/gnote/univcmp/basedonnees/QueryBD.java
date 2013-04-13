@@ -341,6 +341,41 @@ public class QueryBD {
 		}
 
 	}
+	
+	//recupération de l'ensemble des Ec d'une formation donnée
+		public void affectListECFormation(Enseignant e, int numeroFormation) throws SQLException{
+			PreparedStatement pst = cx.prepareStatement("SELECT EC.NFORMATION, EC.NEC, EC.LIBELLE, COEF FROM EC WHERE NFORMATION=?");
+			pst.setInt(1, numeroFormation);
+			
+			ResultSet rs = pst.executeQuery();
+			try {
+			   
+				while (rs.next()) {
+					Formation form=new Formation();
+					EC ec=new EC();
+					
+					int numero=rs.getInt("NFORMATION");
+					form.setNumeroFormation(numero);
+					ec.setFormation(form);
+					int numeroEc=rs.getInt("NEC");
+					String libelle=rs.getString("LIBELLE");
+					float coef=rs.getFloat("COEF");
+					ec.setNumeroEC(numeroEc);
+					ec.setLibelle(libelle);
+					ec.setCoef(coef);
+					e.getListeECFormation().add(ec);
+				}
+				rs.close();
+				pst.close();
+			}
+			catch (SQLException ex) {
+				ex.getMessage();
+			}finally{
+				rs.close();
+				pst.close();
+			}
+
+		}
 
 	// extraction du libelle de la formation avec son id 
 	
@@ -425,5 +460,25 @@ public class QueryBD {
 	public void fermerConnexio() throws SQLException{
 		cx.close();
 	}
+	
+	//insertion de la modification d'un coefficient d'EC
+	public int ModifierCoefEC( int numeroFormation, int numeroEC,String coef)throws SQLException {
+		String requete="";
+		 requete="Update EC set COEF="+coef+" WHERE NFORMATION="+numeroFormation+ "and NEC="+numeroEC;
+		int resInsert=0;
+		try {
+			Statement st = cx.createStatement();
+			resInsert = st.executeUpdate(requete);
+			st.close();
+
+		}
+
+		catch (SQLException e) {
+			e.getMessage();
+		}
+
+		return resInsert;
+	}
+	
 }
 
