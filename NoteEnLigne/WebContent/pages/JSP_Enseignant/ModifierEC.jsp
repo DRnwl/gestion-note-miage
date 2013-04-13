@@ -1,11 +1,11 @@
-<%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="fr.paris10.miage.gnote.univcmp.bean.Formation"%>
-
 <%@page import="fr.paris10.miage.gnote.univcmp.bean.EC"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -105,7 +105,7 @@
 </logic:messagesPresent></h2>
 
 
-	<form id="Insert" method="POST" action="ModifierCoefEC.do">
+	<form id="Modif" method="POST" action="ModifierCoefEC.do">
 
 		<TABLE  align="center" class="formulaire">
 			<tr>
@@ -119,8 +119,8 @@
             for (EC ec : listEcForm) {      
 	%>
 				<tr>
-					<td> <input type="button" name="libelle" value="<%= ec.getLibelle() %>"/></td>
-					<td> <input type="text" name="coef" value="<%= ec.getCoef() %>"/></td>
+					<td> <input type="text" name="libelle" value="<%= ec.getLibelle() %>"/></td>
+					<td> <input type="text" name="coef" value="<%= ec.getCoef() %>" /></td>
 				</tr>	   		
 	<% 
 			}
@@ -128,7 +128,8 @@
 				
 			</tr>
        </TABLE>
-       <input type="submit" value="soumettre" /></td>
+       <br><br><br>
+       <input type="submit" value="soumettre" align="center"/></td>
 	</form>
 	</article>
 	</section>
