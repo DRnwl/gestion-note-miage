@@ -3,6 +3,8 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="fr.paris10.miage.gnote.univcmp.bean.Formation"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -99,12 +101,28 @@
 		<li class="icn_add_user"><a href="modNote.html">Modifier</a></li>
 	</ul>
 	<h3>
-		<img src="images/buro.png" />&nbsp;&nbsp;&nbsp; Cours
+		<img src="images/buro.png" />&nbsp;&nbsp;&nbsp; Modifier ECs
 	</h3>
 	<ul class="toggle">
-		<li class="icn_edit_article"><a href="#">UE 1</a></li>
-		<li class="icn_tags"><a href="#">UE 2 </a></li>
-		<li class="icn_profile"><a href="#">UE 3</a></li>
+		<jsp:useBean id="user" class="fr.paris10.miage.gnote.usercmp.bean.Enseignant" scope="session" />
+			
+			<p align="center">Choisissez une formation:</p>	
+		
+			<form id="ModifEC" method="POST" action="ModifierEC.do">
+			
+			
+			<%  
+			ArrayList<Formation> listeform= (ArrayList<Formation>) user.getListFormations();
+            for (Formation f:listeform) {      
+			%>
+				<p align="center"><li class="icn_new_article"><%=f.getType()+ f.getNiveau()+" "+f.getLibelle()+" "+f.getParcours()%>
+					<input type="radio" name="choix" value="<%=f.getNumeroFormation()%>"/></li></p>
+			<% 
+			}
+    		%>
+    		<br>
+    		<p align="center"><input type="submit" value="soumettre"/>
+			</form>
 	</ul>
 	<h3>
 		<img src="images/buro.png" />&nbsp; &nbsp;Examen
