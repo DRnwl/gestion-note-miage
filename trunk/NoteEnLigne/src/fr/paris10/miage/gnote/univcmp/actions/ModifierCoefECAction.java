@@ -17,36 +17,25 @@ import fr.paris10.miage.gnote.usercmp.bean.Enseignant;
 public class ModifierCoefECAction extends Action{
 	public ActionForward execute( ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response )throws SQLException {
-
-		System.out.println("je suis dans l'action de modif coef");
 		ModifierCoefECForm monForm =(ModifierCoefECForm) form;
-		System.out.println(form);
 		ServletContext context = getServlet().getServletContext();
 		QueryBD conBase = new QueryBD(context.getRealPath(""));
 		
 		//recupération du numéro de formation
-		String coef=monForm.getCoef();
-		System.out.println("coef:"+coef);
+		float coef=Float.parseFloat(monForm.getCoef());
 		String libelle=monForm.getLibelle();
-		System.out.println("libelle: "+libelle);
 		
 		//ici récupération de l'étudiant de la session 
 		HttpSession session = request.getSession(true);
 		Enseignant ens=(Enseignant) session.getAttribute("user");
 		int numeroEC=0;
 		int numeroFormation=0;
-		System.out.println("taille du T: "+ens.getListeECFormation().size());
 		for(EC ec: ens.getListeECFormation()){
-			System.out.println("JE suis dans le for, ec vaut "+ec.getLibelle() +" et libelle "+libelle);
 			if(ec.getLibelle().equalsIgnoreCase(libelle)){
 				numeroEC=ec.getNumeroEC();
 				numeroFormation=ec.getFormation().getNumeroFormation();
 			}
 		}
-		System.out.println("libelle: "+libelle);
-		System.out.println("coef: "+coef);
-		System.out.println("nformation: "+numeroFormation);
-		System.out.println("nec: "+numeroEC);
 		conBase.ModifierCoefEC(numeroFormation, numeroEC, coef);
 		return mapping.findForward("modifCoef");
 
