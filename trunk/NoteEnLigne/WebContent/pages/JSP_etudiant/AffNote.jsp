@@ -90,14 +90,14 @@
 			
 			<%  
             for (PromotionEtudiant pe : user.getListPromotionEtudiant()) {      
-	%>
+			%>
 				<p align="center"><li class="icn_new_article"><%=pe.getPromotion().getFormation().getType()+ pe.getPromotion().getFormation().getNiveau()+" "+pe.getPromotion().getFormation().getLibelle()+" "+pe.getPromotion().getFormation().getParcours()%>
 					<input type="radio" name="choix" value="<%=pe.getPromotion().getFormation().getNumeroFormation()%>"/></li></p>
-	<% 
+			<% 
 			}
-    %>
-    <br>
-    <p align="center"><input type="submit" value="soumettre"/>
+    		%>
+    		<br>
+    		<p align="center"><input type="submit" value="soumettre"/>
 			</form>
 		</ul>
 		
