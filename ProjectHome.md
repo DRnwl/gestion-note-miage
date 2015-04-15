@@ -1,0 +1,1 @@
+interface permettant la gestion et la consultation des notes en ligne par les enseignants,le secrétariat,les étudiants et le responsable de l'EC.
